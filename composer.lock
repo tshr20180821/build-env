@@ -58,17 +58,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.3.10",
-        "ext-mbstring": "*",
-        "ext-gd": "*",
-        "ext-apcu": "*",
-        "ext-pcntl": "*",
-        "ext-xmlrpc": "*",
-        "ext-imagick": "*",
-        "ext-soap": "*",
-        "ext-ftp": "*",
-        "ext-intl": "*",
-        "ext-imap": "*"
+        "php": ">=7.3.10"
     },
     "platform-dev": []
 }
