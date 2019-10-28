@@ -29,4 +29,7 @@ ldd /tmp/usr/bin/git
 
 /tmp/usr/bin/git --version
 
+mkdir bin
+cp /tmp/usr/bin/git ./bin/
+
 date
