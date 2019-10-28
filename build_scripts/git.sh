@@ -13,6 +13,7 @@ ls -lang
 pushd git-${GIT_VERSION}
 make configure
 ./configure --help
+./configure --prefix /tmp/usr
 time make -j2
 popd
 popd
