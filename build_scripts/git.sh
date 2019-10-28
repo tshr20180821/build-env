@@ -25,4 +25,8 @@ popd
 
 tree /tmp/usr
 
+ldd /tmp/usr/bin/git
+
+/tmp/usr/bin/git --version
+
 date
