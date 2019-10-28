@@ -12,7 +12,7 @@ tar xf v${GIT_VERSION}.tar.gz
 ls -lang
 pushd git-${GIT_VERSION}
 make configure
-ls -lang
+./configure --help
 popd
 popd
 
