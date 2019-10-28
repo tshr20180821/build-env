@@ -6,6 +6,8 @@ date
 
 GIT_VERSION=2.23.0
 
+echo ${HOME}
+
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
@@ -31,5 +33,8 @@ ldd /tmp/usr/bin/git
 
 mkdir bin
 cp /tmp/usr/bin/git ./bin/
+
+pwd
+ls -lang ./bin/
 
 date
