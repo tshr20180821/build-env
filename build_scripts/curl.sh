@@ -6,6 +6,14 @@ date
 
 CURL_VERSION=7.66.0
 
+# - Aptfile -
+# libssh2-1-dev
+# libbrotli-dev
+# libnghttp2-14
+# libnghttp2-dev
+# libpsl5
+# libpsl-dev
+
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
