@@ -21,6 +21,12 @@ mkdir -p /tmp/usr/bin
 
 cp .apt/usr/bin/ccache /tmp/usr/bin/
 
+mkdir /tmp/repo
+pushd /tmp/repo
+git clone --depth=1 https://github.com/tshr20140816/build-env.git
+ls -lang
+popd
+
 pushd build_scripts
 chmod +x ./${BUILD_SCRIPT_NAME}.sh
 ./${BUILD_SCRIPT_NAME}.sh
