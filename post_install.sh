@@ -19,7 +19,11 @@ cat /app/.netrc
 
 mkdir -p /tmp/usr/bin
 
-cp .apt/usr/bin/ccache /tmp/usr/bin/
+if [ -f bin/ccache ]; then
+  cp bin/ccache /tmp/usr/bin/
+else
+  cp .apt/usr/bin/ccache /tmp/usr/bin/
+fi
 
 mkdir /tmp/repo
 pushd /tmp/repo
