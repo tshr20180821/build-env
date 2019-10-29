@@ -77,8 +77,6 @@ ldd /tmp/usr/bin/curl
 /tmp/usr/bin/curl --version
 
 pushd ../
-mkdir bin
-cp /tmp/usr/bin/curl ./bin/
 cp /tmp/usr/bin/curl ./www/
 popd
 
