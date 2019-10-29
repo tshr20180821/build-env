@@ -18,7 +18,7 @@ export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
-export CCACHE_DIR=/tmp/ccache
+export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
 
@@ -63,8 +63,8 @@ popd
 ccache -s
 
 pushd /tmp
-time tar cf ccache_cache.tar.bz2 --use-compress-prog=pbzip2 ./ccache
-mv ccache_cache.tar.bz2 repo/build-env/ccache/
+time tar cf ccache_cache.tar.bz2 --use-compress-prog=pbzip2 ./ccache_cache
+mv ccache_cache.tar.bz2 repo/build-env/ccache_cache/
 pushd repo/build-env
 git init
 git config --global user.email "user"
