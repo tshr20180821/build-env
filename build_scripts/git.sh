@@ -6,11 +6,21 @@ date
 
 GIT_VERSION=2.23.0
 
-whereis ccache
-
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
+
+export CCACHE_DIR=/tmp/ccache
+
+pushd /tmp/usr/bin
+ln -s ccache gcc
+ln -s ccache g++
+ln -s ccache cc
+ln -s ccache c++
+popd
+
+ccache -s
+ccache -z
 
 pushd /tmp
 curl -L -O https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz
