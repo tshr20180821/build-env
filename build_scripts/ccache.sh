@@ -24,7 +24,7 @@ time git clone -b v${CCACHE_VERSION} --depth=1 https://github.com/ccache/ccache.
 pushd ccache
 time sh autogen.sh
 ./configure --help
-time ./configure --prefix=/tmp/usr --disable-man --with-bundled-zlib
+time ./configure --prefix=/tmp/usr --disable-man
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 popd
 popd
