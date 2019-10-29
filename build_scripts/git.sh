@@ -67,10 +67,6 @@ ldd /tmp/usr/bin/git
 
 /tmp/usr/bin/git --version
 
-pushd ../
-mkdir bin
-cp /tmp/usr/bin/git ./bin/
-cp /tmp/usr/bin/git ./www/
-popd
+cp /tmp/usr/bin/git ../www/
 
 date
