@@ -6,6 +6,10 @@ date
 
 ARIA2_VERSION=1.35.0
 
+# - Aptfile -
+# libssh2-1-dev
+# libc-ares-dev
+
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
