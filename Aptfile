@@ -16,6 +16,7 @@ pbzip2
 # gperf
 
 # -- aria2 --
+# aria2
 openssl
 libssh2-1-dev
 libc-ares-dev
