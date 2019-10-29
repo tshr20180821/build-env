@@ -46,9 +46,7 @@ pushd curl-${CURL_VERSION}
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 if [ $? != 0 ]; then
   echo 'time out'
-  result='NG'
 else
-  result='OK'
   time make install
 fi
 popd
@@ -76,8 +74,6 @@ ldd /tmp/usr/bin/curl
 
 /tmp/usr/bin/curl --version
 
-pushd ../
-cp /tmp/usr/bin/curl ./www/
-popd
+cp /tmp/usr/bin/curl ../www/
 
 date
