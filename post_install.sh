@@ -17,6 +17,10 @@ __HEREDOC__
 
 cat /app/.netrc
 
+mkdir -p /tmp/usr/bin
+
+cp .apt/usr/bin/ccache /tmp/usr/bin/
+
 pushd build_scripts
 chmod +x ./${BUILD_SCRIPT_NAME}.sh
 ./${BUILD_SCRIPT_NAME}.sh
