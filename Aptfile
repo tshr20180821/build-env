@@ -11,6 +11,9 @@ pbzip2
 # libpsl-dev
 
 # -- ccache --
-libzstd-dev
-libb2-dev
-gperf
+# libzstd-dev
+# libb2-dev
+# gperf
+
+# -- aria2 --
+libssh2-1-dev
