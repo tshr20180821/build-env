@@ -1,4 +1,5 @@
 ccache
+distcc
 tree
 pbzip2
 
