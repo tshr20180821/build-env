@@ -1,3 +1,11 @@
 ccache
 tree
 pbzip2
+
+# -- curl --
+libssh2-1-dev
+libbrotli-dev
+libnghttp2-14
+libnghttp2-dev
+libpsl5
+libpsl-dev
