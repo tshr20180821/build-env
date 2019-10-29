@@ -15,10 +15,10 @@ export CCACHE_DIR=/tmp/ccache_cache
 export PATH="/tmp/usr/bin:${PATH}"
 
 pushd /tmp/usr/bin
-ln -s ccache gcc
-ln -s ccache g++
-ln -s ccache cc
-ln -s ccache c++
+ln -s /tmp/usr/bin/ccache gcc
+ln -s /tmp/usr/bin/ccache g++
+ln -s /tmp/usr/bin/ccache cc
+ln -s /tmp/usr/bin/ccache c++
 popd
 
 ls -lang /tmp/usr/bin
