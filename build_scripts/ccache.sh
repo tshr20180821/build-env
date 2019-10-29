@@ -26,16 +26,13 @@ time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
-tree ./
 popd
 popd
 
-tree /tmp/usr
+ldd /tmp/ccache/ccache
 
-ldd /tmp/usr/bin/ccache
+/tmp/ccache/ccache --version
 
-/tmp/usr/bin/ccache --version
-
-cp /tmp/usr/bin/ccache ../www/
+cp /tmp/ccache/ccache ../www/
 
 date
