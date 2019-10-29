@@ -13,6 +13,7 @@ export LDFLAGS="-fuse-ld=gold"
 export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
+ccache --version
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
