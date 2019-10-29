@@ -11,6 +11,7 @@ export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
 export CCACHE_DIR=/tmp/ccache_cache
+mkdir ${CCACHE_DIR}
 
 export PATH="/tmp/usr/bin:${PATH}"
 
