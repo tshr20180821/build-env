@@ -17,10 +17,10 @@ ls -lang /tmp
 export PATH="/tmp/usr/bin:${PATH}"
 
 pushd /tmp/usr/bin
-ln -s /tmp/usr/bin/ccache gcc
-ln -s /tmp/usr/bin/ccache g++
-ln -s /tmp/usr/bin/ccache cc
-ln -s /tmp/usr/bin/ccache c++
+ln -s ccache gcc
+ln -s ccache g++
+ln -s ccache cc
+ln -s ccache c++
 popd
 
 ls -lang /tmp/usr/bin
@@ -40,7 +40,7 @@ pushd aria2-${ARIA2_VERSION}
 ./configure --help
 time ./configure --prefix=/tmp/usr --enable-static=yes --enable-shared=no
 
-time timeout -sKILL 30 make -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 15 make -j$(grep -c -e processor /proc/cpuinfo)
 if [ $? != 0 ]; then
   echo 'time out'
 else
