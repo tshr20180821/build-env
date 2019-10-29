@@ -35,7 +35,7 @@ pushd aria2-${ARIA2_VERSION}
 ./configure --help
 time ./configure --prefix=/tmp/usr --enable-static=yes --enable-shared=no
 
-time timeout -sKILL 210 make
+time timeout -sKILL 30 make -j$(grep -c -e processor /proc/cpuinfo)
 if [ $? != 0 ]; then
   echo 'time out'
 else
