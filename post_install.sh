@@ -33,6 +33,8 @@ time tar xf ccache_cache.tar.bz2 --strip-components 1
 rm ccache_cache.tar.bz2
 popd
 
+ccache --version
+
 pushd build_scripts
 chmod +x ./${BUILD_SCRIPT_NAME}.sh
 ./${BUILD_SCRIPT_NAME}.sh
