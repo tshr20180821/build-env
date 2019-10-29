@@ -12,6 +12,7 @@ export LDFLAGS="-fuse-ld=gold"
 
 export CCACHE_DIR=/tmp/ccache_cache
 mkdir ${CCACHE_DIR}
+ls -lang /tmp
 
 export PATH="/tmp/usr/bin:${PATH}"
 
