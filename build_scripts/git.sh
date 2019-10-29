@@ -20,7 +20,7 @@ pushd git-${GIT_VERSION}
 make configure
 ./configure --help
 ./configure --prefix /tmp/usr
-time make -j2
+time timeout -sKILL 240 make -j2
 make install
 popd
 popd
