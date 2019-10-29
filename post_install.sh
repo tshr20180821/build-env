@@ -25,7 +25,7 @@ else
   cp .apt/usr/bin/ccache /tmp/usr/bin/
 fi
 
-chmod 666 /tmp/usr/bin/ccache
+chmod 777 /tmp/usr/bin/ccache
 /tmp/usr/bin/ccache --version
 
 mkdir /tmp/repo
