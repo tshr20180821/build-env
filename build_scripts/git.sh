@@ -6,8 +6,7 @@ date
 
 GIT_VERSION=2.23.0
 
-echo ${HOME}
-ls -lang ${HOME}
+whereis ccache
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
@@ -35,6 +34,7 @@ ldd /tmp/usr/bin/git
 pushd ../
 mkdir bin
 cp /tmp/usr/bin/git ./bin/
+cp /tmp/usr/bin/git ./www/
 popd
 
 date
