@@ -13,8 +13,6 @@ export LDFLAGS="-fuse-ld=gold"
 export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
-ls -lang /tmp/usr/bin
-ccache --version
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
@@ -22,6 +20,9 @@ ln -s ccache g++
 ln -s ccache cc
 ln -s ccache c++
 popd
+
+ls -lang /tmp/usr/bin
+ccache --version
 
 ccache -s
 ccache -z
