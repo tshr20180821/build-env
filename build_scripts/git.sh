@@ -36,9 +36,7 @@ make configure
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 if [ $? != 0 ]; then
   echo 'time out'
-  result='NG'
 else
-  result='OK'
   time make install
 fi
 
