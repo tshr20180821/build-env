@@ -17,6 +17,8 @@ __HEREDOC__
 
 cat /app/.netrc
 
+# ***** ccache *****
+
 mkdir -p /tmp/usr/bin
 
 if [ -f bin/ccache ]; then
@@ -39,6 +41,18 @@ pushd /tmp
 time tar xf ccache_cache.tar.bz2 --strip-components 1
 rm ccache_cache.tar.bz2
 popd
+
+# ***** heroku cli *****
+
+mkdir heroku
+curl -sS -o heroku/heroku.tar.gz https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz
+
+pushd heroku
+tar xf heroku.tar.gz --strip-components=1
+rm heroku.tar.gz
+popd
+
+# ***** target *****
 
 pushd build_scripts
 chmod +x ./${BUILD_SCRIPT_NAME}.sh
