@@ -10,7 +10,6 @@ CCACHE_VERSION=3.7.5
 # libzstd-dev
 # libb2-dev
 # gperf
-# asciidoc
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
@@ -27,7 +26,7 @@ time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
-make install
+tree ./
 popd
 popd
 
