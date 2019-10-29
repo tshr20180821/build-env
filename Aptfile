@@ -14,3 +14,4 @@ pbzip2
 libzstd-dev
 libb2-dev
 gperf
+asciidoc
