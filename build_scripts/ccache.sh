@@ -6,6 +6,11 @@ date
 
 CCACHE_VERSION=3.7.5
 
+# -- ccache --
+# libzstd-dev
+# libb2-dev
+# gperf
+
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
