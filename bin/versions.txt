@@ -1,3 +1,7 @@
 ccache --version
 
 ccache version 3.7.5
+
+aria2c --version
+
+aria2 version 1.35.0
