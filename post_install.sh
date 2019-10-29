@@ -27,7 +27,7 @@ git clone --depth=1 https://github.com/tshr20140816/build-env.git
 ls -lang
 popd
 
-cp /tmp/repo/build-env/ccache/ccache_cache.zip /tmp/
+mv /tmp/repo/build-env/ccache/ccache_cache.zip /tmp/
 pushd /tmp
 time unzip -q ccache_cache.zip
 rm ccache_cache.zip
