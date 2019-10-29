@@ -10,6 +10,7 @@ CCACHE_VERSION=3.7.5
 # libzstd-dev
 # libb2-dev
 # gperf
+# asciidoc
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
