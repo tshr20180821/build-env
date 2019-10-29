@@ -43,7 +43,7 @@ pushd curl-${CURL_VERSION}
   --with-libssh2 --with-brotli --with-nghttp2 \
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
 
-time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 210 make
 if [ $? != 0 ]; then
   echo 'time out'
 else
