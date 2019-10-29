@@ -48,8 +48,10 @@ popd
 ccache -s
 
 pushd /tmp
-zip -9qr ccache_cache.zip ./ccache
-mv ccache_cache.zip repo/build-env/ccache/
+# zip -9qr ccache_cache.zip ./ccache
+# mv ccache_cache.zip repo/build-env/ccache/
+tar cvf ccache_cache.tar.bz2 --use-compress-prog=pbzip2 ./ccache
+mv ccache_cache.tar.bz2 repo/build-env/ccache/
 pushd repo/build-env
 git init
 git config --global user.email "user"
