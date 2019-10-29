@@ -23,6 +23,7 @@ popd
 
 ls -lang /tmp/usr/bin
 ccache --version
+ldd /tmp/usr/bin/ccache
 
 ccache -s
 ccache -z
