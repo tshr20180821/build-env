@@ -31,7 +31,12 @@ pushd /tmp
 curl -O http://ftp.gnu.org/gnu/parallel/parallel-latest.tar.bz2
 tar xf parallel-latest.tar.bz2
 ls -lang
+pushd parallel-${PARALLEL_VERSION}
+./configure --help
+time ./configure --prefix=/tmp/usr
 
+time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+popd
 popd
 
 date
