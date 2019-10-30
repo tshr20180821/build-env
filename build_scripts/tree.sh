@@ -16,20 +16,16 @@ pushd /tmp
 
 curl -O http://mama.indstate.edu/users/ice/tree/src/tree-${TREE_VERSION}.tgz
 tar xf tree-${TREE_VERSION}.tgz
-ls -lang
 pushd tree-${TREE_VERSION}
 
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
-ls -lang
 popd
 popd
 
-tree /tmp/usr
+ldd /tmp/tree-${TREE_VERSION}/tree
 
-ldd /tmp/usr/bin/tree
+/tmp/tree-${TREE_VERSION}/tree --version
 
-/tmp/usr/bin/tree --version
-
-cp /tmp/usr/bin/tree ../www/
+cp /tmp/tree-${TREE_VERSION}/tree ../www/
 
 date
