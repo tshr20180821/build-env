@@ -14,17 +14,17 @@ export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-pushd /tmp/usr/bin
-ln -s ccache gcc
-ln -s ccache g++
-ln -s ccache cc
-ln -s ccache c++
-popd
+# pushd /tmp/usr/bin
+# ln -s ccache gcc
+# ln -s ccache g++
+# ln -s ccache cc
+# ln -s ccache c++
+# popd
 
 ccache --version
 
-ccache -s
-ccache -z
+# ccache -s
+# ccache -z
 
 pushd /tmp
 
@@ -36,7 +36,16 @@ pushd parallel-${PARALLEL_VERSION}
 time ./configure --prefix=/tmp/usr
 
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+time make install
 popd
 popd
+
+tree /tmp/usr
+
+ldd /tmp/usr/bin/parallel
+
+/tmp/usr/bin/parallel --version
+
+cp /tmp/usr/bin/parallel ../www/
 
 date
