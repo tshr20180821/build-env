@@ -59,6 +59,7 @@ curl -sS -o heroku/heroku.tar.gz https://cli-assets.heroku.com/heroku-cli/channe
 pushd heroku
 tar xf heroku.tar.gz --strip-components=1
 rm heroku.tar.gz
+timeout -sKILL 10 ./bin/heroku ps:exec --status
 popd
 
 # ***** target *****
