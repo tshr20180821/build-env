@@ -9,10 +9,19 @@ chmod +x ./start_web.sh
 GITHUB_USER_DECODE=$(echo -n ${GITHUB_USER} | base64 -d)
 GITHUB_PASSWORD_DECODE=$(echo -n ${GITHUB_PASSWORD} | base64 -d)
 
+HEROKU_LOGIN_USER_DECODE=$(echo -n ${HEROKU_LOGIN_USER} | base64 -d)
+HEROKU_API_KEY_DECODE=$(echo -n ${HEROKU_API_KEY} | base64 -d)
+
 cat << __HEREDOC__ >> /app/.netrc
 machine github.com
   login ${GITHUB_USER_DECODE}
   password ${GITHUB_PASSWORD_DECODE}
+machine api.heroku.com
+  login ${HEROKU_LOGIN_USER_DECODE}
+  password ${HEROKU_API_KEY_DECODE}
+machine git.heroku.com
+  login ${HEROKU_LOGIN_USER_DECODE}
+  password ${HEROKU_API_KEY_DECODE}
 __HEREDOC__
 
 cat /app/.netrc
