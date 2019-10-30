@@ -10,7 +10,7 @@ GITHUB_USER_DECODE=$(echo -n ${GITHUB_USER} | base64 -d)
 GITHUB_PASSWORD_DECODE=$(echo -n ${GITHUB_PASSWORD} | base64 -d)
 
 HEROKU_LOGIN_USER_DECODE=$(echo -n ${HEROKU_LOGIN_USER} | base64 -d)
-HEROKU_API_KEY_DECODE=$(echo -n ${HEROKU_API_KEY} | base64 -d)
+HEROKU_API_KEY_DECODE=$(echo -n ${HEROKU_API_KEY_ENCODE} | base64 -d)
 
 cat << __HEREDOC__ >> /app/.netrc
 machine github.com
