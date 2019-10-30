@@ -2,8 +2,8 @@
 
 set -x
 
-ldd ./www/aria2c
-./www/aria2c --version
+/usr/sbin/sshd --version
+/usr/sbin/sshd --help
 
 timeout -sKILL 10 ss -t
 
