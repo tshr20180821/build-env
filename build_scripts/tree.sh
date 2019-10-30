@@ -17,21 +17,21 @@ pushd /tmp
 curl -O http://mama.indstate.edu/users/ice/tree/src/tree-${TREE_VERSION}.tgz
 tar xf tree-${TREE_VERSION}.tgz
 ls -lang
-# pushd parallel-${PARALLEL_VERSION}
-# ./configure --help
-# time ./configure --prefix=/tmp/usr
+pushd tree-${TREE_VERSION}
+./configure --help
+time ./configure --prefix=/tmp/usr
 
-# time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
-# time make install
-# popd
+time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+time make install
+popd
 popd
 
 tree /tmp/usr
 
-# ldd /tmp/usr/bin/parallel
+ldd /tmp/usr/bin/tree
 
-# /tmp/usr/bin/parallel --version
+/tmp/usr/bin/tree --version
 
-# cp /tmp/usr/bin/parallel ../www/
+cp /tmp/usr/bin/tree ../www/
 
 date
