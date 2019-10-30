@@ -2,8 +2,8 @@
 
 set -x
 
-/usr/sbin/sshd --version
-/usr/sbin/sshd --help
+/usr/sbin/sshd -V
+/usr/sbin/sshd -h
 
 timeout -sKILL 10 ss -t
 
