@@ -1,6 +1,6 @@
 Port 60022
 
-AddressFamily any
+AddressFamily inet
 ListenAddress 0.0.0.0
 
 PermitRootLogin no
