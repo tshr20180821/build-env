@@ -29,6 +29,7 @@ ccache -z
 pushd /tmp
 
 curl -O http://ftp.gnu.org/gnu/parallel/parallel-latest.tar.bz2
+tar xf parallel-latest.tar.bz2
 ls -lang
 
 popd
