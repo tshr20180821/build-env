@@ -6,7 +6,7 @@ date
 
 chmod +x ./start_web.sh
 
-timeout -sKILL 10 ifconfig
+timeout -sKILL 10 ss
 
 GITHUB_USER_DECODE=$(echo -n ${GITHUB_USER} | base64 -d)
 GITHUB_PASSWORD_DECODE=$(echo -n ${GITHUB_PASSWORD} | base64 -d)
