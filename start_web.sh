@@ -8,6 +8,6 @@ ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 
 /usr/sbin/sshd -f etc/sshd_config &
 
-timeout -sKILL 10 ss -t
+sleep 10 && timeout -sKILL 10 ss -ant &
 
 vendor/bin/heroku-php-apache2 -C apache.conf www
