@@ -4,7 +4,9 @@ set -x
 
 /usr/sbin/sshd -V
 
-/usr/sbin/sshd -4 -f etc/sshd_config &
+ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
+
+/usr/sbin/sshd -f etc/sshd_config &
 
 timeout -sKILL 10 ss -t
 
