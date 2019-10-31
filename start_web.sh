@@ -4,6 +4,7 @@ set -x
 
 hostname -i
 echo ${PORT}
+whoami
 
 /usr/sbin/sshd -V
 
