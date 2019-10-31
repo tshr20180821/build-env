@@ -2,6 +2,9 @@
 
 set -x
 
+hostname -i
+echo ${PORT}
+
 /usr/sbin/sshd -V
 
 ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
