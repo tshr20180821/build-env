@@ -1,4 +1,4 @@
-Port 60022
+# Port 60022
 
 AddressFamily inet
 ListenAddress 0.0.0.0
