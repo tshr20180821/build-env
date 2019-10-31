@@ -3,6 +3,8 @@ Port 60022
 AddressFamily inet
 ListenAddress 0.0.0.0
 
+HostKey /app/etc/ssh_host_rsa_key
+
 Protocol 2
 
 PermitRootLogin no
