@@ -9,7 +9,7 @@ echo ${PORT}
 
 ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 
-/usr/sbin/sshd -f etc/sshd_config &
+/usr/sbin/sshd -p 60022 -f etc/sshd_config &
 
 sleep 10 && timeout -sKILL 10 ss -ant &
 
