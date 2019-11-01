@@ -24,4 +24,10 @@ ls -lang
 popd
 popd
 
+ldd /tmp/openssh-portable-V_${SSH_VERSION}/ssh
+
+/tmp/openssh-portable-V_${SSH_VERSION}/ssh --version
+
+cp /tmp/openssh-portable-V_${SSH_VERSION}/ssh ../www/
+
 date
