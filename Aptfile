@@ -2,7 +2,6 @@
 # distcc
 tree
 pbzip2
-connect-proxy
 
 # -- curl --
 # libssh2-1-dev
