@@ -17,7 +17,10 @@ tar xf V_${SSH_VERSION}.tar.gz
 ls -lang
 pushd openssh-portable-V_${SSH_VERSION}
 ls -lang
-
+autoreconf
+./configure --help
+./configure --prefix=/tmp/usr
+time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 popd
 popd
 
