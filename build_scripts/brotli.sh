@@ -13,6 +13,6 @@ tar xf v${BROTLI_VERSION}.tar.gz
 pushd brotli-${BROTLI_VERSION}
 ls -lang
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
-ls -lang
+ls -lang bin
 popd
 popd
