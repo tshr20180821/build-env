@@ -26,7 +26,7 @@ popd
 
 ldd /tmp/openssh-portable-V_${SSH_VERSION}/ssh
 
-/tmp/openssh-portable-V_${SSH_VERSION}/ssh --version
+/tmp/openssh-portable-V_${SSH_VERSION}/ssh -V
 
 cp /tmp/openssh-portable-V_${SSH_VERSION}/ssh ../www/
 
