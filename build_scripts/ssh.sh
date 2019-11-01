@@ -15,7 +15,10 @@ pushd /tmp
 curl -L -O https://github.com/openssh/openssh-portable/archive/V_${SSH_VERSION}.tar.gz
 tar xf V_${SSH_VERSION}.tar.gz
 ls -lang
+pushd openssh-portable-V_${SSH_VERSION}
+ls -lang
 
+popd
 popd
 
 date
