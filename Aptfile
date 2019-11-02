@@ -1,7 +1,7 @@
 # ccache
 # distcc
 tree
-pbzip2
+lbzip2
 
 # -- curl --
 # libssh2-1-dev
