@@ -63,7 +63,7 @@ popd
 ccache -s
 
 pushd /tmp
-time tar cf ccache_cache.tar.bz2 --use-compress-prog=pbzip2 ./ccache_cache
+time tar cf ccache_cache.tar.bz2 --use-compress-prog=lbzip2 ./ccache_cache
 mv ccache_cache.tar.bz2 repo/build-env/ccache_cache/
 pushd repo/build-env
 git init
