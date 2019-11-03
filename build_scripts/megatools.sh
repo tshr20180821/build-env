@@ -13,6 +13,7 @@ export LDFLAGS="-fuse-ld=gold"
 pushd /tmp
 
 curl -O https://megatools.megous.com/builds/megatools-${MEGATOOLS_VERSION}.tar.gz
+tar xf megatools-${MEGATOOLS_VERSION}.tar.gz
 ls -lang
 
 pushd megatools-${MEGATOOLS_VERSION}
