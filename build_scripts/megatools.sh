@@ -18,7 +18,7 @@ ls -lang
 
 pushd megatools-${MEGATOOLS_VERSION}
 ./configure --help
-./configure --prefix=/tmp/usr
+./configure --prefix=/tmp/usr --disable-docs
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 make install
 popd
