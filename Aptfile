@@ -4,7 +4,7 @@ tree
 lbzip2
 
 # -- megatools --
-build-essential libglib2.0-dev libssl-dev libcurl4-openssl-dev
+build-essential libglib2.0-dev libssl-dev libcurl4-openssl-dev asciidoc
 
 # -- curl --
 # libssh2-1-dev
