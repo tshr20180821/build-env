@@ -24,4 +24,6 @@ make install
 popd
 popd
 
+tree /tmp/usr
+
 date
