@@ -19,7 +19,7 @@ tar xf v${DISTCC_VERSION}.tar.gz
 
 pushd distcc-${DISTCC_VERSION}
 ls -lang
-
+time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr
 
