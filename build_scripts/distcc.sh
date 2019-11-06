@@ -22,8 +22,11 @@ ls -lang
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr
+time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+make install
+popd
+popd
 
-popd
-popd
+tree /tmp/usr
 
 date
