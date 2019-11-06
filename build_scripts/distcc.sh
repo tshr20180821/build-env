@@ -13,11 +13,16 @@ export LDFLAGS="-fuse-ld=gold"
 
 pushd /tmp
 
-curl -L -O https://github.com/distcc/distcc/archive/v3.3.3.tar.gz
+curl -L -O https://github.com/distcc/distcc/archive/v${DISTCC_VERSION}.tar.gz
 
-tar xf v3.3.3.tar.gz
+tar xf v${DISTCC_VERSION}.tar.gz
 ls -lang
+pushd distcc-${DISTCC_VERSION}
 
+./configure --help
+time ./configure --prefix=/tmp/usr
+
+popd
 popd
 
 date
