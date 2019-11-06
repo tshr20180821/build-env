@@ -16,8 +16,9 @@ pushd /tmp
 curl -L -O https://github.com/distcc/distcc/archive/v${DISTCC_VERSION}.tar.gz
 
 tar xf v${DISTCC_VERSION}.tar.gz
-ls -lang
+
 pushd distcc-${DISTCC_VERSION}
+ls -lang
 
 ./configure --help
 time ./configure --prefix=/tmp/usr
