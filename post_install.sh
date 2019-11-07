@@ -77,6 +77,9 @@ pushd heroku
 tar xf heroku.tar.gz --strip-components=1
 rm heroku.tar.gz
 # timeout -sKILL 10 ./bin/heroku ps:socks -a ${HEROKU_APP_NAME}
+pushd bin
+./heroku update
+popd
 popd
 
 # ***** ssh *****
