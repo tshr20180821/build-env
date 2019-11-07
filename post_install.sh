@@ -6,6 +6,8 @@ date
 
 chmod +x ./start_web.sh
 
+curl -s https://${HEROKU_APP_NAME}.herokuapp.com/ >/dev/null
+
 timeout -sKILL 10 ss -t
 
 # ***** env *****
