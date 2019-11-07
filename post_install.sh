@@ -131,7 +131,8 @@ kill -9 ${SOCKS_PID}
 
 ps aux
 
-ps -ef | grep 'ps:socks -a rabbit-water-01' | grep -v grep | xargs kill -9
+pgrep -f 'ps:socks -a ${DISTCC_HOST_NAME}'
+pgrep -f 'ps:socks -a ${DISTCC_HOST_NAME}' | xargs -t -L 1 -n 1 kill -9
 
 ps aux
 
