@@ -8,7 +8,7 @@ chmod +x ./start_web.sh
 
 curl -s https://${DISTCC_HOST_NAME}.herokuapp.com/ >/dev/null
 
-timeout -sKILL 10 ss -t
+ss -ant
 
 # ***** env *****
 
@@ -86,6 +86,11 @@ ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 pushd heroku/bin/
 
 time timeout -sKILL 30 ./heroku ps -a ${DISTCC_HOST_NAME}
+
+./heroku ps:socks -a ${DISTCC_HOST_NAME} &
+
+sleep 15s
+ss -ant
 
 time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${DISTCC_HOST_NAME}
 time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${DISTCC_HOST_NAME}
