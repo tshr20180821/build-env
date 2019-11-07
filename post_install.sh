@@ -129,4 +129,6 @@ popd
 
 kill -9 ${SOCKS_PID}
 
+ps aux
+
 date
