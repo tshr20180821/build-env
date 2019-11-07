@@ -6,6 +6,8 @@ hostname -i
 echo ${PORT}
 whoami
 
+ls -lang /app/.apt/usr/bin
+
 whereis distcc
 distcc --version
 
