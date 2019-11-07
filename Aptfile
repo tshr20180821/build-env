@@ -5,6 +5,7 @@ lbzip2
 
 # -- distcc --
 libiberty-dev
+python-dev
 python3-dev
 
 # -- megatools --
