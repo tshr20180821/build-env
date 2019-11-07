@@ -21,6 +21,19 @@ whereis gcc
 gcc --version
 ldd /usr/bin/gcc
 
+# ***** heroku cli *****
+
+mkdir heroku
+curl -sS -o heroku/heroku.tar.gz https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz
+
+pushd heroku
+tar xf heroku.tar.gz --strip-components=1
+rm heroku.tar.gz
+pushd bin
+./heroku update &
+popd
+popd
+
 # ***** github auth & heroku auth *****
 
 GITHUB_USER_DECODE=$(echo -n ${GITHUB_USER} | base64 -d)
@@ -68,19 +81,7 @@ time tar xf ccache_cache.tar.bz2 --strip-components 1
 rm ccache_cache.tar.bz2
 popd
 
-# ***** heroku cli *****
-
-mkdir heroku
-curl -sS -o heroku/heroku.tar.gz https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz
-
-pushd heroku
-tar xf heroku.tar.gz --strip-components=1
-rm heroku.tar.gz
-# timeout -sKILL 10 ./bin/heroku ps:socks -a ${HEROKU_APP_NAME}
-pushd bin
-./heroku update
-popd
-popd
+wait
 
 # ***** ssh *****
 
