@@ -6,7 +6,7 @@ date
 
 chmod +x ./start_web.sh
 
-curl -s https://${HEROKU_APP_NAME}.herokuapp.com/ >/dev/null
+curl -s https://${DISTCC_HOST_NAME}.herokuapp.com/ >/dev/null
 
 timeout -sKILL 10 ss -t
 
@@ -85,19 +85,21 @@ ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 
 pushd heroku/bin/
 
-time timeout -sKILL 30 ./heroku ps -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps -a ${DISTCC_HOST_NAME}
 
-time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${HEROKU_APP_NAME}
-time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${HEROKU_APP_NAME}
-time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_ssh_port -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${DISTCC_HOST_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${DISTCC_HOST_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_ssh_port -a ${DISTCC_HOST_NAME}
 export TARGET_USER=$(cat ssh_info_user)
 export TARGET_HTTP_PORT=$(cat ssh_info_http_port)
 export TARGET_SSH_PORT=$(cat ssh_info_ssh_port)
 
-time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/authorized_keys2 -a ${HEROKU_APP_NAME}
-time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/ssh_host_rsa_key2 -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/authorized_keys2 -a ${DISTCC_HOST_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/ssh_host_rsa_key2 -a ${DISTCC_HOST_NAME}
 
 mkdir -p -m 700 /app/.ssh
+ls -lang /app/.ssh
+
 cp ../../etc/config.ssh /app/.ssh/config
 
 cp authorized_keys2 /app/.ssh/authorized_keys
