@@ -91,11 +91,11 @@ pushd heroku/bin/
 
 time timeout -sKILL 30 ./heroku ps -a ${DISTCC_HOST_NAME}
 
-timeout -sKILL 210 ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
+./heroku ps:socks -a ${DISTCC_HOST_NAME} &
 
 sleep 15s
 SOCKS_PID=$!
-ss -ant
+ss -antp
 ps aux
 
 time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${DISTCC_HOST_NAME}
