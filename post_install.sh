@@ -85,17 +85,17 @@ ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 
 pushd heroku/bin/
 
-./heroku ps -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps -a ${HEROKU_APP_NAME}
 
-./heroku ps:copy /app/ssh_info_user -a ${HEROKU_APP_NAME}
-./heroku ps:copy /app/ssh_info_http_port -a ${HEROKU_APP_NAME}
-./heroku ps:copy /app/ssh_info_ssh_port -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_ssh_port -a ${HEROKU_APP_NAME}
 export TARGET_USER=$(cat ssh_info_user)
 export TARGET_HTTP_PORT=$(cat ssh_info_http_port)
 export TARGET_SSH_PORT=$(cat ssh_info_ssh_port)
 
-./heroku ps:copy /app/.ssh/authorized_keys2 -a ${HEROKU_APP_NAME}
-./heroku ps:copy /app/.ssh/ssh_host_rsa_key2 -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/authorized_keys2 -a ${HEROKU_APP_NAME}
+time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/ssh_host_rsa_key2 -a ${HEROKU_APP_NAME}
 
 mkdir -p -m 700 /app/.ssh
 cp ../../etc/config.ssh /app/.ssh/config
