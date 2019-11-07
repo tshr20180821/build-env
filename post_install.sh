@@ -30,7 +30,7 @@ pushd heroku
 tar xf heroku.tar.gz --strip-components=1
 rm heroku.tar.gz
 pushd bin
-./heroku update &
+time ./heroku update
 popd
 popd
 
