@@ -11,6 +11,8 @@ cat /proc/version
 
 whereis gcc
 gcc --version
+whereis distcc
+distcc --version
 
 echo 'ulimit -u : ' $(ulimit -u)
 echo 'getconf ARG_MAX : ' $(printf "%'d\n" $(getconf ARG_MAX))
@@ -54,9 +56,6 @@ echo ${PORT}
 whoami
 
 ls -lang /app/.apt/usr/bin
-
-whereis distcc
-distcc --version
 
 sleep 15 && ss -atnp &
 
