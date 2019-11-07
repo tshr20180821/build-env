@@ -1,10 +1,10 @@
 # ccache
-# distcc
+distcc
 tree
 lbzip2
 
 # -- distcc --
-libiberty-dev
+# libiberty-dev
 
 # -- megatools --
 # libgio-cil
