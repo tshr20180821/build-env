@@ -5,7 +5,6 @@ lbzip2
 
 # -- distcc --
 libiberty-dev
-# python-dev
 # python3-dev
 python3.6-dev
 libpython3.6-dev
