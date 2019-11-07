@@ -20,6 +20,7 @@ echo 'getconf ARG_MAX : ' $(printf "%'d\n" $(getconf ARG_MAX))
 # ***** sshd *****
 
 mkdir -m 700 .ssh
+ls -lang .ssh
 mv etc/config.ssh .ssh/config
 mv etc/ssh_host_rsa_key.pub .ssh/authorized_keys2
 mv etc/ssh_host_rsa_key .ssh/ssh_host_rsa_key2
