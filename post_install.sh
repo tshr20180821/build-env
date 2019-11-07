@@ -131,4 +131,8 @@ kill -9 ${SOCKS_PID}
 
 ps aux
 
+ps -ef | grep 'ps:socks -a rabbit-water-01' | grep -v grep | xargs kill -9
+
+ps aux
+
 date
