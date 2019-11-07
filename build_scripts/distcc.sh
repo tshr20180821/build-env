@@ -7,6 +7,8 @@ date
 
 DISTCC_VERSION=3.3.3
 
+find / -name Python.h -print
+
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
