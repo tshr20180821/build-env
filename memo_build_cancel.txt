@@ -1,0 +1,5 @@
+cd heroku/bin
+./heroku login
+./heroku update
+./heroku plugins:install heroku-builds
+./heroku builds:cancel -a APP_NAME
