@@ -9,6 +9,9 @@ cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e proce
 
 cat /proc/version
 
+whereis gcc
+gcc --version
+
 echo 'ulimit -u : ' $(ulimit -u)
 echo 'getconf ARG_MAX : ' $(printf "%'d\n" $(getconf ARG_MAX))
 
