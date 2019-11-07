@@ -3,8 +3,11 @@
 tree
 lbzip2
 
+# -- distcc --
+libiberty-dev
+
 # -- megatools --
-libgio-cil
+# libgio-cil
 
 # -- curl --
 # libssh2-1-dev
