@@ -3,20 +3,29 @@
 AddressFamily inet
 ListenAddress 0.0.0.0
 
-HostKey /app/etc/ssh_host_rsa_key
-
 Protocol 2
+
+HostKey /app/.ssh/ssh_host_rsa_key2
+
+# deprecated
+# UsePrivilegeSeparation no
 
 PermitRootLogin no
 
-PasswordAuthentication yes
-PermitEmptyPasswords no
-
+PasswordAuthentication no
 ChallengeResponseAuthentication no
 
-UsePAM yes
+PubkeyAuthentication yes
+AuthorizedKeysFile /app/.ssh/authorized_keys2
+
+# UsePAM yes
+UsePAM no
 
 X11Forwarding no
 PrintMotd no
 
+LogLevel DEBUG3
+
 AcceptEnv LANG LC_*
+
+PidFile /tmp/sshd.pid
