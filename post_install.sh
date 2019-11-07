@@ -87,7 +87,7 @@ pushd heroku/bin/
 
 time timeout -sKILL 30 ./heroku ps -a ${DISTCC_HOST_NAME}
 
-./heroku ps:socks -a ${DISTCC_HOST_NAME} &
+timeout -sKILL 210 ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
 
 sleep 15s
 ss -ant
