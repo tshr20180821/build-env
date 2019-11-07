@@ -29,4 +29,11 @@ popd
 
 tree /tmp/usr
 
+ldd /tmp/usr/bin/distcc
+ldd /tmp/usr/bin/distccd
+ldd /tmp/usr/bin/distccmon-text
+ldd /tmp/usr/bin/lsdistcc
+
+/tmp/usr/bin/distcc --version
+
 date
