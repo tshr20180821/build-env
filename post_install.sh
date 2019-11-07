@@ -91,6 +91,7 @@ timeout -sKILL 210 ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
 
 sleep 15s
 ss -ant
+ps aux
 
 time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${DISTCC_HOST_NAME}
 time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${DISTCC_HOST_NAME}
