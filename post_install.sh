@@ -8,6 +8,13 @@ chmod +x ./start_web.sh
 
 timeout -sKILL 10 ss -t
 
+# ***** env *****
+
+echo 'Processor Count : ' $(grep -c -e processor /proc/cpuinfo)
+cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
+
+# ***** github auth & heroku auth *****
+
 GITHUB_USER_DECODE=$(echo -n ${GITHUB_USER} | base64 -d)
 GITHUB_PASSWORD_DECODE=$(echo -n ${GITHUB_PASSWORD} | base64 -d)
 
@@ -63,6 +70,10 @@ tar xf heroku.tar.gz --strip-components=1
 rm heroku.tar.gz
 # timeout -sKILL 10 ./bin/heroku ps:socks -a ${HEROKU_APP_NAME}
 popd
+
+# ***** ssh *****
+
+ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 
 # ***** target *****
 
