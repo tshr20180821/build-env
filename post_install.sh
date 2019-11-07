@@ -90,6 +90,7 @@ time timeout -sKILL 30 ./heroku ps -a ${DISTCC_HOST_NAME}
 timeout -sKILL 210 ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
 
 sleep 15s
+SOCKS_PID=$!
 ss -ant
 ps aux
 
@@ -121,5 +122,7 @@ pushd build_scripts
 chmod +x ./${BUILD_SCRIPT_NAME}.sh
 ./${BUILD_SCRIPT_NAME}.sh
 popd
+
+kill -9 ${SOCKS_PID}
 
 date
