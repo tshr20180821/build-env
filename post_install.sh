@@ -105,6 +105,8 @@ cp ../../etc/config.ssh /app/.ssh/config
 cp authorized_keys2 /app/.ssh/authorized_keys
 cp ssh_host_rsa_key2 /app/.ssh/ssh_host_rsa_key
 
+timeout -sKILL 30 ssh -v -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0
+
 popd
 
 # ***** target *****
