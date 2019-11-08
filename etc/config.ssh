@@ -2,4 +2,5 @@ Host *
   StrictHostKeyChecking no
   Hostname 0.0.0.0
   ProxyCommand nc -x 127.0.0.1:1080 %h %p
-  CertificateFile /app/.ssh/ssh_host_rsa_key
+  IdentitiesOnly yes
+  IdentityFile /app/.ssh/ssh_host_rsa_key
