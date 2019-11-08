@@ -94,14 +94,8 @@ pushd heroku/bin/
 
 ./heroku ps -a ${DISTCC_HOST_NAME}
 
-./heroku ps:socks -a ${DISTCC_HOST_NAME} &
-
-sleep 15s
-ss -antp
-ps aux
-
 time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${DISTCC_HOST_NAME}
-if [ -f /app/ssh_info_user ]; then
+if [ -f ./ssh_info_user ]; then
   time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${DISTCC_HOST_NAME}
   time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_ssh_port -a ${DISTCC_HOST_NAME}
   export TARGET_USER=$(cat ssh_info_user)
@@ -119,7 +113,14 @@ if [ -f /app/ssh_info_user ]; then
   cp authorized_keys2 /app/.ssh/authorized_keys
   cp ssh_host_rsa_key2 /app/.ssh/ssh_host_rsa_key
 
-  timeout -sKILL 30 ssh -v -p ${TARGET_SSH_PORT} -i /app/.ssh/ssh_host_rsa_key ${TARGET_USER}@0.0.0.0 'ls -lang'
+  ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
+
+  sleep 15s
+  ss -antp
+  ps aux
+  curl -v --socks5 127.0.0.1:1080 0.0.0.0:${TARGET_HTTP_PORT}
+
+  timeout -sKILL 30 ssh -v -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
 fi
 
 popd
