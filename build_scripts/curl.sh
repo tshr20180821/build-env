@@ -49,7 +49,7 @@ pushd curl-${CURL_VERSION}
 ./configure --help
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
   --with-libssh2 --with-brotli --with-nghttp2 \
-  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
+  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --enable-esni
 
 time timeout -sKILL 210 make
 if [ $? != 0 ]; then
