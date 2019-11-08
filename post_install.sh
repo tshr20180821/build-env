@@ -94,29 +94,30 @@ time timeout -sKILL 30 ./heroku ps -a ${DISTCC_HOST_NAME}
 ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
 
 sleep 15s
-SOCKS_PID=$!
 ss -antp
 ps aux
 
 time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${DISTCC_HOST_NAME}
-time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${DISTCC_HOST_NAME}
-time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_ssh_port -a ${DISTCC_HOST_NAME}
-export TARGET_USER=$(cat ssh_info_user)
-export TARGET_HTTP_PORT=$(cat ssh_info_http_port)
-export TARGET_SSH_PORT=$(cat ssh_info_ssh_port)
+if [ -f /app/ssh_info_user ]; then
+  time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${DISTCC_HOST_NAME}
+  time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_ssh_port -a ${DISTCC_HOST_NAME}
+  export TARGET_USER=$(cat ssh_info_user)
+  export TARGET_HTTP_PORT=$(cat ssh_info_http_port)
+  export TARGET_SSH_PORT=$(cat ssh_info_ssh_port)
 
-time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/authorized_keys2 -a ${DISTCC_HOST_NAME}
-time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/ssh_host_rsa_key2 -a ${DISTCC_HOST_NAME}
+  time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/authorized_keys2 -a ${DISTCC_HOST_NAME}
+  time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/ssh_host_rsa_key2 -a ${DISTCC_HOST_NAME}
+  
+  mkdir -p -m 700 /app/.ssh
+  ls -lang /app/.ssh
 
-mkdir -p -m 700 /app/.ssh
-ls -lang /app/.ssh
+  cp ../../etc/config.ssh /app/.ssh/config
 
-cp ../../etc/config.ssh /app/.ssh/config
+  cp authorized_keys2 /app/.ssh/authorized_keys
+  cp ssh_host_rsa_key2 /app/.ssh/ssh_host_rsa_key
 
-cp authorized_keys2 /app/.ssh/authorized_keys
-cp ssh_host_rsa_key2 /app/.ssh/ssh_host_rsa_key
-
-timeout -sKILL 30 ssh -v -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 "ls -lang"
+  timeout -sKILL 30 ssh -v -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 "ls -lang"
+fi
 
 popd
 
@@ -126,8 +127,6 @@ pushd build_scripts
 chmod +x ./${BUILD_SCRIPT_NAME}.sh
 ./${BUILD_SCRIPT_NAME}.sh
 popd
-
-kill -9 ${SOCKS_PID}
 
 ps aux
 
