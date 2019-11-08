@@ -131,8 +131,8 @@ kill -9 ${SOCKS_PID}
 
 ps aux
 
-pgrep -f 'ps:socks -a ${DISTCC_HOST_NAME}'
-pgrep -f 'ps:socks -a ${DISTCC_HOST_NAME}' | xargs -t -L 1 -n 1 kill -9
+pgrep -f "ps:socks -a ${DISTCC_HOST_NAME}"
+pgrep -f "ps:socks -a ${DISTCC_HOST_NAME}" | xargs -t -L 1 -n 1 kill -9
 
 ps aux
 
