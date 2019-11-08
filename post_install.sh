@@ -89,10 +89,10 @@ ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 
 pushd heroku/bin/
 
-./heroku features:disable runtime-heroku-exec -a ${DISTCC_HOST_NAME}
-./heroku features:enable runtime-heroku-exec -a ${DISTCC_HOST_NAME}
+# ./heroku features:disable runtime-heroku-exec -a ${DISTCC_HOST_NAME}
+# ./heroku features:enable runtime-heroku-exec -a ${DISTCC_HOST_NAME}
 
-time timeout -sKILL 30 ./heroku ps -a ${DISTCC_HOST_NAME}
+./heroku ps -a ${DISTCC_HOST_NAME}
 
 ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
 
@@ -119,7 +119,7 @@ if [ -f /app/ssh_info_user ]; then
   cp authorized_keys2 /app/.ssh/authorized_keys
   cp ssh_host_rsa_key2 /app/.ssh/ssh_host_rsa_key
 
-  timeout -sKILL 30 ssh -v -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 "ls -lang"
+  timeout -sKILL 30 ssh -v -p ${TARGET_SSH_PORT} -i /app/.ssh/ssh_host_rsa_key ${TARGET_USER}@0.0.0.0 'ls -lang'
 fi
 
 popd
