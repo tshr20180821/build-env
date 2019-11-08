@@ -4,7 +4,7 @@ set -x
 
 date
 
-CURL_VERSION=7.66.0
+CURL_VERSION=7.67.0
 
 # - Aptfile -
 # libssh2-1-dev
