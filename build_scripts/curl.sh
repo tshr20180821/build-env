@@ -16,7 +16,8 @@ CURL_VERSION=7.67.0
 
 printenv | sort
 
-export DISTCC_HOSTS="@0.0.0.0/4:/app/bin/distccd_start"
+# export DISTCC_HOSTS="@0.0.0.0/4:/app/bin/distccd_start"
+export DISTCC_HOSTS="@0.0.0.0/1:/app/bin/distccd_start"
 export DISTCC_POTENTIAL_HOSTS="${DISTCC_HOSTS}"
 export DISTCC_SSH=/tmp/bin/distcc-ssh
 
