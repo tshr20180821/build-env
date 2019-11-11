@@ -94,7 +94,7 @@ pushd heroku/bin/
 
 ./heroku ps -a ${DISTCC_HOST_NAME}
 
-time timeout -sKILL 30 ./heroku ps:copy /tmp/archive/files.tar.xz -a ${DISTCC_HOST_NAME}
+time timeout -sKILL 30 echo y | ./heroku ps:copy /tmp/archive/files.tar.xz -a ${DISTCC_HOST_NAME}
 tar xf files.tar.xz
 if [ -f ./ssh_info_user ]; then
   export TARGET_USER=$(cat ssh_info_user)
