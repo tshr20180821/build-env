@@ -102,6 +102,7 @@ if [ -f ./ssh_info_user ]; then
   export TARGET_USER=$(cat ssh_info_user)
   export TARGET_HTTP_PORT=$(cat ssh_info_http_port)
   export TARGET_SSH_PORT=$(cat ssh_info_ssh_port)
+  mv cflags_option /tmp/cflags_option
 
   time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/authorized_keys2 -a ${DISTCC_HOST_NAME}
   time timeout -sKILL 30 ./heroku ps:copy /app/.ssh/ssh_host_rsa_key2 -a ${DISTCC_HOST_NAME}
