@@ -96,6 +96,11 @@ pushd heroku/bin/
 
 time timeout -sKILL 30 ./heroku ps:copy /tmp/archive/files.tar.xz -a ${DISTCC_HOST_NAME}
 tar xf files.tar.xz
+if [ ! -f ./ssh_info_user ]; then
+  echo y | time timeout -sKILL 30 ./heroku ps:copy /tmp/archive/files.tar.xz -a ${DISTCC_HOST_NAME}
+  tar xf files.tar.xz
+fi
+
 if [ -f ./ssh_info_user ]; then
   export TARGET_USER=$(cat ssh_info_user)
   export TARGET_HTTP_PORT=$(cat ssh_info_http_port)
