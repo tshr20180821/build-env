@@ -97,7 +97,7 @@ pushd heroku/bin/
 time timeout -sKILL 30 ./heroku ps:copy /tmp/archive/files.tar.xz -a ${DISTCC_HOST_NAME}
 tar xf files.tar.xz
 if [ ! -f ./ssh_info_user ]; then
-  time timeout -sKILL 30 (echo y | ./heroku ps:copy /tmp/archive/files.tar.xz -a ${DISTCC_HOST_NAME})
+  time timeout -sKILL 30 echo y | ./heroku ps:copy /tmp/archive/files.tar.xz -a ${DISTCC_HOST_NAME}
   tar xf files.tar.xz
 fi
 
