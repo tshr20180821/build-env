@@ -4,6 +4,7 @@ Host *
   ProxyCommand nc -x 127.0.0.1:1080 %h %p
   IdentitiesOnly yes
   IdentityFile /app/.ssh/ssh_host_rsa_key
+  UserKnownHostsFile /dev/null
   ControlMaster auto
   ControlPath /tmp/ssh_master-%r@%h:%p
   ControlPersist 30
