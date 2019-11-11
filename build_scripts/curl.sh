@@ -14,7 +14,9 @@ CURL_VERSION=7.67.0
 # libpsl5
 # libpsl-dev
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+# export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+cflag_data=$(gcc -march=native -E -v - </dev/null 2>&1 | sed -n 's/.* -v - //p')
+export CFLAGS="-O2 ${cflag_data} -pipe -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
