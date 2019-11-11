@@ -129,7 +129,6 @@ pushd /tmp/bin
 cat << __HEREDOC__ >distcc-ssh
 #!/bin/bash
 
-echo "$(date +%Y/%m/%d" "%H:%M:%S) $*"
 exec ssh -v -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 "$@"
 __HEREDOC__
 chmod +x distcc-ssh
