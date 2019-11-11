@@ -126,7 +126,7 @@ popd
 
 mkdir /tmp/bin
 pushd /tmp/bin
-cat << '__HEREDOC__' >distcc-ssh
+cat << __HEREDOC__ >distcc-ssh
 #!/bin/bash
 
 echo "$(date +%Y/%m/%d" "%H:%M:%S) $*"
