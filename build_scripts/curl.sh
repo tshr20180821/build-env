@@ -16,6 +16,13 @@ CURL_VERSION=7.67.0
 
 printenv | sort
 
+export DISTCC_HOSTS="@0.0.0.0/4:/app/bin/distccd_start"
+export DISTCC_POTENTIAL_HOSTS="${DISTCC_HOSTS}"
+export DISTCC_SSH=/tmp/bin/distcc-ssh
+
+export CC="distcc gcc"
+export CXX="distcc gcc"
+
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
@@ -26,12 +33,12 @@ export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-pushd /tmp/usr/bin
-ln -s ccache gcc
-ln -s ccache g++
-ln -s ccache cc
-ln -s ccache c++
-popd
+# pushd /tmp/usr/bin
+# ln -s ccache gcc
+# ln -s ccache g++
+# ln -s ccache cc
+# ln -s ccache c++
+# popd
 
 ccache -s
 ccache -z
