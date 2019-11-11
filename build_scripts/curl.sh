@@ -15,7 +15,7 @@ CURL_VERSION=7.67.0
 # libpsl-dev
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
-cflags_option=$(cat cflags_option)
+cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
