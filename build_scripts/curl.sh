@@ -14,7 +14,7 @@ CURL_VERSION=7.67.0
 # libpsl5
 # libpsl-dev
 
-printenv
+printenv | sort
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 cflags_option=$(cat /tmp/cflags_option)
