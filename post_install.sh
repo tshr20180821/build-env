@@ -98,6 +98,7 @@ time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_user -a ${DISTCC_HOST_NAME
 if [ -f ./ssh_info_user ]; then
   time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_http_port -a ${DISTCC_HOST_NAME}
   time timeout -sKILL 30 ./heroku ps:copy /app/ssh_info_ssh_port -a ${DISTCC_HOST_NAME}
+  time timeout -sKILL 30 ./heroku ps:copy /app/cflags_option -a ${DISTCC_HOST_NAME}
   export TARGET_USER=$(cat ssh_info_user)
   export TARGET_HTTP_PORT=$(cat ssh_info_http_port)
   export TARGET_SSH_PORT=$(cat ssh_info_ssh_port)
