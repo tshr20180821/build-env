@@ -136,7 +136,7 @@ cat << '__HEREDOC__' >distcc-ssh
 
 set -x
 
-echo "DISTCC_SSH_LOG $(date +%Y/%m/%d" "%H:%M:%S) $*"
+# echo "DISTCC_SSH_LOG $(date +%Y/%m/%d" "%H:%M:%S) $*"
 exec ssh -v -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
 __HEREDOC__
 chmod +x distcc-ssh
