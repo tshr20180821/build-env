@@ -27,7 +27,7 @@ export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-if [ -f ../ssh_info_user ]; then
+if [ -v TARGET_SSH_PORT ]; then
   export CC="distcc"
   export CXX="distcc"
   export PARALLEL_COUNT=6
