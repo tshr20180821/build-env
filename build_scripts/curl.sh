@@ -51,7 +51,8 @@ pushd libmetalink
 time ./buildconf
 ./configure --help
 time ./configure --prefix=/tmp/usr --enable-shared=no
-time make -j2
+# time make -j2
+time make -j6
 make install
 popd
 
@@ -64,7 +65,7 @@ pushd curl-${CURL_VERSION}
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
 
 # time timeout -sKILL 210 make
-time timeout -sKILL 210 make -j4
+time timeout -sKILL 210 make -j6
 if [ $? != 0 ]; then
   echo 'time out'
 else
