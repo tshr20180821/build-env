@@ -143,8 +143,8 @@ chmod +x distcc-ssh
 cat distcc-ssh
 popd
 
-export DISTCC_HOSTS="@0.0.0.0/1"
-export DISTCC_POTENTIAL_HOSTS="@0.0.0.0/1"
+export DISTCC_HOSTS="@0.0.0.0/4"
+export DISTCC_POTENTIAL_HOSTS="@0.0.0.0/4"
 export DISTCC_SSH="/tmp/bin/distcc-ssh"
 
 # ***** target *****
