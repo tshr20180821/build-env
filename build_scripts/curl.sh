@@ -16,8 +16,8 @@ CURL_VERSION=7.67.0
 
 printenv | sort
 
-export CC="distcc gcc"
-export CXX="distcc gcc"
+export CC="distcc"
+export CXX="distcc"
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 cflags_option=$(cat /tmp/cflags_option)
