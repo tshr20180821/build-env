@@ -30,6 +30,7 @@ export PATH="/tmp/usr/bin:${PATH}"
 if [ -f ../ssh_info_user ]; then
   export CC="distcc"
   export CXX="distcc"
+  export PARALLEL_COUNT=6
 else
   pushd /tmp/usr/bin
   ln -s ccache gcc
@@ -37,6 +38,7 @@ else
   ln -s ccache cc
   ln -s ccache c++
   popd
+  export PARALLEL_COUNT=2
 fi
 
 ccache -s
@@ -50,7 +52,7 @@ time ./buildconf
 ./configure --help
 time ./configure --prefix=/tmp/usr --enable-shared=no
 # time make -j2
-time make -j6
+time make -j${PARALLEL_COUNT}
 make install
 popd
 
@@ -63,7 +65,7 @@ pushd curl-${CURL_VERSION}
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
 
 # time timeout -sKILL 210 make
-time timeout -sKILL 210 make -j6
+time timeout -sKILL 210 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
   echo 'time out'
 else
