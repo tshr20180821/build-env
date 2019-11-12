@@ -16,8 +16,6 @@ CURL_VERSION=7.67.0
 
 printenv | sort
 
-export CC="distcc"
-export CXX="distcc"
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 cflags_option=$(cat /tmp/cflags_option)
@@ -29,12 +27,17 @@ export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-# pushd /tmp/usr/bin
-# ln -s ccache gcc
-# ln -s ccache g++
-# ln -s ccache cc
-# ln -s ccache c++
-# popd
+if [ -f ../ssh_info_user ]; then
+  export CC="distcc"
+  export CXX="distcc"
+else
+  pushd /tmp/usr/bin
+  ln -s ccache gcc
+  ln -s ccache g++
+  ln -s ccache cc
+  ln -s ccache c++
+  popd
+fi
 
 ccache -s
 ccache -z
