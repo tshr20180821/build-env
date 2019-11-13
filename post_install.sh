@@ -185,7 +185,7 @@ popd
 ps aux
 
 pgrep -f "ps:socks -a ${DISTCC_HOST_NAME}" | xargs -t -L 1 -n 1 kill -9
-pgrep -f "ssh: /tmp/ssh_master-${TARGET_USER}@0.0.0.0:${TARGET_SSH_PORT}" | xargs -t -L 1 -n 1 kill -9
+pgrep -f "ssh2: /tmp/ssh_master-${TARGET_USER}@0.0.0.0:${TARGET_SSH_PORT}" | xargs -t -L 1 -n 1 kill -9
 
 ps aux
 
