@@ -8,4 +8,3 @@ Host *
   ControlMaster auto
   ControlPath /tmp/ssh_master-%r@%h:%p
   ControlPersist 60
-  Compression no
