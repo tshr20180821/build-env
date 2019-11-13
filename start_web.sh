@@ -83,9 +83,9 @@ kill -HUP $(ss -ltnp | grep 1092 | head -n 1 | grep -o -E 'pid=[0-9]+' | grep -o
 
 find / -name .heroku_exec_data.json -print
 
-cat /app/.ssh/.heroku_exec_data.json
+cat /app/.heroku_exec_data.json
 
-curl -v -X POST -d @/app/.ssh/.heroku_exec_data.json -H "Content-Type: application/json" -L ${HEROKU_EXEC_URL}/api/v1/${DYNO} &
+curl -v -X POST -d @/app/.heroku_exec_data.json -H "Content-Type: application/json" -L ${HEROKU_EXEC_URL}/api/v1/${DYNO} &
 
 ./heroku/bin/heroku status &
 
