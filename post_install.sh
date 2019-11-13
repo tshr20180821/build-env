@@ -145,7 +145,7 @@ if [ -f ./ssh_info_user ]; then
 
   # timeout -sKILL 30 ssh -v -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
   # timeout -sKILL 30 ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
-  if [ ${IS_HPN_SSHD} = 'yes' && ${IS_HPN_SSH} = 'yes' ]; then
+  if [ ${IS_HPN_SSHD} = 'yes' ] && [ ${IS_HPN_SSH} = 'yes' ]; then
     export HPN_SSH_OPTION="-oNoneSwitch=yes -oNoneEnabled=yes"
   fi
   timeout -sKILL 30 /tmp/bin/ssh2 -F /tmp/ssh_config ${HPN_SSH_OPTION} -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
