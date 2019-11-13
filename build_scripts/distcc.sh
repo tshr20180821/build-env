@@ -26,7 +26,7 @@ ls -lang
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr
-time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 210 make -I/usr/include/python2.7/Python.h -j$(grep -c -e processor /proc/cpuinfo)
 make install
 popd
 popd
