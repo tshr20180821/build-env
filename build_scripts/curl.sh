@@ -28,8 +28,8 @@ export CCACHE_DIR=/tmp/ccache_cache
 export PATH="/tmp/usr/bin:${PATH}"
 
 if [ -v TARGET_SSH_PORT ]; then
-  export CCACHE_PREFIX="distcc"
   export PARALLEL_COUNT=9
+  export CCACHE_PREFIX="/tmp/bin/distcc"
 else
   export PARALLEL_COUNT=2
 fi
