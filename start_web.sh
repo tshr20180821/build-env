@@ -83,6 +83,10 @@ printenv | sort
 
 kill -HUP $(ss -ltnp | grep 1092 | head -n 1 | grep -o -E 'pid=[0-9]+' | grep -o -E '[0-9]+') &
 
+cat /app/.ssh/.heroku_exec_data.json
+
+curl -v -X POST -d @/app/.ssh/.heroku_exec_data.json -H "Content-Type: application/json" -L ${HEROKU_EXEC_URL}/api/v1/${DYNO} &
+
 ./heroku/bin/heroku status &
 
 # sleep 10 && ps aux &
