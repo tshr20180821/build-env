@@ -129,7 +129,7 @@ if [ -f ./ssh_info_user ]; then
 
   # timeout -sKILL 30 ssh -v -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
   # timeout -sKILL 30 ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
-  timeout -sKILL 30 ../../hpn-ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
+  timeout -sKILL 30 ../../bin/hpn-ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
 fi
 
 popd
