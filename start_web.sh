@@ -87,9 +87,10 @@ popd
 
 ls -lang /app/bin
 
-/app/bin/ssh2d -D -E /tmp/ssh2d_log -p ${PORT_SSHD} -f ./etc/sshd_config &
-
+touch /tmp/ssh2d_log
 tail -qF -n 0 /tmp/ssh2d_log &
+
+/app/bin/ssh2d -D -E /tmp/ssh2d_log -p ${PORT_SSHD} -f ./etc/sshd_config &
 
 # ***** etc *****
 
