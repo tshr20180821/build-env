@@ -7,5 +7,5 @@ Host *
   UserKnownHostsFile /dev/null
   ControlMaster auto
   ControlPath /tmp/ssh_master-%r@%h:%p
-  ControlPersist 30
+  ControlPersist 60
   Compression no
