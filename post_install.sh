@@ -111,7 +111,8 @@ if [ -f ./ssh_info_user ]; then
   mkdir -p -m 700 /app/.ssh
   ls -lang /app/.ssh
 
-  cp ../../etc/config.ssh /app/.ssh/config
+  # cp ../../etc/config.ssh /app/.ssh/config
+  cp ../../etc/config.ssh /tmp/ssh_config
 
   cp authorized_keys2 /app/.ssh/authorized_keys
   cp ssh_host_rsa_key2 /app/.ssh/ssh_host_rsa_key
@@ -123,7 +124,7 @@ if [ -f ./ssh_info_user ]; then
   ps aux
   curl -v --socks5 127.0.0.1:1080 0.0.0.0:${TARGET_HTTP_PORT}
 
-  timeout -sKILL 30 ssh -v -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
+  timeout -sKILL 30 ssh -v -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
 fi
 
 popd
@@ -138,7 +139,7 @@ cat << '__HEREDOC__' >distcc-ssh
 set -x
 
 # echo "DISTCC_SSH_LOG $(date +%Y/%m/%d" "%H:%M:%S) $*"
-exec ssh -v -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
+exec ssh -v -F /tmp/ssh_config -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
 __HEREDOC__
 chmod +x distcc-ssh
 cat distcc-ssh
