@@ -4,6 +4,8 @@ set -x
 
 # ***** env ******
 
+export HEROKU_EXEC_DEBUG=1
+
 echo 'Processor Count : ' $(grep -c -e processor /proc/cpuinfo)
 cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
 
