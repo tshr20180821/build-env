@@ -155,6 +155,16 @@ popd
 
 # ***** distcc *****
 
+where distcc
+
+mkdir /tmp/bin
+
+# if [ -f ./bin/distcc ]; then
+#   cp ./bin/distcc /tmp/bin
+# else
+#   cp 
+# fi
+
 distcc --version
 
 pushd /tmp/bin
