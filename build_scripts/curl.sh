@@ -65,7 +65,7 @@ pushd curl-${CURL_VERSION}
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
 
 # time timeout -sKILL 210 make
-time timeout -sKILL 210 make -j${PARALLEL_COUNT}
+time timeout -sKILL 180 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
   echo 'time out'
 else
