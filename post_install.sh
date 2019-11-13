@@ -87,6 +87,20 @@ wait
 
 ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 
+whereis ssh
+
+mkdir /tmp/bin
+if [ -f ./bin/hpn-ssh ]; then
+  cp ./bin/hpn-ssh /tmp/bin
+  chmod +x /tmp/bin/hpn-ssh
+  ln -s /tmp/bin/ssh2 /tmp/bin/hpn-ssh
+  /tmp/bin/ssh2 -V
+  /tmp/bin/ssh2 --help
+else
+  ln -s /tmp/bin/ssh2 ssh
+fi
+ls -lang /tmp/bin
+
 pushd heroku/bin/
 
 ./heroku ps -a ${DISTCC_HOST_NAME}
@@ -128,19 +142,12 @@ if [ -f ./ssh_info_user ]; then
 
   # timeout -sKILL 30 ssh -v -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
   # timeout -sKILL 30 ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
-  chmod +x ../../bin/hpn-ssh
-  timeout -sKILL 30 ../../bin/hpn-ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
+  timeout -sKILL 30 /tmp/bin/ssh2 -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
 fi
 
 popd
 
 # ***** distcc *****
-
-mkdir /tmp/bin
-cp ./bin/hpn-ssh /tmp/bin
-chmod +x /tmp/bin/hpn-ssh
-/tmp/bin/hpn-ssh -V
-/tmp/bin/hpn-ssh --help
 
 pushd /tmp/bin
 cat << '__HEREDOC__' >distcc-ssh
@@ -150,6 +157,7 @@ set -x
 
 # echo "DISTCC_SSH_LOG $(date +%Y/%m/%d" "%H:%M:%S) $*"
 exec ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
+exec /tmp/bin/ssh2 -F /tmp/ssh_config -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
 __HEREDOC__
 chmod +x distcc-ssh
 cat distcc-ssh
