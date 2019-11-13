@@ -40,4 +40,7 @@ ldd /tmp/usr/bin/lsdistcc
 
 /tmp/usr/bin/distcc --version
 
+cp /tmp/usr/bin/distcc ../www/
+cp /tmp/usr/bin/distccd ../www/
+
 date
