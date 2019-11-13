@@ -9,4 +9,4 @@ export DISTCC_TCP_CORK=0
 export DISTCC_LOG=/tmp/distcc.log
 
 echo "DISTCC_LOG $(date +%Y/%m/%d" "%H:%M:%S) $@" >>${DISTCC_LOG}
-exec /tmp/bin/distccd --log-level notice --log-file ${DISTCC_LOG} $@
+exec /tmp/bin/distccd --log-level warning --log-file ${DISTCC_LOG} $@
