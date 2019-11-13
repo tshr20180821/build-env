@@ -116,6 +116,7 @@ if [ -f ./ssh_info_user ]; then
   export TARGET_USER=$(cat ssh_info_user)
   export TARGET_HTTP_PORT=$(cat ssh_info_http_port)
   export TARGET_SSH_PORT=$(cat ssh_info_ssh_port)
+  export IS_HPN_SSHD=$(cat is_hpn_sshd)
   mv cflags_option /tmp/cflags_option
 
   mkdir -p -m 700 /app/.ssh
@@ -142,7 +143,12 @@ if [ -f ./ssh_info_user ]; then
 
   # timeout -sKILL 30 ssh -v -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
   # timeout -sKILL 30 ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
-  timeout -sKILL 30 /tmp/bin/ssh2 -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
+  if [ ${IS_HPN_SSHD} = 'yes' ]; then
+    timeout -sKILL 30 /tmp/bin/ssh2 -F /tmp/ssh_config -oNoneSwitch=yes -oNoneEnabled=yes \
+      -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
+  else
+    timeout -sKILL 30 /tmp/bin/ssh2 -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
+  fi
 fi
 
 popd
