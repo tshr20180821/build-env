@@ -136,6 +136,9 @@ popd
 # ***** distcc *****
 
 mkdir /tmp/bin
+cp ./bin/hpn-ssh /tmp/bin
+chmod +x /tmp/bin/hpn-ssh
+
 pushd /tmp/bin
 cat << '__HEREDOC__' >distcc-ssh
 #!/bin/bash
