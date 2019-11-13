@@ -30,7 +30,7 @@ export PATH="/tmp/usr/bin:${PATH}"
 if [ -v TARGET_SSH_PORT ]; then
   export CC="distcc"
   export CXX="distcc"
-  export PARALLEL_COUNT=6
+  export PARALLEL_COUNT=2
 else
   pushd /tmp/usr/bin
   ln -s ccache gcc
