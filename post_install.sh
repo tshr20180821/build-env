@@ -155,7 +155,7 @@ popd
 
 # ***** distcc *****
 
-where distcc
+whereis distcc
 
 mkdir /tmp/bin
 
