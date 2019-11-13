@@ -15,6 +15,9 @@ export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -I../.apt/us
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
+HOME2=$(pwd)
+echo ${HOME2}
+
 pushd /tmp
 
 curl -L -O https://github.com/distcc/distcc/archive/v${DISTCC_VERSION}.tar.gz
