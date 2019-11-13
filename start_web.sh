@@ -79,14 +79,6 @@ echo 'env size : ' $(printf "%'d" $(printenv | wc -c)) 'byte'
 
 printenv | sort
 
-kill -HUP $(ss -ltnp | grep 1092 | head -n 1 | grep -o -E 'pid=[0-9]+' | grep -o -E '[0-9]+') &
-
-find / -name .heroku_exec_data.json -print
-
-cat /app/.heroku_exec_data.json
-
-curl -v -X POST -d @/app/.heroku_exec_data.json -H "Content-Type: application/json" -L ${HEROKU_EXEC_URL}/api/v1/${DYNO} &
-
 ./heroku/bin/heroku status &
 
 # sleep 10 && ps aux &
