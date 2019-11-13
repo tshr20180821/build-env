@@ -24,8 +24,14 @@ UsePAM no
 X11Forwarding no
 PrintMotd no
 
-LogLevel DEBUG3
+# LogLevel DEBUG3
+LogLevel VERBOSE
 
 AcceptEnv LANG LC_*
 
 PidFile /tmp/sshd.pid
+
+ClientAliveInterval 120
+
+# default value
+ClientAliveCountMax 3
