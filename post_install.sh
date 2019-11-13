@@ -90,9 +90,6 @@ ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
 
 pushd heroku/bin/
 
-# ./heroku features:disable runtime-heroku-exec -a ${DISTCC_HOST_NAME}
-# ./heroku features:enable runtime-heroku-exec -a ${DISTCC_HOST_NAME}
-
 ./heroku ps -a ${DISTCC_HOST_NAME}
 
 time timeout -sKILL 30 ./heroku ps:copy /tmp/archive/files.tar.xz -a ${DISTCC_HOST_NAME}
