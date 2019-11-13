@@ -14,17 +14,27 @@ whoami
 
 whereis gcc
 gcc --version
-whereis distcc
-distcc --version
 
 echo 'ulimit -u : ' $(ulimit -u)
 echo 'getconf ARG_MAX : ' $(printf "%'d\n" $(getconf ARG_MAX))
 
 # ***** distccd *****
 
-chmod +x /app/bin/distccd
-/app/bin/distccd --version
-ldd /app/bin/distccd
+mkdir /tmp/bin
+
+if [ -f /app/bin/distccd ]; then
+  chmod +x /app/bin/distccd
+  ln -s /app/bin/distccd /tmp/bin/distccd
+else
+  ln -s /app/.apt/usr/bin/distccd /tmp/bin/distccd
+fi
+/tmp/bin/distccd --version
+ldd /tmp/bin/distccd
+
+export DISTCC_LOG=/tmp/distcc.log
+touch ${DISTCC_LOG}
+chmod 666 ${DISTCC_LOG}
+tail -qF -n 0 ${DISTCC_LOG} &
 
 # ***** sshd *****
 
@@ -82,13 +92,6 @@ ls -lang /app/bin
 tail -qF -n 0 /tmp/ssh2d_log &
 
 # ***** etc *****
-
-ls -lang /app/.apt/usr/bin
-
-export DISTCC_LOG=/tmp/distcc.log
-touch ${DISTCC_LOG}
-chmod 666 ${DISTCC_LOG}
-tail -qF -n 0 ${DISTCC_LOG} &
 
 echo 'env size : ' $(printf "%'d" $(printenv | wc -c)) 'byte'
 
