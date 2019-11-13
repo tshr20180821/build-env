@@ -81,11 +81,13 @@ echo 'env size : ' $(printf "%'d" $(printenv | wc -c)) 'byte'
 
 printenv | sort
 
+kill -HUP $(ss -ltnp | grep 1092 | head -n 1 | grep -o -E 'pid=[0-9]+' | grep -o -E '[0-9]+') &
+
 ./heroku/bin/heroku status &
 
-sleep 10 && ps aux &
+# sleep 10 && ps aux &
 
-sleep 15 && kill -HUP $(ss -ltnp | grep 1092 | head -n 1 | grep -o -E 'pid=[0-9]+' | grep -o -E '[0-9]+') &
+# sleep 15 && kill -HUP $(ss -ltnp | grep 1092 | head -n 1 | grep -o -E 'pid=[0-9]+' | grep -o -E '[0-9]+') &
 
 sleep 20 && ss -atnp &
 
