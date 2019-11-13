@@ -155,6 +155,8 @@ popd
 
 # ***** distcc *****
 
+distcc --version
+
 pushd /tmp/bin
 cat << '__HEREDOC__' >distcc-ssh
 #!/bin/bash
