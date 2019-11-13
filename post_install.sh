@@ -138,6 +138,8 @@ popd
 mkdir /tmp/bin
 cp ./bin/hpn-ssh /tmp/bin
 chmod +x /tmp/bin/hpn-ssh
+/tmp/bin/hpn-ssh -V
+/tmp/bin/hpn-ssh --help
 
 pushd /tmp/bin
 cat << '__HEREDOC__' >distcc-ssh
