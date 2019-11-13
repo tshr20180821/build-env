@@ -93,13 +93,13 @@ mkdir /tmp/bin
 if [ -f ./bin/hpn-ssh ]; then
   cp ./bin/hpn-ssh /tmp/bin
   chmod +x /tmp/bin/hpn-ssh
-  ln -s /tmp/bin/ssh2 /tmp/bin/hpn-ssh
-  /tmp/bin/ssh2 -V
-  /tmp/bin/ssh2 --help
+  ln -s /tmp/bin/hpn-ssh /tmp/bin/ssh2
 else
-  ln -s /tmp/bin/ssh2 ssh
+  ln -s /usr/bin/ssh /tmp/bin/ssh2
 fi
 ls -lang /tmp/bin
+/tmp/bin/ssh2 -V
+/tmp/bin/ssh2 --help
 
 pushd heroku/bin/
 
