@@ -20,6 +20,12 @@ distcc --version
 echo 'ulimit -u : ' $(ulimit -u)
 echo 'getconf ARG_MAX : ' $(printf "%'d\n" $(getconf ARG_MAX))
 
+# ***** distccd *****
+
+chmod +x /app/bin/distccd
+/app/bin/distccd --version
+ldd /app/bin/distccd
+
 # ***** sshd *****
 
 mkdir -m 700 .ssh
