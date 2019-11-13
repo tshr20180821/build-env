@@ -11,7 +11,7 @@ whereis python
 python --version
 find / -name Python.h -print
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -I/usr/include/python2.7/"
+export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -I../.apt/usr/include/python3.6m/"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
