@@ -64,7 +64,7 @@ ls -lang /app/bin
 
 /app/bin/ssh2d -D -E /tmp/ssh2d_log -p ${PORT_SSHD} -f etc/sshd_config &
 
-tail -f /tmp/ssh2d_log &
+tail -qF -n 0 /tmp/ssh2d_log &
 
 # ***** etc *****
 
@@ -73,7 +73,7 @@ ls -lang /app/.apt/usr/bin
 export DISTCC_LOG=/tmp/distcc.log
 touch ${DISTCC_LOG}
 chmod 666 ${DISTCC_LOG}
-tail -f ${DISTCC_LOG} &
+tail -qF -n 0 ${DISTCC_LOG} &
 
 echo 'env size : ' $(printf "%'d" $(printenv | wc -c)) 'byte'
 
