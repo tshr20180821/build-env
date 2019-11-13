@@ -159,13 +159,15 @@ whereis distcc
 
 mkdir /tmp/bin
 
-# if [ -f ./bin/distcc ]; then
-#   cp ./bin/distcc /tmp/bin
-# else
-#   cp 
-# fi
+if [ -f ./bin/distcc ]; then
+  cp ./bin/distcc /tmp/bin
+else
+  cp $(pwd)/.apt/usr/bin/distcc /tmp/bin
+fi
 
-distcc --version
+chmod +x /tmp/bin/distcc
+/tmp/bin/distcc --version
+/tmp/bin/distcc --help
 
 pushd /tmp/bin
 cat << '__HEREDOC__' >distcc-ssh
