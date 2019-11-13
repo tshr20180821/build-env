@@ -58,11 +58,16 @@ pushd /tmp/archive
 tar cJvf files.tar.xz *
 popd
 
-ln -s /usr/sbin/sshd /app/bin/ssh2d
+if [ -f /app/bin/hpn-sshd ]; then
+  ln -s /app/bin/hpn-sshd /app/bin/ssh2d
+  echo NoneEnabled=yes >>./etc/sshd_config
+else
+  ln -s /usr/sbin/sshd /app/bin/ssh2d
+fi
 
 ls -lang /app/bin
 
-/app/bin/ssh2d -D -E /tmp/ssh2d_log -p ${PORT_SSHD} -f etc/sshd_config &
+/app/bin/ssh2d -D -E /tmp/ssh2d_log -p ${PORT_SSHD} -f ./etc/sshd_config &
 
 tail -qF -n 0 /tmp/ssh2d_log &
 
