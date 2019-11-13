@@ -121,10 +121,11 @@ if [ -f ./ssh_info_user ]; then
 
   for i in {1..15}; do
     sleep 1s
-    ss -antp | grep 127.0.0.1:1080
+    if [ $(ss -antp | grep -c 127.0.0.1:1080) -eq 1 ]; then
+      break;
+    fi
   done
 
-  # sleep 15s
   ss -antp
   ps aux
   curl -v --socks5 127.0.0.1:1080 0.0.0.0:${TARGET_HTTP_PORT}
