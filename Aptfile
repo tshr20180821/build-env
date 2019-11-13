@@ -4,8 +4,8 @@ tree
 lbzip2
 
 # -- distcc --
-libiberty-dev
-python3-dev
+# libiberty-dev
+# python3-dev
 
 # -- megatools --
 # libgio-cil
