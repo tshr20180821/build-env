@@ -28,19 +28,19 @@ export CCACHE_DIR=/tmp/ccache_cache
 export PATH="/tmp/usr/bin:${PATH}"
 
 if [ -v TARGET_SSH_PORT ]; then
-  export CC="distcc"
-  export CXX="distcc"
+  export CCACHE_PREFIX="distcc"
   export PARALLEL_COUNT=9
 else
-  pushd /tmp/usr/bin
-  ln -s ccache gcc
-  ln -s ccache g++
-  ln -s ccache cc
-  ln -s ccache c++
-  popd
   export PARALLEL_COUNT=2
 fi
 
+pushd /tmp/usr/bin
+ln -s ccache gcc
+ln -s ccache g++
+ln -s ccache cc
+ln -s ccache c++
+popd
+  
 ccache -s
 ccache -z
 
