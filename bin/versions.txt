@@ -10,8 +10,11 @@ ccache version 3.7.5
 parallel --version
 GNU parallel 20191022
 
-ssh -V
+ssh2 -V
 OpenSSH_8.1p1, OpenSSL 1.1.1  11 Sep 2018
+
+hpn-ssh -V
+OpenSSH_7.8p1-hpn14v15, OpenSSL 1.1.1  11 Sep 2018
 
 tree --version
 tree v1.8.0 (c) 1996 - 2018 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro
