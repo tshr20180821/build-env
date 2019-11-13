@@ -7,7 +7,6 @@ export DISTCC_TCP_CORK=0
 # export PATH="/app/bin:$PATH"
 # export DISTCC_DIR=/app/.distcc
 export DISTCC_LOG=/tmp/distcc.log
-export DISTCC_VERBOSE=1
 
 echo "DISTCC_LOG $(date +%Y/%m/%d" "%H:%M:%S) $@" >>${DISTCC_LOG}
 exec /tmp/bin/distccd --log-level notice --log-file ${DISTCC_LOG} $@
