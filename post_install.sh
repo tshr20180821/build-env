@@ -5,6 +5,7 @@ set -x
 date
 
 chmod +x ./start_web.sh
+chmod +x ./bin/distccd_start
 
 curl -s https://${DISTCC_HOST_NAME}.herokuapp.com/ >/dev/null
 
