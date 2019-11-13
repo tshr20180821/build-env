@@ -11,7 +11,7 @@ whereis python
 python --version
 find / -name Python.h -print
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -I/usr/include/python2.7/"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
@@ -26,7 +26,7 @@ ls -lang
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr
-time timeout -sKILL 210 make -I/usr/include/python2.7/ -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 make install
 popd
 popd
