@@ -34,9 +34,11 @@ popd
 popd
 
 ldd /tmp/openssh-portable-V_${SSH_VERSION}/ssh
+ldd /tmp/openssh-portable-V_${SSH_VERSION}/sshd
 
 /tmp/openssh-portable-V_${SSH_VERSION}/ssh -V
 
 cp /tmp/openssh-portable-V_${SSH_VERSION}/ssh ../www/
+cp /tmp/openssh-portable-V_${SSH_VERSION}/sshd ../www/
 
 date
