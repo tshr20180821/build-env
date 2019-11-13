@@ -43,6 +43,16 @@ cat /app/.ssh/sshd_config
 
 test ${PORT} -ne 60022 && export PORT_SSHD=60022 || export PORT_SSHD=61022
 
+if [ -f /app/bin/hpn-sshd ]; then
+  ln -s /app/bin/hpn-sshd /app/bin/ssh2d
+  echo NoneEnabled=yes >>./etc/sshd_config
+  cat ./etc/sshd_config
+  echo -n yes >is_hpn_sshd
+else
+  ln -s /usr/sbin/sshd /app/bin/ssh2d
+  echo -n no >is_hpn_sshd
+fi
+
 echo -n $(whoami) >ssh_info_user
 echo -n ${PORT} >ssh_info_http_port
 echo -n ${PORT_SSHD} >ssh_info_ssh_port
@@ -54,17 +64,10 @@ mv cflags_option /tmp/archive/
 mv ssh_info_user /tmp/archive/
 mv ssh_info_http_port /tmp/archive/
 mv ssh_info_ssh_port /tmp/archive/
+mv is_hpn_sshd /tmp/archive/
 pushd /tmp/archive
 tar cJvf files.tar.xz *
 popd
-
-if [ -f /app/bin/hpn-sshd ]; then
-  ln -s /app/bin/hpn-sshd /app/bin/ssh2d
-  echo NoneEnabled=yes >>./etc/sshd_config
-  cat ./etc/sshd_config
-else
-  ln -s /usr/sbin/sshd /app/bin/ssh2d
-fi
 
 ls -lang /app/bin
 
