@@ -119,7 +119,12 @@ if [ -f ./ssh_info_user ]; then
 
   ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
 
-  sleep 15s
+  for i in {1..15}; do
+    sleep 1s
+    ss -antp | grep 127.0.0.1:1080
+  done
+
+  # sleep 15s
   ss -antp
   ps aux
   curl -v --socks5 127.0.0.1:1080 0.0.0.0:${TARGET_HTTP_PORT}
