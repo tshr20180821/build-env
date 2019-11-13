@@ -18,9 +18,12 @@ tar xf V_${SSH_VERSION}.tar.gz
 pushd openssh-portable-V_${SSH_VERSION}
 
 # curl -O https://jaist.dl.sourceforge.net/project/hpnssh/HPN-SSH%2014v16%207.8p1/openssh-7_8_P1-hpn-14.16.diff
+curl -O https://ayera.dl.sourceforge.net/project/hpnssh/OpenSSL-1.1%20Compatibility/hpn-openssl1.1-7_8_P1.diff
+
 ls -lang
 
 # patch -p1 <./openssh-7_8_P1-hpn-14.16.diff
+patch -p1 <./hpn-openssl1.1-7_8_P1.diff
 
 autoreconf
 ./configure --help
