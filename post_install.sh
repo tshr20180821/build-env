@@ -94,8 +94,10 @@ if [ -f ./bin/hpn-ssh ]; then
   cp ./bin/hpn-ssh /tmp/bin
   chmod +x /tmp/bin/hpn-ssh
   ln -s /tmp/bin/hpn-ssh /tmp/bin/ssh2
+  export IS_HPN_SSH=yes
 else
   ln -s /usr/bin/ssh /tmp/bin/ssh2
+  export IS_HPN_SSH=no
 fi
 ls -lang /tmp/bin
 /tmp/bin/ssh2 -V
@@ -143,12 +145,10 @@ if [ -f ./ssh_info_user ]; then
 
   # timeout -sKILL 30 ssh -v -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
   # timeout -sKILL 30 ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
-  if [ ${IS_HPN_SSHD} = 'yes' ]; then
-    timeout -sKILL 30 /tmp/bin/ssh2 -F /tmp/ssh_config -oNoneSwitch=yes -oNoneEnabled=yes \
-      -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
-  else
-    timeout -sKILL 30 /tmp/bin/ssh2 -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
+  if [ ${IS_HPN_SSHD} = 'yes' && ${IS_HPN_SSH} = 'yes' ]; then
+    export HPN_SSH_OPTION="-oNoneSwitch=yes -oNoneEnabled=yes"
   fi
+  timeout -sKILL 30 /tmp/bin/ssh2 -F /tmp/ssh_config ${HPN_SSH_OPTION} -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
 fi
 
 popd
@@ -162,8 +162,8 @@ cat << '__HEREDOC__' >distcc-ssh
 set -x
 
 # echo "DISTCC_SSH_LOG $(date +%Y/%m/%d" "%H:%M:%S) $*"
-exec ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
-exec /tmp/bin/ssh2 -F /tmp/ssh_config -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
+# exec ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
+exec /tmp/bin/ssh2 -F /tmp/ssh_config ${HPN_SSH_OPTION} -p ${TARGET_SSH_PORT} -l ${TARGET_USER} "$@"
 __HEREDOC__
 chmod +x distcc-ssh
 cat distcc-ssh
