@@ -61,6 +61,7 @@ popd
 if [ -f /app/bin/hpn-sshd ]; then
   ln -s /app/bin/hpn-sshd /app/bin/ssh2d
   echo NoneEnabled=yes >>./etc/sshd_config
+  cat ./etc/sshd_config
 else
   ln -s /usr/sbin/sshd /app/bin/ssh2d
 fi
