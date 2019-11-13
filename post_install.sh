@@ -5,7 +5,6 @@ set -x
 date
 
 chmod +x ./start_web.sh
-chmod +x ./bin/distccd_start
 
 curl -s https://${DISTCC_HOST_NAME}.herokuapp.com/ >/dev/null
 
@@ -129,6 +128,7 @@ if [ -f ./ssh_info_user ]; then
 
   # timeout -sKILL 30 ssh -v -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
   # timeout -sKILL 30 ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
+  chmod +x ../../bin/hpn-ssh
   timeout -sKILL 30 ../../bin/hpn-ssh -F /tmp/ssh_config -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'ls -lang'
 fi
 
@@ -158,6 +158,8 @@ popd
 export DISTCC_HOSTS="@0.0.0.0/8:/app/bin/distccd_start"
 export DISTCC_POTENTIAL_HOSTS=${DISTCC_HOSTS}
 export DISTCC_SSH="/tmp/bin/distcc-ssh"
+
+chmod +x ./bin/distccd_start
 
 # ***** target *****
 
