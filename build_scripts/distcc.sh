@@ -11,12 +11,11 @@ whereis python
 python --version
 find / -name Python.h -print 2>/dev/null
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -I../.apt/usr/include/python3.6m/"
+PYTHON_H=$(pwd)/../.apt/usr/include/python3.6m/
+
+export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -I${PYTHON_H}"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
-
-HOME2=$(pwd)
-echo ${HOME2}
 
 pushd /tmp
 
