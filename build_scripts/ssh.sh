@@ -13,12 +13,15 @@ export LDFLAGS="-fuse-ld=gold"
 
 pushd /tmp
 
-curl -O https://jaist.dl.sourceforge.net/project/hpnssh/HPN-SSH%2014v16%207.8p1/openssh-7_8_P1-hpn-14.16.diff
-
 curl -L -O https://github.com/openssh/openssh-portable/archive/V_${SSH_VERSION}.tar.gz
 tar xf V_${SSH_VERSION}.tar.gz
 pushd openssh-portable-V_${SSH_VERSION}
+
+curl -O https://jaist.dl.sourceforge.net/project/hpnssh/HPN-SSH%2014v16%207.8p1/openssh-7_8_P1-hpn-14.16.diff
 ls -lang
+
+patch -p1 <./openssh-7_8_P1-hpn-14.16.diff
+
 autoreconf
 ./configure --help
 ./configure --prefix=/tmp/usr
