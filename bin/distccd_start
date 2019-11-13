@@ -10,4 +10,4 @@ export DISTCC_LOG=/tmp/distcc.log
 export DISTCC_VERBOSE=1
 
 echo "DISTCC_LOG $(date +%Y/%m/%d" "%H:%M:%S) $@" >>${DISTCC_LOG}
-exec /tmp/bin/distccd --verbose --log-file ${DISTCC_LOG} $@
+exec /tmp/bin/distccd --log-level info --log-file ${DISTCC_LOG} $@
