@@ -25,7 +25,7 @@ time python /tmp/get-pip.py --user --no-warn-script-location
 /tmp/python/bin/pip install --help
 
 # time /tmp/python/bin/pip install --no-color --progress-bar=ascii -I --user bzr mercurial
-time /tmp/python/bin/pip install --no-color --progress-bar=ascii -I --user mercurial
+time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user mercurial
 
 /tmp/python/bin/pip freeze
 
