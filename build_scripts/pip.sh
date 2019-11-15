@@ -4,6 +4,8 @@ set -x
 
 date
 
+find / -name Python.h -print 2>/dev/null
+
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
