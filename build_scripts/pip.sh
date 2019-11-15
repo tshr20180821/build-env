@@ -11,6 +11,9 @@ export LDFLAGS="-fuse-ld=gold"
 
 mkdir -m 777 /tmp/usr/bin
 
+ls /usr/bin | xargs -n 1 -I {} ln -s /usr/bin/{} /tmp/usr/bin/{}
+rm /tmp/usr/bin/make
+
 cat << '__HEREDOC__' >/tmp/usr/bin/make
 #!/bin/bash
 
@@ -21,9 +24,6 @@ echo $@
 __HEREDOC__
 
 chmod +x /tmp/usr/bin/make
-
-ln -s /usr/bin/curl /tmp/usr/bin/curl
-ln -s /usr/bin/python /tmp/usr/bin/python
 
 export PATH="/tmp/usr/bin:${PATH}"
 export PATH_OLD=${PATH}
