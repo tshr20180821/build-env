@@ -20,14 +20,15 @@ echo $@
 /usr/bin/make -j2 $@
 __HEREDOC__
 
-export PATH="/tmp/usr/bin:${PATH}"
-export PATH_OLD=${PATH}
-export PATH=$(echo ${PATH} | sed -e 's|:/usr/bin:||g')
+chmod +x /tmp/usr/bin/make
 
 ln -s /usr/bin/curl /tmp/usr/bin/curl
 ln -s /usr/bin/python /tmp/usr/bin/python
 
-chmod +x /tmp/usr/bin/make
+export PATH="/tmp/usr/bin:${PATH}"
+export PATH_OLD=${PATH}
+export PATH=$(echo ${PATH} | sed -e 's|:/usr/bin:||g')
+
 whereis make
 echo ${PATH}
 
