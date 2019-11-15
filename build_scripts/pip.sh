@@ -34,6 +34,6 @@ time python /tmp/get-pip.py --user
 /tmp/python/bin/pip install --help
 
 # time /tmp/python/bin/pip install -I --user bzr mercurial
-time /tmp/python/bin/pip install -I --user bzr
+time /tmp/python/bin/pip install -v -I --user bzr
 
 date
