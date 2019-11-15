@@ -21,13 +21,13 @@ ln -s /usr/bin/python3.6 /tmp/usr/bin/python
 
 export PYTHONUSERBASE=/tmp/python
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
-time python3.6 /tmp/get-pip.py --user --no-warn-script-location
+time python3.6 /tmp/get-pip.py --user
 
 /tmp/python/bin/pip --help
 /tmp/python/bin/pip install --help
 
 # time /tmp/python/bin/pip install --no-color --progress-bar=ascii -I --user bzr mercurial
-time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user mercurial
+time /tmp/python/bin/pip install -I --user mercurial
 
 /tmp/python/bin/pip freeze
 
