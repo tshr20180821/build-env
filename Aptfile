@@ -3,6 +3,9 @@ distcc
 tree
 lbzip2
 
+# -- mercurial(pip) --
+python3-dev
+
 # -- distcc --
 # libiberty-dev
 # python3-dev
