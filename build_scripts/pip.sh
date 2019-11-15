@@ -21,6 +21,11 @@ echo $@
 __HEREDOC__
 
 export PATH="/tmp/usr/bin:${PATH}"
+export PATH_OLD=${PATH}
+export PATH=$(echo ${PATH} | sed -e 's|:/usr/bin:||g')
+
+ln -s /usr/bin/curl /tmp/usr/bin/curl
+ln -s /usr/bin/python /tmp/usr/bin/python
 
 chmod +x /tmp/usr/bin/make
 whereis make
@@ -35,5 +40,8 @@ time python /tmp/get-pip.py --user
 
 # time /tmp/python/bin/pip install -I --user bzr mercurial
 time /tmp/python/bin/pip install -v --no-color -I --user bzr
+
+rm /tmp/usr/bin/make
+export PATH=${PATH_OLD}
 
 date
