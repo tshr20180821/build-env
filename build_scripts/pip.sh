@@ -15,21 +15,20 @@ export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -I/tmp/usr/includ
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
-export PATH=/tmp/usr/bin:${PATH}
-mkdir -m 777 -p /tmp/usr/bin
-ln -s /usr/bin/python3.6 /tmp/usr/bin/python
 
 export PYTHONUSERBASE=/tmp/python
+export PATH=${PYTHONUSERBASE}/bin:${PATH}
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 time python3.6 /tmp/get-pip.py --user
 
-/tmp/python/bin/pip --help
-/tmp/python/bin/pip install --help
+# pip --help
+# pip install --help
 
 # time /tmp/python/bin/pip install --no-color --progress-bar=ascii -I --user bzr mercurial
+time /tmp/python/bin/pip install -I --user bzr
 time /tmp/python/bin/pip install -I --user mercurial
 
-/tmp/python/bin/pip freeze
+pip freeze
 
 pushd ${PYTHONUSERBASE}
 time tar cf /tmp/pips.tar.bz2 --use-compress-prog=lbzip2 ./
