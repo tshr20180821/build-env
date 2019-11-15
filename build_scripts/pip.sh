@@ -40,7 +40,7 @@ time python /tmp/get-pip.py --user
 /tmp/python/bin/pip install --help
 
 # time /tmp/python/bin/pip install -I --user bzr mercurial
-time /tmp/python/bin/pip install --no-color -I --user bzr
+time /tmp/python/bin/pip install --no-color --progress-bar=ascii -I --user bzr
 
 rm /tmp/usr/bin/make
 export PATH=${PATH_OLD}
