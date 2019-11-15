@@ -6,8 +6,7 @@ date
 
 find / -name Python.h -print 2>/dev/null
 
-/tmp/build_21b4e3b208d3a7268c9c207aaf473984/.apt/usr/include/python3.6m/Python.h
-include_path=$(pwd)/../.apt/usr/include
+include_path=$(pwd)/../.apt/usr/include/python3.6m
 
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -I${include_path}"
