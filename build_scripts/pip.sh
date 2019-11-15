@@ -19,9 +19,9 @@ time python /tmp/get-pip.py --user --no-warn-script-location
 time /tmp/python/bin/pip install --no-color --progress-bar=ascii -I --user bzr mercurial
 
 pushd ${PYTHONUSERBASE}
-time tar cJf /tmp/pips.tar.xz ./
+time tar cf /tmp/pips.tar.bz2 --use-compress-prog=lbzip2 ./
 popd
 
-mv /tmp/pips.tar.xz ../www
+mv /tmp/pips.tar.bz2 ../www
 
 date
