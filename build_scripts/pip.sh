@@ -6,10 +6,12 @@ date
 
 find / -name Python.h -print 2>/dev/null
 
-include_path=$(pwd)/../.apt/usr/include/python3.6m
+mkdir -m 777 -p /tmp/usr/include
+cp -r ${pwd}../.apt/usr/include/python3.6m /tmp/usr/include/
+tree /tmp/usr/include/
 
 cflags_option=$(cat /tmp/cflags_option)
-export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -I${include_path}"
+export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -I/tmp/usr/include/"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
