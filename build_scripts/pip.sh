@@ -21,4 +21,8 @@ time python /tmp/get-pip.py --user --no-warn-script-location
 # time /tmp/python/bin/pip install -I --user bzr mercurial
 time /tmp/python/bin/pip install --no-color --progress-bar=ascii -I --user bzr
 
+pushd ${PYTHONUSERBASE}
+tar cJf /tmp/pips.tar.xz ./
+popd
+
 date
