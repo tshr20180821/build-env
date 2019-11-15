@@ -27,7 +27,7 @@ chmod +x /tmp/usr/bin/make
 
 export PATH="/tmp/usr/bin:${PATH}"
 export PATH_OLD=${PATH}
-export PATH=$(echo ${PATH} | sed -e 's|:/usr/bin:||g')
+export PATH=$(echo ${PATH} | sed -e 's|:/usr/bin:|:|g')
 
 whereis make
 echo ${PATH}
