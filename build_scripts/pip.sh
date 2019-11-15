@@ -30,6 +30,7 @@ export PATH_OLD=${PATH}
 export PATH=$(echo ${PATH} | sed -e 's|:/usr/bin:|:|g')
 
 whereis make
+make --version
 echo ${PATH}
 
 export PYTHONUSERBASE=/tmp/python
