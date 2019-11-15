@@ -11,7 +11,7 @@ cp -r ${pwd}../.apt/usr/include/python3.6m /tmp/usr/include/
 tree /tmp/usr/include/
 
 cflags_option=$(cat /tmp/cflags_option)
-export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -I/tmp/usr/include/"
+export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -I/tmp/usr/include -I/tmp/usr -I/tmp/usr/include/python3.6m"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
