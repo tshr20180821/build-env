@@ -27,7 +27,7 @@ patch -p1 <./openssh-8_1_P1-hpn-14.20.diff
 
 autoreconf
 ./configure --help
-./configure --prefix=/tmp/usr --with-pam
+./configure --prefix=/tmp/usr --with-pam --with-ipaddr-display
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 ls -lang
 popd
