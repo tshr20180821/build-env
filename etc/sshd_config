@@ -18,7 +18,6 @@ ChallengeResponseAuthentication no
 PubkeyAuthentication yes
 AuthorizedKeysFile /app/.ssh/authorized_keys2
 
-# UsePAM yes
 UsePAM no
 
 X11Forwarding no
