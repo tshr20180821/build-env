@@ -11,7 +11,7 @@ distcc --version
 distcc 3.3.3 x86_64-pc-linux-gnu
 
 hpn-ssh -V
-OpenSSH_7.8p1-hpn14v15, OpenSSL 1.1.1  11 Sep 2018
+OpenSSH_8.1p1-hpn14v20, OpenSSL 1.1.1  11 Sep 2018
 
 parallel --version
 GNU parallel 20191022
