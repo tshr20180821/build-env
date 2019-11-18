@@ -4,6 +4,7 @@ tree
 lbzip2
 
 nodejs
+node-gyp
 npm
 
 # -- distcc --
