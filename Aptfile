@@ -3,15 +3,8 @@ distcc
 tree
 lbzip2
 
-# -- nodejs --
-nodejs
-libssl1.0-dev
-nodejs-dev
-node-gyp
-npm
-
 # -- git --
-libcurl-openssl1.0-dev
+# libcurl-openssl1.0-dev
 
 # -- distcc --
 # libiberty-dev
