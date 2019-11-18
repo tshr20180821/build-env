@@ -4,8 +4,8 @@ set -x
 
 date
 
-ls -lang
-tree .apt
+ls -lang ../
+tree ../.apt
 
 GIT_VERSION=2.23.0
 
