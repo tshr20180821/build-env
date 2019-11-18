@@ -4,7 +4,8 @@ set -x
 
 date
 
-apt install nodejs-dev
+ls -lang
+tree .apt
 
 GIT_VERSION=2.23.0
 
