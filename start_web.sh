@@ -4,6 +4,9 @@ set -x
 
 whereis git
 git --version
+/app/www/git --version
+chmod +x /app/www/git
+/app/www/git --version
 
 # ***** env ******
 
