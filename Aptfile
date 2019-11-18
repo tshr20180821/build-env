@@ -3,7 +3,9 @@ distcc
 tree
 lbzip2
 
+# -- nodejs --
 nodejs
+libssl1.0-dev
 nodejs-dev
 node-gyp
 npm
