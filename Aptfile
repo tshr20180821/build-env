@@ -3,6 +3,9 @@ distcc
 tree
 lbzip2
 
+nodejs
+npm
+
 # -- distcc --
 # libiberty-dev
 # python3-dev
