@@ -2,6 +2,9 @@
 
 set -x
 
+whereis git
+git --version
+
 # ***** env ******
 
 echo 'Processor Count : ' $(grep -c -e processor /proc/cpuinfo)
