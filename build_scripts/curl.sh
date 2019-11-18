@@ -82,10 +82,12 @@ pushd repo/build-env
 git init
 git config --global user.email "user"
 git config --global user.name "user"
+# 1MB -> 30MB
+git config --global http.postbuffer 31457280
 git add .
 git commit -a -m "."
 git remote set-url origin https://github.com/tshr20140816/build-env
-git push origin master
+time git push origin master
 popd
 popd
 
