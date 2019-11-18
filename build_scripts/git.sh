@@ -41,7 +41,7 @@ make configure
 ./configure --help
 ./configure --prefix /tmp/usr
 
-time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 210 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
   echo 'time out'
 else
