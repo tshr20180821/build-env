@@ -4,6 +4,8 @@ set -x
 
 date
 
+apt install nodejs-dev
+
 GIT_VERSION=2.23.0
 
 cflags_option=$(cat /tmp/cflags_option)
