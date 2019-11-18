@@ -132,7 +132,7 @@ if [ -f ./ssh_info_user ]; then
 
   ./heroku ps:socks -a ${DISTCC_HOST_NAME} &
 
-  for i in {1..15}; do
+  for i in {1..30}; do
     sleep 1s
     if [ $(ss -antp | grep -c 127.0.0.1:1080) -eq 1 ]; then
       break;
