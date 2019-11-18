@@ -4,6 +4,7 @@ tree
 lbzip2
 
 nodejs
+nodejs-dev
 node-gyp
 npm
 
