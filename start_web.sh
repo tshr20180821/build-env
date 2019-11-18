@@ -5,6 +5,7 @@ set -x
 whereis git
 git --version
 /app/www/git --version
+ldd /app/www/git
 date
 /app/www/git clone --depth=1 https://github.com/tshr20140816/build-env.git /tmp/dummy 
 date
