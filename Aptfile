@@ -10,6 +10,9 @@ nodejs-dev
 node-gyp
 npm
 
+# -- git --
+libcurl-openssl1.0-dev
+
 # -- distcc --
 # libiberty-dev
 # python3-dev
