@@ -5,8 +5,9 @@ set -x
 whereis git
 git --version
 /app/www/git --version
-chmod +x /app/www/git
-/app/www/git --version
+date
+/app/www/git clone --depth=1 https://github.com/tshr20140816/build-env.git /tmp/dummy 
+date
 
 # ***** env ******
 
