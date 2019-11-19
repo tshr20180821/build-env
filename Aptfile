@@ -3,9 +3,6 @@ distcc
 tree
 lbzip2
 
-:repo:deb http://apt.newrelic.com/debian/ newrelic non-free
-newrelic-php5
-
 # -- git --
 # libcurl4
 # libcurl4-openssl-dev
