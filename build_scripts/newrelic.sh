@@ -18,7 +18,8 @@ wait
 pushd /tmp
 
 dpkg --help
-time dpkg -i newrelic-php5-common_${NEWRELIC_VERSION}_all.deb \
+time dpkg --instdir=/tmp/newrelic --admindir=/tmp/newrelic --root=/tmp/newrelic -i \
+  newrelic-php5-common_${NEWRELIC_VERSION}_all.deb \
   newrelic-daemon_${NEWRELIC_VERSION}_amd64.deb \
   newrelic-php5_${NEWRELIC_VERSION}_amd64.deb
 
