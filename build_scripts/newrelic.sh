@@ -28,12 +28,11 @@ dpkg-deb --help
 dpkg-deb -x newrelic-php5-common_${NEWRELIC_VERSION}_all.deb repo2
 dpkg-deb -x newrelic-daemon_${NEWRELIC_VERSION}_amd64.deb repo2
 dpkg-deb -x newrelic-php5_${NEWRELIC_VERSION}_amd64.deb repo2
+tree repo2
 dpkg-deb -e newrelic-php5-common_${NEWRELIC_VERSION}_all.deb repo2
 dpkg-deb -e newrelic-daemon_${NEWRELIC_VERSION}_amd64.deb repo2
 dpkg-deb -e newrelic-php5_${NEWRELIC_VERSION}_amd64.deb repo2
-
-ls -lang
-ls -lang repo2
+tree repo2
 
 popd
 
