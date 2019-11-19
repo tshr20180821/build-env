@@ -23,6 +23,15 @@ time dpkg --instdir=/tmp/newrelic --admindir=/tmp/newrelic --root=/tmp/newrelic 
   newrelic-daemon_${NEWRELIC_VERSION}_amd64.deb \
   newrelic-php5_${NEWRELIC_VERSION}_amd64.deb
 
+mkdir repo
+dpkg-deb --help
+dpkg-deb -x newrelic-php5-common_${NEWRELIC_VERSION}_all.deb repo
+dpkg-deb -x newrelic-daemon_${NEWRELIC_VERSION}_amd64.deb repo
+dpkg-deb -x newrelic-php5_${NEWRELIC_VERSION}_amd64.deb repo
+
+ls -lang
+ls -lang repo
+
 popd
 
 date
