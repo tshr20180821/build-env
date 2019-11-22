@@ -201,4 +201,6 @@ pgrep -f "ssh2: /tmp/ssh_master-${TARGET_USER}@0.0.0.0:${TARGET_SSH_PORT}" | xar
 
 ps aux
 
+rm -rf .apt/usr/share/man .apt/usr/share/doc
+
 date
