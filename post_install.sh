@@ -21,18 +21,6 @@ whereis gcc
 gcc --version
 ldd /usr/bin/gcc
 
-# ***** heroku cli *****
-
-curl -sS --create-dirs -o heroku/heroku.tar.xz $(curl -sS https://cli-assets.heroku.com/linux-x64 | grep -o -E https.+xz)
-
-pushd heroku
-tar xf heroku.tar.xz --strip-components=1
-rm heroku.tar.xz
-pushd bin
-time ./heroku update &
-popd
-popd
-
 # ***** github auth & heroku auth *****
 
 GITHUB_USER_DECODE=$(echo -n ${GITHUB_USER} | base64 -d)
@@ -54,6 +42,17 @@ machine git.heroku.com
 __HEREDOC__
 
 cat /app/.netrc
+
+# ***** heroku cli *****
+
+curl -sS --create-dirs -o heroku/heroku.tar.xz $(curl -sS https://cli-assets.heroku.com/linux-x64 | grep -o -E https.+xz)
+
+pushd heroku
+tar xf heroku.tar.xz --strip-components=1
+rm heroku.tar.xz
+# time ./bin/heroku update &
+time .bin/heroku plugins:install heroku-builds &
+popd
 
 # ***** ccache *****
 
