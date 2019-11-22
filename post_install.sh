@@ -23,8 +23,7 @@ ldd /usr/bin/gcc
 
 # ***** heroku cli *****
 
-mkdir heroku
-curl -sS -o heroku/heroku.tar.xz $(curl -sS https://cli-assets.heroku.com/linux-x64 | grep -o -E https.+xz)
+curl -sS --create-dirs -o heroku/heroku.tar.xz $(curl -sS https://cli-assets.heroku.com/linux-x64 | grep -o -E https.+xz)
 
 pushd heroku
 tar xf heroku.tar.xz --strip-components=1
