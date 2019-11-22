@@ -24,11 +24,11 @@ ldd /usr/bin/gcc
 # ***** heroku cli *****
 
 mkdir heroku
-curl -sS -o heroku/heroku.tar.gz https://cli-assets.heroku.com/heroku-cli/channels/stable/heroku-cli-linux-x64.tar.gz
+curl -sS -o heroku/heroku.tar.xz $(curl -sS https://cli-assets.heroku.com/linux-x64 | grep -o -E https.+xz)
 
 pushd heroku
-tar xf heroku.tar.gz --strip-components=1
-rm heroku.tar.gz
+tar xf heroku.tar.xz --strip-components=1
+rm heroku.tar.xz
 pushd bin
 time ./heroku update &
 popd
