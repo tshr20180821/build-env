@@ -6,7 +6,7 @@ date
 
 chmod +x ./start_web.sh
 
-curl -s https://${DISTCC_HOST_NAME}.herokuapp.com/ >/dev/null &
+curl -s https://${DISTCC_HOST_NAME}.herokuapp.com/ >/dev/null 2>&1 &
 
 ss -ant
 
