@@ -51,7 +51,7 @@ pushd heroku
 tar xf heroku.tar.xz --strip-components=1
 rm heroku.tar.xz
 # time ./bin/heroku update &
-time .bin/heroku plugins:install heroku-builds &
+time ./bin/heroku plugins:install heroku-builds &
 popd
 
 # ***** ccache *****
