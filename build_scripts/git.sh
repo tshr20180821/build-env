@@ -85,4 +85,8 @@ ldd /tmp/usr/bin/git
 
 cp /tmp/usr/bin/git ../www/
 
+pushd /tmp
+/tmp/usr/bin/git clone -b v3.7.5 --depth=1 https://github.com/ccache/ccache.git
+popd
+
 date
