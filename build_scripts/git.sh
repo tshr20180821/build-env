@@ -46,8 +46,7 @@ ls -lang
 pushd git-${GIT_VERSION}
 make configure
 ./configure --help
-./configure --prefix /tmp/usr --with-curl=/tmp/.apt/usr
-# ./configure --prefix /tmp/usr --with-curl=/usr/bin/curl
+./configure --prefix /tmp/usr2 --with-curl=/tmp/.apt/usr
 cat config.log
 
 time timeout -sKILL 210 make -j${PARALLEL_COUNT}
@@ -77,16 +76,16 @@ git push origin master
 popd
 popd
 
-tree /tmp/usr
+tree /tmp/usr2
 
-ldd /tmp/usr/bin/git
+ldd /tmp/usr2/bin/git
 
-/tmp/usr/bin/git --version
+/tmp/usr2/bin/git --version
 
-cp /tmp/usr/bin/git ../www/
+cp /tmp/usr2/bin/git ../www/
 
 pushd /tmp
-/tmp/usr/bin/git clone -b v3.7.5 --depth=1 https://github.com/ccache/ccache.git
+/tmp/usr2/bin/git clone -b v3.7.5 --depth=1 https://github.com/ccache/ccache.git
 ls -lang
 popd
 
