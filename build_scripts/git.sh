@@ -8,7 +8,7 @@ ls -lang ../
 tree ../.apt
 
 pushd ..
-ln -s ./.apt /tmp/.apt
+ln -s $(pwd)/.apt /tmp/.apt
 popd
 ls -lang /tmp/.apt
 
