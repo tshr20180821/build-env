@@ -5,7 +5,6 @@ set -x
 date
 
 whereis curl
-pkg-config --static --libs libcurl
 
 pushd ..
 ln -s $(pwd)/.apt /tmp/.apt
@@ -47,8 +46,8 @@ ls -lang
 pushd git-${GIT_VERSION}
 make configure
 ./configure --help
-# ./configure --prefix /tmp/usr --with-curl=/tmp/.apt/usr
-./configure --prefix /tmp/usr --with-curl=/usr/bin/curl
+./configure --prefix /tmp/usr --with-curl=/tmp/.apt/usr
+# ./configure --prefix /tmp/usr --with-curl=/usr/bin/curl
 
 time timeout -sKILL 210 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
