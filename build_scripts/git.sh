@@ -35,6 +35,8 @@ popd
 ccache -s
 ccache -z
 
+HOME2=$(pwd)
+
 pushd /tmp
 curl -L -O https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz
 tar xf v${GIT_VERSION}.tar.gz
