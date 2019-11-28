@@ -15,7 +15,8 @@ ls -lang /tmp/.apt
 GIT_VERSION=2.23.0
 
 cflags_option=$(cat /tmp/cflags_option)
-export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -static"
+# export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -static"
+export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
