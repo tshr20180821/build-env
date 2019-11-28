@@ -49,7 +49,7 @@ time timeout -sKILL 210 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
   echo 'time out'
 else
-  ls -lang git-static
+  tree ./
   time make install
 fi
 
