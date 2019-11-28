@@ -79,10 +79,10 @@ popd
 
 # tree /app
 
-ldd /app/bin/git
+ldd /tmp/usr/bin/git
 
-/app/bin/git --version
+/tmp/usr/bin/git --version
 
-cp /app/bin/git ../www/
+cp /tmp/usr/bin/git ../www/
 
 date
