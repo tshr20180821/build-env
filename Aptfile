@@ -4,8 +4,8 @@ tree
 lbzip2
 
 # -- git --
-# libcurl4
-# libcurl4-openssl-dev
+libcurl4
+libcurl4-openssl-dev
 
 # -- distcc --
 # libiberty-dev
