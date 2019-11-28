@@ -77,7 +77,7 @@ git push origin master
 popd
 popd
 
-# tree /app
+tree /tmp/usr
 
 ldd /tmp/usr/bin/git
 
