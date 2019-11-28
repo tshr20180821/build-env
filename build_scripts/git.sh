@@ -7,6 +7,10 @@ date
 ls -lang ../
 tree ../.apt
 
+pushd ..
+ln -s ./.apt /tmp/.apt
+popd
+
 GIT_VERSION=2.23.0
 
 cflags_option=$(cat /tmp/cflags_option)
@@ -44,9 +48,8 @@ ls -lang
 pushd git-${GIT_VERSION}
 make configure
 ./configure --help
-pwd
-tree /
-./configure --prefix /tmp/usr --with-curl=${HOME2}/../../.apt/usr
+tree /tmp/.apt/usr
+./configure --prefix /tmp/usr --with-curl=/tmp/.apt/usr
 
 time timeout -sKILL 210 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
