@@ -48,6 +48,7 @@ make configure
 ./configure --help
 ./configure --prefix /tmp/usr --with-curl=/tmp/.apt/usr
 # ./configure --prefix /tmp/usr --with-curl=/usr/bin/curl
+cat config.log
 
 time timeout -sKILL 210 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
