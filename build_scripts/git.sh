@@ -5,6 +5,7 @@ set -x
 date
 
 whereis curl
+pkg-config --static --libs libcurl
 
 pushd ..
 ln -s $(pwd)/.apt /tmp/.apt
