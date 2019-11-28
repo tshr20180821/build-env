@@ -54,7 +54,7 @@ time timeout -sKILL 210 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
   echo 'time out'
 else
-  tree ./
+  # tree ./
   time make install
 fi
 
@@ -77,7 +77,7 @@ git push origin master
 popd
 popd
 
-tree /app
+# tree /app
 
 ldd /app/bin/git
 
