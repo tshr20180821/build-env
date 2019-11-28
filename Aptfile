@@ -15,12 +15,12 @@ libcurl4-openssl-dev
 # libgio-cil
 
 # -- curl --
-# libssh2-1-dev
-# libbrotli-dev
-# libnghttp2-14
-# libnghttp2-dev
-# libpsl5
-# libpsl-dev
+libssh2-1-dev
+libbrotli-dev
+libnghttp2-14
+libnghttp2-dev
+libpsl5
+libpsl-dev
 
 # -- ccache --
 # libzstd-dev
