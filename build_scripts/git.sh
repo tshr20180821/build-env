@@ -4,13 +4,11 @@ set -x
 
 date
 
-ls -lang ../
-tree ../.apt
+whereis curl
 
 pushd ..
 ln -s $(pwd)/.apt /tmp/.apt
 popd
-ls -lang /tmp/.apt
 
 GIT_VERSION=2.23.0
 
