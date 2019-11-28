@@ -10,6 +10,7 @@ tree ../.apt
 pushd ..
 ln -s ./.apt /tmp/.apt
 popd
+ls -lang /tmp/.apt
 
 GIT_VERSION=2.23.0
 
@@ -38,8 +39,6 @@ popd
 
 ccache -s
 ccache -z
-
-HOME2=$(pwd)
 
 pushd /tmp
 curl -L -O https://github.com/git/git/archive/v${GIT_VERSION}.tar.gz
