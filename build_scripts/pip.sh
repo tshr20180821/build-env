@@ -7,6 +7,8 @@ date
 python --version
 python3 --version
 
+find / -name Python.h -print
+
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
