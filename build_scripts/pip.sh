@@ -29,6 +29,8 @@ time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user me
 
 pip freeze
 
+tree ${PYTHONUSERBASE}
+
 pushd ${PYTHONUSERBASE}
 time tar cf /tmp/pips.tar.bz2 --use-compress-prog=lbzip2 ./
 popd
