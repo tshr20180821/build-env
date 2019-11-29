@@ -31,7 +31,7 @@ pip install --help
 
 # time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr mercurial
 # time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr
-time /tmp/python/bin/pip install -v --no-use-wheel --global-option="-I/tmp/.apt/usr/include/python3.6m/" \
+time /tmp/python/bin/pip install -v --no-binary --global-option="-I/tmp/.apt/usr/include/python3.6m/" \
   --no-color --progress-bar=ascii -I --user mercurial
 
 pip freeze
