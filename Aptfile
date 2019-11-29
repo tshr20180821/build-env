@@ -3,6 +3,9 @@ distcc
 tree
 lbzip2
 
+# -- mercurial --
+libpython3-dev
+
 # -- git --
 # libcurl4
 # libcurl4-openssl-dev
