@@ -7,10 +7,14 @@ date
 python --version
 python3 --version
 
+pushd ..
+ln -s $(pwd)/.apt /tmp/.apt
+popd
+
 find / -name Python.h -print
 
 cflags_option=$(cat /tmp/cflags_option)
-export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
+export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -I/tmp/.apt/usr/include/python3.6m/"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
