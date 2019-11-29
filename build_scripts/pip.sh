@@ -22,7 +22,7 @@ pip --help
 pip install --help
 
 # time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr mercurial
-time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr
+# time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr
 time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user mercurial
 
 pip freeze
