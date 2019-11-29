@@ -4,6 +4,9 @@ set -x
 
 date
 
+python --version
+python3 --version
+
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
