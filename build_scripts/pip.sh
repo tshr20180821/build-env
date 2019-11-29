@@ -15,12 +15,15 @@ export LDFLAGS="-fuse-ld=gold"
 export PYTHONUSERBASE=/tmp/python
 export PATH=${PYTHONUSERBASE}/bin:${PATH}
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
-time python /tmp/get-pip.py --user
+# time python /tmp/get-pip.py --user
+time python3 /tmp/get-pip.py --user
 
 pip --help
 pip install --help
 
-time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr mercurial
+# time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr mercurial
+time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr
+time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user mercurial
 
 pip freeze
 
