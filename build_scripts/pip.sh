@@ -7,13 +7,7 @@ date
 python --version
 python3 --version
 
-pushd ..
-ln -s $(pwd)/.apt /tmp/.apt
-popd
-
 find / -name Python.h -print
-
-ls -lang /tmp/.apt/usr/include/python3.6m/
 
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer -I/tmp/.apt/usr/include/python3.6m/"
@@ -30,9 +24,7 @@ pip --help
 pip install --help
 
 # time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr mercurial
-# time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr
-time /tmp/python/bin/pip install -v --no-binary --global-option="-I/tmp/.apt/usr/include/python3.6m/" \
-  --no-color --progress-bar=ascii -I --user mercurial
+time /tmp/python/bin/pip install -v --no-color --progress-bar=ascii -I --user bzr
 
 pip freeze
 
