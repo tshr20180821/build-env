@@ -16,10 +16,12 @@ export LDFLAGS="-fuse-ld=gold"
 
 export PYTHONUSERBASE=/tmp/python
 export PATH=${PYTHONUSERBASE}/bin:${PATH}
-curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
+# curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 # time python /tmp/get-pip.py --user
-time python3 /tmp/get-pip.py --user
+# time python3 /tmp/get-pip.py --user
 
+whereis pip
+pip --version
 pip --help
 pip install --help
 
