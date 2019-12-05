@@ -28,7 +28,7 @@ if [ ${NEED_DISTCC} != "yes" ]; then
   chmod +x ./${BUILD_SCRIPT_NAME}.sh
   ./${BUILD_SCRIPT_NAME}.sh
   popd
-  return
+  exit
 fi
 
 # ***** github auth & heroku auth *****
