@@ -28,6 +28,7 @@ if [ ${NEED_DISTCC} != "yes" ]; then
   chmod +x ./${BUILD_SCRIPT_NAME}.sh
   ./${BUILD_SCRIPT_NAME}.sh
   popd
+  date
   exit
 fi
 
