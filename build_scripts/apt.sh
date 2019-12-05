@@ -14,11 +14,13 @@ apt-get ${APT_OPTIONS} -s -V upgrade | grep -o -E '^   [a-zA-Z0-9].+? ' | awk '{
 
 cat /tmp/update_list
 
-# for PACKAGE in $(cat /tmp/update_list); do
-#   # time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} -d install --reinstall ${PACKAGE}
+for PACKAGE in $(cat /tmp/update_list); do
+  time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} -d install --reinstall ${PACKAGE}
 #   time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} install --reinstall --print-uris -qq ${PACKAGE}
 #   # time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} install --reinstall --print-uris ${PACKAGE}
-# done
+done
+
+ls -lang /tmp/archives/*.deb
 
 # https://codeday.me/jp/qa/20190808/1401338.html
 
