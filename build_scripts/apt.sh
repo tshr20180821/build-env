@@ -14,8 +14,8 @@ apt-get ${APT_OPTIONS} -s -V upgrade | grep -o -E '^   [a-zA-Z0-9].+? ' | awk '{
 
 for PACKAGE in $(cat /tmp/update_list); do
   # time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} -d install --reinstall ${PACKAGE}
-  # time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} install --reinstall --print-uris -qq ${PACKAGE}
-  time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} install --reinstall --print-uris ${PACKAGE}
+  time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} install --reinstall --print-uris -qq ${PACKAGE}
+  # time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} install --reinstall --print-uris ${PACKAGE}
 done
 
 # for DEB in $(ls -1 /tmp/archives/*.deb); do
