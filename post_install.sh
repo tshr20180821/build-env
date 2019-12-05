@@ -21,6 +21,16 @@ whereis gcc
 gcc --version
 ldd /usr/bin/gcc
 
+# ***** target *****
+
+if [ ${NEED_DISTCC} != "yes" ]; then
+  pushd build_scripts
+  chmod +x ./${BUILD_SCRIPT_NAME}.sh
+  ./${BUILD_SCRIPT_NAME}.sh
+  popd
+  return
+fi
+
 # ***** github auth & heroku auth *****
 
 GITHUB_USER_DECODE=$(echo -n ${GITHUB_USER} | base64 -d)
