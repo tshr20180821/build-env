@@ -18,6 +18,8 @@ for PACKAGE in $(cat /tmp/update_list); do
   # time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} install --reinstall --print-uris ${PACKAGE}
 done
 
+# https://codeday.me/jp/qa/20190808/1401338.html
+
 # for DEB in $(ls -1 /tmp/archives/*.deb); do
 #   time dpkg -x ${DEB} ${BUILD_DIR}/.apt/
 # done
