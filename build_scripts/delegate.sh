@@ -21,7 +21,7 @@ time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} -d install --reinstall $(paste -s /
 ls -lang /tmp/archives/*.deb
 
 for DEB in $(ls -1 /tmp/archives/*.deb); do
-  time dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
+  dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
 done
 
 # ***** delegate *****
