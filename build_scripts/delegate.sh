@@ -34,7 +34,7 @@ tar xf delegate9.9.13.tar.gz
 pushd delegate9.9.13
 
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
-echo "<HR>" > ./src/builtin/mssgs/news/artlistfooter.dhtml
+echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
 time make ADMIN="admin@localhost"
 
