@@ -4,10 +4,10 @@ tree
 lbzip2
 
 # -- apt-fast --
-https://code.launchpad.net/~apt-fast/+archive/ubuntu/stable/+files/apt-fast_1.9.8-1~ubuntu18.04.1_all.deb
+# https://code.launchpad.net/~apt-fast/+archive/ubuntu/stable/+files/apt-fast_1.9.8-1~ubuntu18.04.1_all.deb
 
 # -- mercurial --
-libpython3-dev
+# libpython3-dev
 
 # -- git --
 # libcurl4
