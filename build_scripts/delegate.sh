@@ -36,6 +36,8 @@ tar xf delegate9.9.13.tar.gz
 
 pushd delegate9.9.13
 
+find -name fpoll.h -print
+
 # rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 # echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
