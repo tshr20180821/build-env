@@ -26,7 +26,7 @@ ls -lang /tmp/archives/*.deb
 
 # ***** delegate *****
 
-export CFLAGS="-O2 -march=native"
+export CFLAGS="-O2 -march=native -std=gnu++98"
 export CXXFLAGS="$CFLAGS"
 
 mkdir /tmp/bin
@@ -48,7 +48,7 @@ pushd delegate9.9.13
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
-time CC=gcc_gnu98 make ADMIN="admin@localhost"
+time make ADMIN="admin@localhost"
 
 ldd ./src/delegated
 
