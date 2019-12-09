@@ -20,9 +20,9 @@ time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} -d install --reinstall $(paste -s /
 
 ls -lang /tmp/archives/*.deb
 
-# for DEB in $(ls -1 /tmp/archives/*.deb); do
-#   dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
-# done
+for DEB in $(ls -1 /tmp/archives/*.deb); do
+  dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
+done
 
 # ***** delegate *****
 
@@ -36,11 +36,8 @@ tar xf delegate9.9.13.tar.gz
 
 pushd delegate9.9.13
 
-# cat ./include/fpoll.h
-ls -lang
-
-# rm ./src/builtin/mssgs/news/artlistfooter.dhtml
-# echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
+rm ./src/builtin/mssgs/news/artlistfooter.dhtml
+echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
 time make ADMIN="admin@localhost"
 
