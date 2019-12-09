@@ -4,6 +4,8 @@ set -x
 
 date
 
+gcc --version
+
 # ***** apt *****
 
 BUILD_DIR=$(pwd)
