@@ -20,9 +20,9 @@ time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} -d install --reinstall $(paste -s /
 
 ls -lang /tmp/archives/*.deb
 
-for DEB in $(ls -1 /tmp/archives/*.deb); do
-  dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
-done
+# for DEB in $(ls -1 /tmp/archives/*.deb); do
+#   dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
+# done
 
 # ***** delegate *****
 
@@ -30,6 +30,7 @@ export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
 mkdir /tmp/bin
+export PATH=/tmp/bin:${PATH}
 cat << __HEREDOC__ >>/tmp/bin/gcc_gnu98
 #!/bin/sh
 
