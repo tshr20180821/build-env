@@ -15,6 +15,7 @@ APT_OPTIONS="-o debug::nolocking=true -o dir::cache=/tmp -o dir::state=/tmp"
 APT_FORCE_YES="-y --allow-remove-essential --allow-change-held-packages"
 
 apt-get ${APT_OPTIONS} update
+echo libssl hold | dpkg --set-selections
 apt-get ${APT_OPTIONS} -s -V upgrade | grep -o -E '^   [a-zA-Z0-9].+? ' | awk '{print $1}' >/tmp/update_list
 
 cat /tmp/update_list
@@ -47,7 +48,7 @@ chmod +x /tmp/bin/gcc_gnu98
 
 pushd /tmp
 
-curl -O http://delegate.hpcc.jp/anonftp/DeleGate/delegate9.9.13.tar.gz
+# curl -O http://delegate.hpcc.jp/anonftp/DeleGate/delegate9.9.13.tar.gz
 tar xf delegate9.9.13.tar.gz
 
 pushd delegate9.9.13
@@ -55,7 +56,7 @@ pushd delegate9.9.13
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
-time make ADMIN="admin@localhost"
+# time make ADMIN="admin@localhost"
 
 ldd ./src/delegated
 
