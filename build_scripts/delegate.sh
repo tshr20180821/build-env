@@ -4,6 +4,8 @@ set -x
 
 date
 
+find / -name libssl.so* -print
+
 # ***** apt *****
 
 BUILD_DIR=$(pwd)
@@ -20,9 +22,11 @@ time apt-get ${APT_OPTIONS} ${APT_FORCE_YES} -d install --reinstall $(paste -s /
 
 ls -lang /tmp/archives/*.deb
 
-# for DEB in $(ls -1 /tmp/archives/*.deb); do
-#   dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
-# done
+for DEB in $(ls -1 /tmp/archives/*.deb); do
+  dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
+done
+
+find / -name libssl.so* -print
 
 # ***** delegate *****
 
