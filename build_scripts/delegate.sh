@@ -29,7 +29,13 @@ done
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
-echo $PATH
+mkdir /tmp/bin
+cat << __HEREDOC__ >>/tmp/bin/gcc_gnu98
+#!/bin/sh
+
+gcc -std=gnu++98 "$@"
+__HEREDOC__
+chmod +x /tmp/bin/gcc_gnu98
 
 pushd /tmp
 
@@ -41,7 +47,7 @@ pushd delegate9.9.13
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
-time make ADMIN="admin@localhost"
+time CC=gcc_gnu98 make ADMIN="admin@localhost"
 
 ldd ./src/delegated
 
