@@ -5,7 +5,8 @@ set -x
 date
 
 find / -name libssl.so* -print
-
+ls -lang /usr/lib/x86_64-linux-gnu
+       
 # ***** apt *****
 
 BUILD_DIR=$(pwd)
@@ -27,6 +28,8 @@ for DEB in $(ls -1 /tmp/archives/*.deb); do
 done
 
 find / -name libssl.so* -print
+ls -lang /usr/lib/x86_64-linux-gnu
+ls -lang ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
 
 # ***** delegate *****
 
