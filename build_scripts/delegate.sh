@@ -29,6 +29,8 @@ done
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
+echo $PATH
+
 pushd /tmp
 
 curl -O http://delegate.hpcc.jp/anonftp/DeleGate/delegate9.9.13.tar.gz
