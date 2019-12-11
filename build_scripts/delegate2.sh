@@ -31,6 +31,7 @@ done
 
 ${BUILD_DIR}/../.apt/usr/bin/i686-linux-gnu-ld --version
 pushd ${BUILD_DIR}/../.apt/usr/bin
+ln -s i686-linux-gnu-gcc-5 cc
 ln -s i686-linux-gnu-gcc-5 gcc
 ln -s i686-linux-gnu-ld ld
 popd
