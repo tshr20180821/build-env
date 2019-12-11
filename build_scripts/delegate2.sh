@@ -29,8 +29,7 @@ done
 
 # ***** delegate *****
 
-ls -lang /usr/i686-linux-gnu/lib
-mkdir -p /usr/i686-linux-gnu/lib
+ldd ${BUILD_DIR}/../.apt/usr/bin/../lib/gcc-cross/i686-linux-gnu/5/../../../../i686-linux-gnu/bin/ld
 
 export CFLAGS="-O2 -march=native -L${BUILD_DIR}/../.apt/usr/i686-linux-gnu/lib"
 export CXXFLAGS="$CFLAGS"
