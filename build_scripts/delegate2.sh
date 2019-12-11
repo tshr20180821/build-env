@@ -36,7 +36,7 @@ ls -lang ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
 
 # ***** delegate *****
 
-export CFLAGS="-O2 -march=native"
+export CFLAGS="-O2 -march=native -L${BUILD_DIR}/../app/.apt/usr/i686-linux-gnu/lib"
 export CXXFLAGS="$CFLAGS"
 
 mkdir /tmp/bin
