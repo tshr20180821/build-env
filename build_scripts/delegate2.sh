@@ -29,14 +29,8 @@ done
 
 # ***** delegate *****
 
-${BUILD_DIR}/../.apt/usr/bin/i686-linux-gnu-ld --version
-pushd ${BUILD_DIR}/../.apt/usr/bin
-ln -s i686-linux-gnu-gcc-5 cc
-ln -s i686-linux-gnu-gcc-5 gcc
-ln -s i686-linux-gnu-ld ld
-popd
-
 echo ${PATH}
+export PATH=${BUILD_DIR}/../app/.apt/usr/i686-linux-gnu/bin:${PATH}
 
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
