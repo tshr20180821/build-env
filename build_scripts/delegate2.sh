@@ -31,12 +31,13 @@ done
 
 ${BUILD_DIR}/../.apt/usr/bin/i686-linux-gnu-ld --version
 pushd ${BUILD_DIR}/../.apt/usr/bin
+ln -s i686-linux-gnu-gcc-5 gcc
 ln -s i686-linux-gnu-ld ld
 popd
 
 echo ${PATH}
 
-export CFLAGS="-O2 -march=native -Xlinker -rpath -Xlinker ${BUILD_DIR}/../.apt/usr/i686-linux-gnu/lib"
+export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
 pushd /tmp
@@ -49,7 +50,7 @@ pushd delegate9.9.13
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
-time make ADMIN="admin@localhost" CC=i686-linux-gnu-gcc-5
+time make ADMIN="admin@localhost"
 
 ldd ./src/delegated
 
