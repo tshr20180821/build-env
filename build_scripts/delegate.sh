@@ -48,7 +48,7 @@ chmod +x /tmp/bin/gcc_gnu98
 
 pushd /tmp
 
-# curl -O http://delegate.hpcc.jp/anonftp/DeleGate/delegate9.9.13.tar.gz
+curl -O http://delegate.hpcc.jp/anonftp/DeleGate/delegate9.9.13.tar.gz
 tar xf delegate9.9.13.tar.gz
 
 pushd delegate9.9.13
@@ -56,7 +56,7 @@ pushd delegate9.9.13
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
-# time make ADMIN="admin@localhost"
+time make ADMIN="admin@localhost"
 
 ldd ./src/delegated
 
