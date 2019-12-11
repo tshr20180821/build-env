@@ -34,6 +34,8 @@ pushd ${BUILD_DIR}/../.apt/usr/bin
 ln -s i686-linux-gnu-ld ld
 popd
 
+echo ${PATH}
+
 export CFLAGS="-O2 -march=native -Xlinker -rpath -Xlinker ${BUILD_DIR}/../.apt/usr/i686-linux-gnu/lib"
 export CXXFLAGS="$CFLAGS"
 
