@@ -3,9 +3,6 @@
 set -x
 
 date
-
-find / -name libssl.so* -print
-ls -lang /usr/lib/x86_64-linux-gnu
        
 # ***** apt *****
 
@@ -30,23 +27,10 @@ for DEB in $(ls -1 /tmp/archives/*.deb); do
   dpkg -x ${DEB} ${BUILD_DIR}/../.apt/
 done
 
-find / -name libssl.so* -print
-ls -lang /usr/lib/x86_64-linux-gnu
-ls -lang ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
-
 # ***** delegate *****
 
-export CFLAGS="-O2 -march=native -L${BUILD_DIR}/../app/.apt/usr/i686-linux-gnu/lib"
+export CFLAGS="-O2 -march=native -L/lib -L${BUILD_DIR}/../app/.apt/usr/i686-linux-gnu/lib"
 export CXXFLAGS="$CFLAGS"
-
-mkdir /tmp/bin
-export PATH=/tmp/bin:${PATH}
-cat << __HEREDOC__ >>/tmp/bin/gcc_gnu98
-#!/bin/sh
-
-gcc -std=gnu++98 "$@"
-__HEREDOC__
-chmod +x /tmp/bin/gcc_gnu98
 
 pushd /tmp
 
