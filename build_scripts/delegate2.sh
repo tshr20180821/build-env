@@ -29,7 +29,9 @@ done
 
 # ***** delegate *****
 
-export CFLAGS="-O2 -march=native -L/lib/x86_64-linux-gnu -L${BUILD_DIR}/../../app/.apt/usr/i686-linux-gnu/lib"
+ls ${BUILD_DIR}/../app/.apt/usr/i686-linux-gnu/lib
+
+export CFLAGS="-O2 -march=native -L/lib/x86_64-linux-gnu -L${BUILD_DIR}/../app/.apt/usr/i686-linux-gnu/lib"
 export CXXFLAGS="$CFLAGS"
 
 pushd /tmp
