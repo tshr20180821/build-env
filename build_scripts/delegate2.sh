@@ -29,7 +29,7 @@ done
 
 # ***** delegate *****
 
-find / -name i686-linux-gnu-ld -print 2>/dev/null
+${BUILD_DIR}/../.apt/usr/bin/i686-linux-gnu-ld --version
 
 export CFLAGS="-O2 -march=native –-with-ld=${BUILD_DIR}/../.apt/usr/bin/i686-linux-gnu-ld"
 export CXXFLAGS="$CFLAGS"
