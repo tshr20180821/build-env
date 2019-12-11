@@ -32,6 +32,8 @@ done
 echo ${PATH}
 export PATH=${BUILD_DIR}/../app/.apt/usr/i686-linux-gnu/bin:${PATH}
 
+cc --version
+
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
