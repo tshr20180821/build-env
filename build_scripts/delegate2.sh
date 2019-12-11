@@ -31,7 +31,7 @@ done
 
 find / -name i686-linux-gnu-ld -print 2>/dev/null
 
-export CFLAGS="-O2 -march=native –-with-ld=i686-linux-gnu-ld"
+export CFLAGS="-O2 -march=native –-with-ld=${BUILD_DIR}/../.apt/usr/bin/i686-linux-gnu-ld"
 export CXXFLAGS="$CFLAGS"
 
 pushd /tmp
