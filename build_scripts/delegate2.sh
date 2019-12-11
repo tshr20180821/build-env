@@ -58,7 +58,7 @@ pushd delegate9.9.13
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
-time make ADMIN="admin@localhost"
+time make ADMIN="admin@localhost" CC=i686-linux-gnu-gcc-5
 
 ldd ./src/delegated
 
