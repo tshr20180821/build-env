@@ -32,6 +32,7 @@ done
 pushd ${BUILD_DIR}/../.apt/usr/i686-linux-gnu/bin
 ln -s ../../bin/i686-linux-gnu-gcc-5 gcc
 ln -s ../../bin/i686-linux-gnu-gcc-5 cc
+ldd ld
 popd
 
 echo ${PATH}
