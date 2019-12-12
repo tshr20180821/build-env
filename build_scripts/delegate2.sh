@@ -16,7 +16,7 @@ echo libssl hold | dpkg --set-selections
 apt-get ${APT_OPTIONS} -s -V upgrade | grep -o -E '^   [a-zA-Z0-9].+? ' | awk '{print $1}' >/tmp/update_list
 
 echo "gcc-5" >>/tmp/update_list
-# echo "libc6" >>/tmp/update_list
+echo "g++-5" >>/tmp/update_list
 
 cat /tmp/update_list
 
