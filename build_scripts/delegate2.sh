@@ -45,7 +45,7 @@ cc --version
 
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
-export LDFLAGS="-L/app/.apt/usr/i686-linux-gnu/lib"
+export LDFLAGS="-L/app/.apt/usr/i686-linux-gnu/lib -L/lib/x86_64-linux-gnu"
 
 pushd /tmp
 
