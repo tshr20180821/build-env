@@ -35,7 +35,7 @@ ln -s i686-linux-gnu-gcc-5 cc
 popd
 
 echo ${PATH}
-export PATH=${BUILD_DIR}/../app/.apt/usr/i686-linux-gnu/bin:${PATH}
+export PATH=${BUILD_DIR}/../.apt/usr/i686-linux-gnu/bin:${PATH}
 
 cc --version
 
