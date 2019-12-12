@@ -17,8 +17,10 @@ apt-get ${APT_OPTIONS} -s -V upgrade | grep -o -E '^   [a-zA-Z0-9].+? ' | awk '{
 
 # echo "gcc-4.8" >>/tmp/update_list
 # echo "g++-4.8" >>/tmp/update_list
-echo "gcc-5" >>/tmp/update_list
-echo "g++-5" >>/tmp/update_list
+# echo "gcc-5" >>/tmp/update_list
+# echo "g++-5" >>/tmp/update_list
+echo "gcc-8" >>/tmp/update_list
+echo "g++-8" >>/tmp/update_list
 
 cat /tmp/update_list
 
@@ -46,7 +48,8 @@ rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
 # time make ADMIN="admin@localhost" CC=gcc-4.8 CXX=g++-4.8
-time make ADMIN="admin@localhost" CC=gcc-5 CXX=g++-5
+# time make ADMIN="admin@localhost" CC=gcc-5 CXX=g++-5
+time make ADMIN="admin@localhost" CC=gcc-8 CXX=g++-8
 
 ldd ./src/delegated
 
