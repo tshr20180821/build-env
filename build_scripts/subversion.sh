@@ -19,7 +19,7 @@ tar xf subversion-1.13.0.tar.bz2
 pushd subversion-1.13.0
 ./configure --help
 time ./configure --prefix=/tmp/usr --enable-shared=no
-time make
+time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 make install
 popd
 popd
