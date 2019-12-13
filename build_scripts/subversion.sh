@@ -16,7 +16,7 @@ time curl -O http://ftp.riken.jp/net/apache/subversion/subversion-1.13.0.tar.bz2
 
 tar xf subversion-1.13.0.tar.bz2
 
-pushd subversion-1.13.0.tar.bz2
+pushd subversion-1.13.0
 ./configure --help
 time ./configure --prefix=/tmp/usr
 time make
