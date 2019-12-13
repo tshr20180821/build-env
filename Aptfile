@@ -8,6 +8,7 @@ lbzip2
 
 # -- subversion --
 libsqlite3-dev
+utf8proc
 
 # -- mercurial --
 # libpython3-dev
