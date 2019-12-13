@@ -12,11 +12,9 @@ export LDFLAGS="-fuse-ld=gold"
 
 pushd /tmp
 
-curl -L -O https://github.com/kornelski/pngquant/archive/${PNGQUANT_VERSION}.tar.gz
+time git clone --recursive --depth=1 -b ${PNGQUANT_VERSION} https://github.com/kornelski/pngquant.git
 
-tar xf ${PNGQUANT_VERSION}.tar.gz
-
-pushd pngquant-${PNGQUANT_VERSION}
+pushd pngquant
 ./configure --help
 time ./configure --prefix=/tmp/usr
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
