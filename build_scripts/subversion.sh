@@ -18,7 +18,7 @@ tar xf subversion-1.13.0.tar.bz2
 
 pushd subversion-1.13.0
 ./configure --help
-time ./configure --prefix=/tmp/usr
+time ./configure --prefix=/tmp/usr --enable-shared=no
 time make
 make install
 popd
