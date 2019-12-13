@@ -6,8 +6,8 @@ date
 
 PNGQUANT_VERSION=2.12.1
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -I${PYTHON_H}"
-export CXXFLAGS="$CFLAGS"
+# export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+# export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
 pushd /tmp
