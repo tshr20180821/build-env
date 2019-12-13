@@ -16,7 +16,7 @@ time git clone --recursive --depth=1 -b ${PNGQUANT_VERSION} https://github.com/k
 
 pushd pngquant
 ./configure --help
-time ./configure --prefix=/tmp/usr
+time ./configure --prefix=/tmp/usr --with-openmp=static
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 make install
 popd
