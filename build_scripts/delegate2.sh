@@ -34,8 +34,8 @@ BUILD_DIR=$(pwd)
 
 # ***** delegate *****
 
-# export CFLAGS="-O2 -march=native -std=gnu++98"
-export CFLAGS="-O2 -march=native"
+export CFLAGS="-O2 -march=native -std=gnu++98"
+# export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
 pushd /tmp
