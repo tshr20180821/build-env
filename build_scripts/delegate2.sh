@@ -47,6 +47,7 @@ pushd delegate9.9.13
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
+diff ${BUILD_DIR}/../files/fpoll.h include/fpoll.h
 cp -f ${BUILD_DIR}/../files/fpoll.h include/
 
 # time make ADMIN="admin@localhost" CC=gcc-4.8 CXX=g++-4.8
