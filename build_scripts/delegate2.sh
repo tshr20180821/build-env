@@ -34,7 +34,7 @@ done
 
 # ***** delegate *****
 
-export CFLAGS="-O2 -march=native"
+export CFLAGS="-O2 -march=native -std=gnu++98"
 export CXXFLAGS="$CFLAGS"
 
 pushd /tmp
