@@ -8,6 +8,8 @@ BUILD_DIR=$(pwd)
 
 SUBVERSION_VERSION=1.13.0
 
+find / -name libsqlite3.so -print 2>/dev/null
+
 ls -lang ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -L${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu"
