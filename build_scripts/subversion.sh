@@ -22,6 +22,7 @@ export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
 
+mkdir /tmp/usr/bin
 cp ../bin/ccache /tmp/usr/bin/
 
 # if [ -v TARGET_SSH_PORT ]; then
