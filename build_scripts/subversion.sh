@@ -72,17 +72,17 @@ pushd /tmp
 time tar cf ccache_cache.tar.bz2 --use-compress-prog=lbzip2 ./ccache_cache
 ls -lang ccache_cache.tar.bz2
 mv ccache_cache.tar.bz2 repo/build-env/ccache_cache/
-pushd repo/build-env
-git init
-git config --global user.email "user"
-git config --global user.name "user"
+# pushd repo/build-env
+# git init
+# git config --global user.email "user"
+# git config --global user.name "user"
 # 1MB -> 30MB
 # git config --global http.postbuffer 31457280
-git add .
-git commit -a -m "."
-git remote set-url origin https://github.com/tshr20140816/build-env
-time git push origin master
-popd
+# git add .
+# git commit -a -m "."
+# git remote set-url origin https://github.com/tshr20140816/build-env
+# time git push origin master
+# popd
 popd
 
 tree /tmp/usr
