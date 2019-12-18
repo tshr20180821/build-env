@@ -18,9 +18,9 @@ popd
 
 ls -lang ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
-# cflags_option=$(cat /tmp/cflags_option)
-# export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
+# export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+cflags_option=$(cat /tmp/cflags_option)
+export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 export LD_LIBRARY_PATH="{BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu"
@@ -29,18 +29,12 @@ export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-mkdir -m 0777 -p /tmp/usr/bin
-cp ../bin/ccache /tmp/usr/bin/
-chmod +x /tmp/usr/bin/ccache
-/tmp/usr/bin/ccache --version
-
-# if [ -v TARGET_SSH_PORT ]; then
-#   export PARALLEL_COUNT=9
-#   export CCACHE_PREFIX="/tmp/bin/distcc"
-# else
-#   export PARALLEL_COUNT=2
-# fi
-export PARALLEL_COUNT=2
+if [ -v TARGET_SSH_PORT ]; then
+  export PARALLEL_COUNT=9
+  export CCACHE_PREFIX="/tmp/bin/distcc"
+else
+  export PARALLEL_COUNT=2
+fi
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
@@ -61,7 +55,7 @@ tar xf subversion-${SUBVERSION_VERSION}.tar.bz2
 pushd subversion-${SUBVERSION_VERSION}
 ./configure --help
 time ./configure --prefix=/tmp/usr --enable-shared=no
-time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 21 make -j$(grep -c -e processor /proc/cpuinfo)
 # make install
 popd
 popd
