@@ -54,8 +54,8 @@ tar xf subversion-${SUBVERSION_VERSION}.tar.bz2
 
 pushd subversion-${SUBVERSION_VERSION}
 ./configure --help
-time ./configure --prefix=/tmp/usr --enable-shared=no
-time timeout -sKILL 21 make -j$(grep -c -e processor /proc/cpuinfo)
+# time ./configure --prefix=/tmp/usr --enable-shared=no
+# time timeout -sKILL 21 make -j$(grep -c -e processor /proc/cpuinfo)
 # make install
 popd
 popd
