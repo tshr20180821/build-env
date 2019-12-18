@@ -2,10 +2,6 @@
 
 set -x
 
-whereis git
-git --version
-/app/www/git --version
-
 # ***** env ******
 
 echo 'Processor Count : ' $(grep -c -e processor /proc/cpuinfo)
@@ -19,8 +15,8 @@ whoami
 whereis gcc
 gcc --version
 
-ldd ./svn
-./svn --version
+ldd ./www/svn
+./www/svn --version
 
 echo 'ulimit -u : ' $(ulimit -u)
 echo 'getconf ARG_MAX : ' $(printf "%'d\n" $(getconf ARG_MAX))
