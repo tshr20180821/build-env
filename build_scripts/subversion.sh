@@ -20,10 +20,10 @@ ls -lang ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 cflags_option=$(cat /tmp/cflags_option)
-export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
+# export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
-export LD_LIBRARY_PATH="{BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu"
+# export LD_LIBRARY_PATH="{BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu"
 
 export CCACHE_DIR=/tmp/ccache_cache
 
