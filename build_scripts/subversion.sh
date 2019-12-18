@@ -55,7 +55,7 @@ tar xf subversion-${SUBVERSION_VERSION}.tar.bz2
 pushd subversion-${SUBVERSION_VERSION}
 ./configure --help
 time timeout -sKILL 60 ./configure --prefix=/tmp/usr --enable-shared=no
-time timeout -sKILL 210 make -j${PARALLEL_COUNT}
+time timeout -sKILL 240 make -j${PARALLEL_COUNT}
 # make install
 popd
 popd
