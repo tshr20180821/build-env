@@ -9,6 +9,7 @@ BUILD_DIR=$(pwd)
 SUBVERSION_VERSION=1.13.0
 
 find / -name libsqlite3.so -print 2>/dev/null
+find / -name libsqlite3.so.0.8.6 -print 2>/dev/null
 
 ls -lang ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
 
@@ -23,8 +24,10 @@ export CCACHE_DIR=/tmp/ccache_cache
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-mkdir -p /tmp/usr/bin
+mkdir -m 0777 -p /tmp/usr/bin
 cp ../bin/ccache /tmp/usr/bin/
+chmod +x /tmp/usr/bin/ccache
+/tmp/usr/bin/ccache --version
 
 # if [ -v TARGET_SSH_PORT ]; then
 #   export PARALLEL_COUNT=9
