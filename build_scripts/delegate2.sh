@@ -28,7 +28,7 @@ done
 
 # ***** delegate *****
 
-export CFLAGS="-O2 -march=native -std=gnu++98"
+export CFLAGS="-O2 -march=native -std=gnu++98 -Wno-narrowing -DHCASE=1"
 export CXXFLAGS="$CFLAGS"
 
 pushd /tmp
@@ -41,8 +41,8 @@ pushd delegate9.9.13
 rm ./src/builtin/mssgs/news/artlistfooter.dhtml
 echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
-diff ${BUILD_DIR}/../files/fpoll.h include/fpoll.h
-cp -f ${BUILD_DIR}/../files/fpoll.h include/
+# diff ${BUILD_DIR}/../files/fpoll.h include/fpoll.h
+# cp -f ${BUILD_DIR}/../files/fpoll.h include/
 
 time make ADMIN="admin@localhost"
 
