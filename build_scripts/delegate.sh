@@ -10,7 +10,14 @@ BUILD_DIR=$(pwd)
 
 rm -f /tmp/update_list
 
-APT_OPTIONS="-o debug::nolocking=true -o dir::cache=/tmp -o dir::state=/tmp"
+cat /etc/apt/sources.list >/tmp/sources.list
+
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic main restricted universe multiverse" >>/tmp/sources.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-security main restricted universe multiverse" >>/tmp/sources.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-updates main restricted universe multiverse" >>/tmp/sources.list
+echo "deb http://archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse" >>/tmp/sources.list
+
+APT_OPTIONS="-o debug::nolocking=true -o dir::cache=/tmp -o dir::state=/tmp -o dir::etc::sourcelist=/tmp/sources.list"
 APT_FORCE_YES="-y --allow-remove-essential --allow-change-held-packages"
 
 apt-get ${APT_OPTIONS} update
