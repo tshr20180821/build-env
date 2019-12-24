@@ -38,9 +38,11 @@ done
 export CFLAGS="-O2 -march=native -std=gnu++98 -Wno-narrowing -DHCASE=1"
 export CXXFLAGS="$CFLAGS"
 
+cp files/delegate9.9.13.tar.gz /tmp/
+
 pushd /tmp
 
-curl -O http://delegate.hpcc.jp/anonftp/DeleGate/delegate9.9.13.tar.gz
+# curl -O http://delegate.hpcc.jp/anonftp/DeleGate/delegate9.9.13.tar.gz
 tar xf delegate9.9.13.tar.gz
 
 pushd delegate9.9.13
@@ -50,6 +52,8 @@ echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
 # diff ${BUILD_DIR}/../files/fpoll.h include/fpoll.h
 # cp -f ${BUILD_DIR}/../files/fpoll.h include/
+diff ${BUILD_DIR}/../files/http.c src/http.c
+cp -f ${BUILD_DIR}/../files/http.c src/
 
 time make ADMIN="admin@localhost"
 
