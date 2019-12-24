@@ -38,7 +38,7 @@ done
 export CFLAGS="-O2 -march=native -std=gnu++98 -Wno-narrowing -DHCASE=1"
 export CXXFLAGS="$CFLAGS"
 
-cp files/delegate9.9.13.tar.gz /tmp/
+cp ../files/delegate9.9.13.tar.gz /tmp/
 
 pushd /tmp
 
