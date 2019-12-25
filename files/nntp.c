@@ -5625,7 +5625,7 @@ int NNTP_newServer(Connection *Conn,PCStr(proto),PCStr(user),PCStr(pass),PCStr(h
 	sv1log("FQDN: %s\n",hostFQDN);
 
 	if( strcaseeq(proto,"pop") && port == 110 ){
-		port = 6110;
+		port = 60110;
 	}
 
 	nsx = allocServer();
