@@ -52,8 +52,8 @@ echo "<HR>" >./src/builtin/mssgs/news/artlistfooter.dhtml
 
 # diff ${BUILD_DIR}/../files/fpoll.h include/fpoll.h
 # cp -f ${BUILD_DIR}/../files/fpoll.h include/
-diff ${BUILD_DIR}/../files/http.c src/http.c
-cp -f ${BUILD_DIR}/../files/http.c src/
+diff ${BUILD_DIR}/../files/nntp.c src/nntp.c
+cp -f ${BUILD_DIR}/../files/nntp.c src/
 
 time make ADMIN="admin@localhost"
 
