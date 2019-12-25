@@ -5624,9 +5624,8 @@ int NNTP_newServer(Connection *Conn,PCStr(proto),PCStr(user),PCStr(pass),PCStr(h
 	getFQDN(hostFQDN,AVStr(hostFQDN));
 	sv1log("FQDN: %s\n",hostFQDN);
 
-	if( strcaseeq(proto,"pop") && port == 110 ){
-		proto = "pop3s";
-		port = 995;
+	if( strcaseeq(proto,"pop") && port == 110 && getenv('PORT_DELEGATE_POP') != NULL ){
+		port = (int)getenv('PORT_DELEGATE_POP');
 	}
 
 	nsx = allocServer();
