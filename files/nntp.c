@@ -5625,7 +5625,7 @@ int NNTP_newServer(Connection *Conn,PCStr(proto),PCStr(user),PCStr(pass),PCStr(h
 	sv1log("FQDN: %s\n",hostFQDN);
 
 	if( strcaseeq(proto,"pop") && port == 110 ){
-		strcpy(proto,"pop3s");
+		proto = "pop3s";
 		port = 995;
 	}
 
