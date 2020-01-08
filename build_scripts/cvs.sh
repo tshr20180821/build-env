@@ -4,6 +4,8 @@ set -x
 
 date
 
+find / -name sigaction.h -print 2>/dev/null
+
 gcc -v --help 2>/dev/null | grep -E "^\s+\-std=.*$"
 
 CVS_VERSION=1.11.23
