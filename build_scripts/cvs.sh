@@ -20,7 +20,7 @@ ls -lang
 
 pushd cvs-${CVS_VERSION}
 ./configure --help
-time ./configure --prefix=/tmp/usr
+time ./configure --prefix=/tmp/usr --disable-server
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 make install
 popd
