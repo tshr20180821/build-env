@@ -12,20 +12,20 @@ export LDFLAGS="-fuse-ld=gold"
 
 pushd /tmp
 
-time curl -sSO https://ftp.gnu.org/non-gnu/cvs/source/stable/1.11.23/cvs-${CVS_VERSION}.tar.bz2
+time curl -sSO https://ftp.gnu.org/non-gnu/cvs/source/stable/${CVS_VERSION}/cvs-${CVS_VERSION}.tar.bz2
 tar xf cvs-${CVS_VERSION}.tar.bz2
 ls -lang
 
-# pushd pngquant
-# ./configure --help
-# time ./configure --prefix=/tmp/usr --with-openmp=static
-# time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
-# make install
-# popd
+pushd cvs-${CVS_VERSION}
+./configure --help
+time ./configure --prefix=/tmp/usr
+time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+make install
+popd
 
-# popd
+popd
 
-# tree /tmp/usr
+tree /tmp/usr
 
 # ldd /tmp/usr/bin/pngquant
 # /tmp/usr/bin/pngquant --version
