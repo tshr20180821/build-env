@@ -11,7 +11,7 @@ gcc -v --help 2>/dev/null | grep -E "^\s+\-std=.*$"
 CVS_VERSION=1.11.23
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -std=c99"
-export CFLAGS="-std=gnu99"
+export CFLAGS="-ansi"
 # export CXXFLAGS="$CFLAGS"
 # export LDFLAGS="-fuse-ld=gold"
 
