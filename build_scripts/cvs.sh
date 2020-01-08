@@ -6,7 +6,7 @@ date
 
 CVS_VERSION=1.11.23
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -std=gnu++98"
+export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -std=c89"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
