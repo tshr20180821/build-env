@@ -12,8 +12,8 @@ export LDFLAGS="-fuse-ld=gold"
 
 pushd /tmp
 
-curl -LO https://ymu.dl.osdn.jp/nkf/70406/nkf-2.1.5.tar.gz
-tar xf nkf-2.1.5.tar.gz
+curl -LO https://ymu.dl.osdn.jp/nkf/70406/nkf-${NKF_VERSION}.tar.gz
+tar xf nkf-${NKF_VERSION}.tar.gz
 ls -lang
 pushd nkf-${NKF_VERSION}
 
@@ -24,10 +24,10 @@ ls -lang
 popd
 popd
 
-# ldd /tmp/usr/bin/parallel
+ldd /tmp/nkf-${NKF_VERSION}/nkf
 
-# /tmp/usr/bin/parallel --version
+/tmp/nkf-${NKF_VERSION}/nkf --version
 
-# cp /tmp/usr/bin/parallel ../www/
+cp /tmp/nkf-${NKF_VERSION}/nkf ../www/
 
 date
