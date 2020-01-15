@@ -12,7 +12,7 @@ export LDFLAGS="-fuse-ld=gold"
 
 pushd /tmp
 
-curl -Lo nkf-2.1.5.tar.gz https://ja.osdn.net/frs/redir.php?m=ymu&f=nkf/70406/nkf-2.1.5.tar.gz
+curl -LO https://ymu.dl.osdn.jp/nkf/70406/nkf-2.1.5.tar.gz
 tar xf nkf-2.1.5.tar.gz
 ls -lang
 pushd nkf-${NKF_VERSION}
