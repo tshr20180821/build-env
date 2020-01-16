@@ -15,6 +15,7 @@ pushd /tmp
 time git clone --recursive --depth=1 -b ${LBZIP2_VERSION} https://github.com/kjn/lbzip2.git
 
 pushd lbzip2
+ls -lang
 autoconf
 ./configure --help
 time ./configure --prefix=/tmp/usr
