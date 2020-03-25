@@ -80,7 +80,7 @@ chmod 777 /tmp/usr/bin/ccache
 
 mkdir /tmp/repo
 pushd /tmp/repo
-git clone --depth=1 https://github.com/tshr20140816/build-env.git
+git clone --depth=1 https://github.com/tshr20180821/build-env.git
 ls -lang
 popd
 
