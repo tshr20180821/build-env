@@ -3,6 +3,7 @@
 set -x
 
 date
+timestamp=$(date +%s)
 
 chmod +x ./start_web.sh
 
@@ -216,3 +217,5 @@ pgrep -f "ssh2: /tmp/ssh_master-${TARGET_USER}@0.0.0.0:${TARGET_SSH_PORT}" | xar
 rm -rf .apt/usr/share/man .apt/usr/share/doc
 
 date
+timestamp=$(($(date +%s)-${timestamp}))
+date -d @${timestamp} +"%M:%S"
