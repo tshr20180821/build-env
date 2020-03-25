@@ -3,7 +3,7 @@
 set -x
 
 date
-$timestamp=(date +%s)
+timestamp=$(date +%s)
 
 CURL_VERSION=7.69.1
 
@@ -103,5 +103,5 @@ cp /tmp/usr/bin/curl ../www/
 
 date
 
-$timestamp=$(($timestamp-(date +%s)))
-date -d @$timestamp +"%M:%S"
+timestamp=$((${timestamp}-(date +%s)))
+date -d @${timestamp} +"%M:%S"
