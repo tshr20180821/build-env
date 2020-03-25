@@ -103,5 +103,5 @@ cp /tmp/usr/bin/curl ../www/
 
 date
 
-timestamp=$((${timestamp}-(date +%s)))
+timestamp=$((${timestamp}-$(date +%s)))
 date -d @${timestamp} +"%M:%S"
