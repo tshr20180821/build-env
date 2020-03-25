@@ -28,6 +28,7 @@ if [ ${NEED_DISTCC} != "yes" ]; then
   chmod +x ./${BUILD_SCRIPT_NAME}.sh
   ./${BUILD_SCRIPT_NAME}.sh
   popd
+  ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
   date
   exit
 fi
