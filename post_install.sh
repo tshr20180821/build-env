@@ -218,4 +218,4 @@ rm -rf .apt/usr/share/man .apt/usr/share/doc
 
 date
 timestamp=$(($(date +%s)-${timestamp}))
-date -d @${timestamp} +"%M:%S"
+date -d @${timestamp} +"%-M:%S"
