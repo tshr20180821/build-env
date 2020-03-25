@@ -15,9 +15,6 @@ whoami
 whereis gcc
 gcc --version
 
-ldd ./www/svn
-./www/svn --version
-
 echo 'ulimit -u : ' $(ulimit -u)
 echo 'getconf ARG_MAX : ' $(printf "%'d\n" $(getconf ARG_MAX))
 
