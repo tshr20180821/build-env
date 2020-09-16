@@ -4,7 +4,7 @@ set -x
 
 date
 
-PNGQUANT_VERSION=2.12.1
+PNGQUANT_VERSION=2.12.5
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 # export CXXFLAGS="$CFLAGS"
