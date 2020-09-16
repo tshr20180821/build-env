@@ -7,8 +7,8 @@ lbzip2
 # https://code.launchpad.net/~apt-fast/+archive/ubuntu/stable/+files/apt-fast_1.9.8-1~ubuntu18.04.1_all.deb
 
 # -- subversion --
-# libsqlite3-dev
-# libutf8proc-dev
+libsqlite3-dev
+libutf8proc-dev
 
 # -- mercurial --
 # libpython3-dev
@@ -25,12 +25,12 @@ lbzip2
 # libgio-cil
 
 # -- curl --
-libssh2-1-dev
-libbrotli-dev
-libnghttp2-14
-libnghttp2-dev
-libpsl5
-libpsl-dev
+# libssh2-1-dev
+# libbrotli-dev
+# libnghttp2-14
+# libnghttp2-dev
+# libpsl5
+# libpsl-dev
 
 # -- ccache --
 # libzstd-dev
