@@ -6,7 +6,7 @@ date
 
 BUILD_DIR=$(pwd)
 
-SUBVERSION_VERSION=1.13.0
+SUBVERSION_VERSION=1.14.0
 
 find / -name libsqlite3.so -print 2>/dev/null
 find / -name libsqlite3.so.0.8.6 -print 2>/dev/null
