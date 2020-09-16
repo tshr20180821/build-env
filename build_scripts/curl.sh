@@ -60,7 +60,7 @@ tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
 ./configure --help
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
-  --with-libssh2 --with-brotli --with-nghttp2 --with-zstd \
+  --with-libssh2 --with-brotli --with-nghttp2 \
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
 
 # time timeout -sKILL 210 make
