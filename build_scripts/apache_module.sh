@@ -56,9 +56,9 @@ tar xf c-ares-1.14.0.tar.gz
 target=c-ares-1.14.0
 pushd ${target}
 
-./configure --prefix=/tmp/usr
-time timeout -sKILL 180 make -j${PARALLEL_COUNT}
-make install
+./configure --prefix=/tmp/usr --config-cache
+# time timeout -sKILL 180 make -j${PARALLEL_COUNT}
+# make install
 
 popd
 
