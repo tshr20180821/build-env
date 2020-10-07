@@ -52,11 +52,13 @@ wait
 
 # ***** c-ares *****
 
+# 1.16.1
 tar xf c-ares-1.14.0.tar.gz
 target=c-ares-1.14.0
 pushd ${target}
 
 ./configure --prefix=/tmp/usr --config-cache
+cp ./config.cache /tmp/config.cache.c-ares
 # time timeout -sKILL 180 make -j${PARALLEL_COUNT}
 # make install
 
@@ -90,5 +92,6 @@ tree /tmp/usr
 # /tmp/usr/bin/curl --version
 
 # cp /tmp/usr/bin/curl ../www/
+cp /tmp/config.cache.c-ares ../www/
 
 date
