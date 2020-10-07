@@ -18,6 +18,7 @@ pushd brotli-${BROTLI_VERSION}
 ls -lang
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 ls -lang bin
+tree ./
 popd
 popd
 
