@@ -5,7 +5,8 @@ set -x
 
 date
 
-BROTLI_VERSION=1.0.9
+# BROTLI_VERSION=1.0.9
+BROTLI_VERSION=1.0.7
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
