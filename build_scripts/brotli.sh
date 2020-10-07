@@ -17,6 +17,7 @@ curl -L -O https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz
 mkdir usr
 tar xf cmake-3.12.0-Linux-x86_64.tar.gz -C ./usr --strip=1
 tree ./usr
+export PATH="/tmp/usr/bin:${PATH}"
 
 curl -L -O https://github.com/google/brotli/archive/v${BROTLI_VERSION}.tar.gz
 tar xf v${BROTLI_VERSION}.tar.gz
