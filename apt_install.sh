@@ -4,9 +4,11 @@ set -x
 
 date -d '9 hours'
 
-BUILD_DIR=$(pwd)
+if [ ! -f /tmp/update_list ]; then
+  exit
+fi
 
-rm -f /tmp/update_list
+BUILD_DIR=$(pwd)
 
 tree /etc/apt/sources.list.d
 
@@ -18,11 +20,6 @@ APT_FORCE_YES="-y --allow-remove-essential --allow-change-held-packages"
 
 apt-get ${APT_OPTIONS} update
 apt-get ${APT_OPTIONS} -s -V upgrade | grep -o -E '^   [a-zA-Z0-9].+? ' | awk '{print $1}' >/tmp/update_list
-
-cp /tmp/update_list files/
-
-# for delegate
-# cat /tmp/update_list | grep -v libssl-dev | grep -v libssl1.1 >/tmp/update_list
 
 cat /tmp/update_list
 
