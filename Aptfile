@@ -35,9 +35,9 @@ lbzip2
 # libpsl-dev
 
 # -- ccache --
-libzstd-dev
-libb2-dev
-gperf
+# libzstd-dev
+# libb2-dev
+# gperf
 
 # -- aria2 --
 # aria2
