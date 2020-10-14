@@ -30,4 +30,4 @@ ls -lang /tmp/archives
 ls -1 /tmp/archives/*.deb
 
 find /tmp/archives -name "*.deb" -type f -print0 | \
-  xargs --max-procs=1 --max-args=1 --null -I{} --verbose dpkg -x {} ${BUILD_DIR}/.apt/
+  xargs --max-procs=1 --max-args=1 --null -I{} --verbose dpkg -x {} ${BUILD_DIR}/../.apt/
