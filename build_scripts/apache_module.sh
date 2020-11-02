@@ -60,7 +60,7 @@ tar xf c-ares-1.16.1.tar.gz
 target=c-ares-1.16.1
 pushd ${target}
 
-if [ -f ${BUILD_DIR}/ccache_cache/config.cache.c-ares ]; then
+if [ -f ${BUILD_DIR}/../ccache_cache/config.cache.c-ares ]; then
   ./configure --prefix=/tmp/usr --cache-file=${BUILD_DIR}/ccache_cache/config.cache.c-ares
 else
   ./configure --prefix=/tmp/usr --config-cache
