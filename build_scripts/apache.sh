@@ -53,6 +53,7 @@ pushd ${target}
 ./configure --prefix=/tmp/usr2 --enable-brotli \
   --enable-mods-shared="few"
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
+make install
 
 popd
 
