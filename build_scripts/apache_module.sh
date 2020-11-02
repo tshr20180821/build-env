@@ -68,7 +68,7 @@ else
   cp ./config.cache /tmp/config.cache.c-ares
 fi
 time timeout -sKILL 180 make -j${PARALLEL_COUNT}
-make install
+make install &
 
 popd
 
