@@ -50,7 +50,7 @@ tar xf httpd-2.4.46.tar.bz2
 target=httpd-2.4.46
 pushd ${target}
 ./configure --help
-./configure --prefix=/tmp/usr --enable-brotli \
+./configure --prefix=/tmp/usr2 --enable-brotli \
   --enable-mods-shared="few"
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
 
@@ -77,4 +77,4 @@ time git push origin master
 popd
 popd
 
-ls -lang /tmp/usr/modules/
+tree /tmp/usr2
