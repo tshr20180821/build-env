@@ -44,6 +44,12 @@ pushd /tmp
 wget https://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.46.tar.bz2
 
 tar xf httpd-2.4.46.tar.bz2
-ls -lang
+target=httpd-2.4.46
+pushd ${target}
+./configure --help
+./configure --prefix=/tmp/usr
+time timeout -sKILL 90 make -j${PARALLEL_COUNT}
+
+popd
 
 popd
