@@ -5,6 +5,7 @@ set -x
 date
 
 CURL_VERSION=7.73.0
+# 7.73.0 - --without-zstd
 
 # - Aptfile -
 # libssh2-1-dev
@@ -13,6 +14,7 @@ CURL_VERSION=7.73.0
 # libnghttp2-dev
 # libpsl5
 # libpsl-dev
+# libzstd-dev
 echo "libssh2-1-dev" >/tmp/update_list
 echo "libbrotli-dev" >>/tmp/update_list
 echo "libnghttp2-14" >>/tmp/update_list
