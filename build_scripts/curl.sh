@@ -20,7 +20,6 @@ echo "libnghttp2-dev" >>/tmp/update_list
 echo "libpsl5" >>/tmp/update_list
 echo "libpsl-dev" >>/tmp/update_list
 echo "libzstd-dev" >>/tmp/update_list
-echo "zstd" >>/tmp/update_list
 bash ../apt_install.sh
 
 printenv | sort
