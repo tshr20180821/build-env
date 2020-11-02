@@ -61,7 +61,7 @@ target=c-ares-1.16.1
 pushd ${target}
 
 if [ -f ${BUILD_DIR}/../ccache_cache/config.cache.c-ares ]; then
-  ./configure --prefix=/tmp/usr --cache-file=${BUILD_DIR}/ccache_cache/config.cache.c-ares
+  ./configure --prefix=/tmp/usr --cache-file=${BUILD_DIR}/../ccache_cache/config.cache.c-ares
 else
   ./configure --prefix=/tmp/usr --config-cache
   cp ./config.cache /tmp/config.cache.c-ares
