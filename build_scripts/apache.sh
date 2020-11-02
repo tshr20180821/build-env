@@ -50,8 +50,13 @@ tar xf httpd-2.4.46.tar.bz2
 target=httpd-2.4.46
 pushd ${target}
 ./configure --help
-./configure --prefix=/tmp/usr2 --enable-brotli \
-  --enable-mods-shared="few"
+./configure --prefix=/tmp/usr2 \
+  --enable-mods-shared="few" \
+  --enable-brotli --enable-file-cache \
+  --disable-authn-core --disable-authn-file --disable-access-compat --disable-authn-core \
+  --disable-authz-host --disable-authz-user --disable-authz-groupfile --disable-auth-basic \
+  --disable-autoindex --disable-alias --disable-dir --disable-env --disable-filter --disable-headers \
+  --disable-log_config --disable-mime --disable-reqtimeout --disable-setenvif --disable-status --disable-unixd
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
 make install
 
@@ -78,4 +83,4 @@ time git push origin master
 popd
 popd
 
-tree /tmp/usr2
+ls -lang /tmp/usr2/modules
