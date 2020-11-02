@@ -76,3 +76,5 @@ git remote set-url origin https://github.com/tshr20180821/build-env
 time git push origin master
 popd
 popd
+
+ls -lang /tmp/usr2/modules/
