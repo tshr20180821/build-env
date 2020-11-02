@@ -67,7 +67,7 @@ else
   ./configure --prefix=/tmp/usr --config-cache
   cp ./config.cache /tmp/config.cache.c-ares
 fi
-time timeout -sKILL 180 make -j${PARALLEL_COUNT}
+time timeout -sKILL 90 make -j${PARALLEL_COUNT}
 make install &
 
 popd
@@ -87,6 +87,8 @@ else
   ./configure --prefix=/tmp/usr --config-cache
   cp ./config.cache /tmp/config.cache.jansson
 fi
+time timeout -sKILL 90 make -j${PARALLEL_COUNT}
+make install &
 
 popd
 
