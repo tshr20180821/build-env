@@ -43,7 +43,8 @@ pushd /tmp
 
 # wget https://c-ares.haxx.se/download/c-ares-1.14.0.tar.gz &
 wget https://github.com/c-ares/c-ares/releases/download/cares-1_16_1/c-ares-1.16.1.tar.gz &
-wget http://www.digip.org/jansson/releases/jansson-2.11.tar.bz2 &
+# wget http://www.digip.org/jansson/releases/jansson-2.11.tar.bz2 &
+wget http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2 &
 wget https://github.com/nghttp2/nghttp2/releases/download/v1.32.0/nghttp2-1.32.0.tar.xz &
 wget https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz &
 git clone --depth 1 https://github.com/google/brotli &
@@ -71,6 +72,24 @@ make install
 
 popd
 
+# ***** jansson *****
+
+# 2.13.1
+tar xf jansson-2.13.1.tar.bz2
+target=jansson-2.13.1
+
+pushd ${target}
+
+./configure --help
+if [ -f ${BUILD_DIR}/../ccache_cache/config.cache.jansson ]; then
+  ./configure --prefix=/tmp/usr --cache-file=${BUILD_DIR}/../ccache_cache/config.cache.jansson
+else
+  ./configure --prefix=/tmp/usr --config-cache
+  cp ./config.cache /tmp/config.cache.jansson
+fi
+
+popd
+
 popd
 
 ccache -s
@@ -94,11 +113,7 @@ popd
 
 tree /tmp/usr
 
-# ldd /tmp/usr/bin/curl
-
-# /tmp/usr/bin/curl --version
-
-# cp /tmp/usr/bin/curl ../www/
 cp /tmp/config.cache.c-ares ../www/
+cp /tmp/config.cache.jansson ../www/
 
 date
