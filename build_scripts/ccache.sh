@@ -4,7 +4,8 @@ set -x
 
 date
 
-CCACHE_VERSION=3.7.12
+# CCACHE_VERSION=3.7.12
+CCACHE_VERSION=4.0
 
 # - Aptfile -
 # libzstd-dev
