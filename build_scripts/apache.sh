@@ -85,5 +85,5 @@ popd
 
 ls -lang /tmp/usr/modules
 
-cp /tmp/usr/modules/mod_brotli.so ./www/
-cp /tmp/usr/modules/mod_file_cache.so ./www/
+cp /tmp/usr/modules/mod_brotli.so ../www/
+cp /tmp/usr/modules/mod_file_cache.so ../www/
