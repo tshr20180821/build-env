@@ -47,8 +47,10 @@ wget https://github.com/c-ares/c-ares/releases/download/cares-1_16_1/c-ares-1.16
 wget http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2 &
 # wget https://github.com/nghttp2/nghttp2/releases/download/v1.32.0/nghttp2-1.32.0.tar.xz &
 wget https://github.com/nghttp2/nghttp2/releases/download/v1.41.0/nghttp2-1.41.0.tar.xz &
-wget https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz &
-git clone --depth 1 https://github.com/google/brotli &
+# wget https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz &
+wget https://cmake.org/files/v3.18/cmake-3.18.4-Linux-x86_64.tar.gz &
+# git clone --depth 1 https://github.com/google/brotli &
+wget https://github.com/google/brotli/archive/v1.0.9.tar.gz &
 wget http://ftp.jaist.ac.jp/pub/apache//apr/apr-1.6.3.tar.bz2 &
 wget http://ftp.jaist.ac.jp/pub/apache//apr/apr-util-1.6.1.tar.bz2 &
 wget http://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.34.tar.gz &
@@ -116,6 +118,27 @@ IBCARES_CFLAGS="-I/tmp/usr/include" LIBCARES_LIBS="-L/tmp/usr/lib -lcares" \
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
 make install &
 
+popd
+
+# ***** cmake *****
+
+# 3.18.4
+tar xf cmake-3.18.4-Linux-x86_64.tar.gz -C /tmp/usr --strip=1 
+
+# ***** brotli *****
+
+# 1.0.9
+tar xf v1.0.9.tar.gz
+target=brotli-1.0.9
+pushd ${target}
+mkdir out
+pushd out
+../configure-cmake --help
+../configure-cmake --prefix=/tmp/usr --disable-debug
+time timeout -sKILL 90 make -j${PARALLEL_COUNT}
+make install &
+
+popd
 popd
 
 popd
