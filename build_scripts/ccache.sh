@@ -24,7 +24,13 @@ rm /tmp/usr/bin/ccache
 
 pushd /tmp
 
+wget https://cmake.org/files/v3.18/cmake-3.18.4-Linux-x86_64.tar.gz
 time git clone -b v${CCACHE_VERSION} --depth=1 https://github.com/ccache/ccache.git
+
+mkdir /tmp/usr
+tar xf cmake-3.18.4-Linux-x86_64.tar.gz -C /tmp/usr --strip=1 
+
+export PATH="/tmp/usr/bin:${PATH}"
 
 pushd ccache
 time sh autogen.sh
