@@ -77,4 +77,4 @@ time git push origin master
 popd
 popd
 
-ls -lang /tmp/usr2/modules/
+ls -lang /tmp/usr/modules/
