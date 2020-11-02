@@ -101,12 +101,13 @@ target=nghttp2-1.41.0
 pushd ${target}
 
 ./configure --help
-if [ -f ${BUILD_DIR}/../ccache_cache/config.cache.nghttp2 ]; then
-  ./configure --prefix=/tmp/usr --cache-file=${BUILD_DIR}/../ccache_cache/config.cache.nghttp2
-else
-  ./configure --prefix=/tmp/usr --config-cache
-  cp ./config.cache /tmp/config.cache.nghttp2
-fi
+# if [ -f ${BUILD_DIR}/../ccache_cache/config.cache.nghttp2 ]; then
+#   ./configure --prefix=/tmp/usr --cache-file=${BUILD_DIR}/../ccache_cache/config.cache.nghttp2
+# else
+#   ./configure --prefix=/tmp/usr --config-cache
+#   cp ./config.cache /tmp/config.cache.nghttp2
+# fi
+./configure --prefix=/tmp/usr
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
 make install &
 
