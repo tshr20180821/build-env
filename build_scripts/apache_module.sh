@@ -93,6 +93,8 @@ make install &
 
 popd
 
+wait
+
 # ***** nghttp2 *****
 
 # 1.41.0
@@ -107,7 +109,10 @@ pushd ${target}
 #   ./configure --prefix=/tmp/usr --config-cache
 #   cp ./config.cache /tmp/config.cache.nghttp2
 # fi
-./configure --prefix=/tmp/usr
+IBCARES_CFLAGS="-I/tmp/usr/include" LIBCARES_LIBS="-L/tmp/usr/lib -lcares" \
+  JANSSON_CFLAGS="-I/tmp/usr/include" JANSSON_LIBS="-L/tmp/usr/lib -ljansson" \
+  ./configure --prefix=/tmp/usr --disable-examples --disable-dependency-tracking \
+  --enable-lib-only
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
 make install &
 
