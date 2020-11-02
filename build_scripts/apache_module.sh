@@ -10,6 +10,8 @@ APACHE_VERSION=2.4.46
 
 printenv | sort
 
+BUILD_DIR=$(pwd)
+
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
@@ -39,7 +41,8 @@ ccache -z
 
 pushd /tmp
 
-wget https://c-ares.haxx.se/download/c-ares-1.14.0.tar.gz &
+# wget https://c-ares.haxx.se/download/c-ares-1.14.0.tar.gz &
+wget https://github.com/c-ares/c-ares/releases/download/cares-1_16_1/c-ares-1.16.1.tar.gz &
 wget http://www.digip.org/jansson/releases/jansson-2.11.tar.bz2 &
 wget https://github.com/nghttp2/nghttp2/releases/download/v1.32.0/nghttp2-1.32.0.tar.xz &
 wget https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz &
@@ -53,12 +56,16 @@ wait
 # ***** c-ares *****
 
 # 1.16.1
-tar xf c-ares-1.14.0.tar.gz
-target=c-ares-1.14.0
+tar xf c-ares-1.16.1.tar.gz
+target=c-ares-1.16.1
 pushd ${target}
 
-./configure --prefix=/tmp/usr --config-cache
-cp ./config.cache /tmp/config.cache.c-ares
+if [ -f ${BUILD_DIR}/ccache_cache/config.cache.c-ares ]; then
+  ./configure --prefix=/tmp/usr --cache-file=${BUILD_DIR}/ccache_cache/config.cache.c-ares
+else
+  ./configure --prefix=/tmp/usr --config-cache
+  cp ./config.cache /tmp/config.cache.c-ares
+fi
 # time timeout -sKILL 180 make -j${PARALLEL_COUNT}
 # make install
 
