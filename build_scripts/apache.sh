@@ -7,6 +7,9 @@ date
 APACHE_VERSION=2.4.46
 
 # - Aptfile -
+echo "libbrotli-dev" >>/tmp/update_list
+
+bash ../apt_install.sh
 
 printenv | sort
 
@@ -47,7 +50,8 @@ tar xf httpd-2.4.46.tar.bz2
 target=httpd-2.4.46
 pushd ${target}
 ./configure --help
-./configure --prefix=/tmp/usr --enable-mods-shared="few"
+./configure --prefix=/tmp/usr --enable-brotli \
+  --enable-mods-shared="few"
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
 
 popd
