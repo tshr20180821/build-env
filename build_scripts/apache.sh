@@ -54,9 +54,9 @@ pushd ${target}
   --enable-mods-shared="few" \
   --enable-brotli --enable-file-cache \
   --disable-authn-core --disable-authn-file --disable-access-compat --disable-authn-core \
-  --disable-authz-host --disable-authz-user --disable-authz-groupfile --disable-auth-basic \
+  --disable-authz-core --disable-authz-host --disable-authz-user --disable-authz-groupfile --disable-auth-basic \
   --disable-autoindex --disable-alias --disable-dir --disable-env --disable-filter --disable-headers \
-  --disable-log_config --disable-mime --disable-reqtimeout --disable-setenvif --disable-status --disable-unixd
+  --disable-log_config --disable-mime --disable-reqtimeout --disable-setenvif --disable-status --disable-unixd --disable-version
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
 make install
 
