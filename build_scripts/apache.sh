@@ -44,13 +44,13 @@ ccache -z
 
 pushd /tmp
 
-wget https://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.46.tar.bz2
+wget https://ftp.jaist.ac.jp/pub/apache//httpd/httpd-${APACHE_VERSION}.tar.bz2
 
-tar xf httpd-2.4.46.tar.bz2
-target=httpd-2.4.46
+tar xf httpd-${APACHE_VERSION}.tar.bz2
+target=httpd-${APACHE_VERSION}
 pushd ${target}
 ./configure --help
-./configure --prefix=/tmp/usr2 \
+./configure --prefix=/tmp/usr \
   --enable-mods-shared="few" \
   --enable-brotli --enable-file-cache \
   --disable-authn-core --disable-authn-file --disable-access-compat --disable-authn-core \
@@ -83,4 +83,7 @@ time git push origin master
 popd
 popd
 
-ls -lang /tmp/usr2/modules
+ls -lang /tmp/usr/modules
+
+cp /tmp/usr/modules/mod_brotli.so ./www/
+cp /tmp/usr/modules/mod_file_cache.so ./www/
