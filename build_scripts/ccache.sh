@@ -14,7 +14,7 @@ CCACHE_VERSION=4.0
 echo "libzstd-dev" >/tmp/update_list
 echo "libb2-dev" >>/tmp/update_list
 echo "gperf" >>/tmp/update_list
-echo "asciidoc" >>/tmp/update_list
+# echo "asciidoc" >>/tmp/update_list
 bash ../apt_install.sh
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
@@ -40,7 +40,7 @@ pushd ccache
 cmake --help
 mkdir out
 pushd out
-cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON ../
+cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON --disable-man ../
 # time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 popd
 popd
