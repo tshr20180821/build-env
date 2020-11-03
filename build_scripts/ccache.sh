@@ -37,8 +37,11 @@ pushd ccache
 # ./configure --help
 # time ./configure --prefix=/tmp/usr --disable-man
 cmake --help
-cmake -DCMAKE_BUILD_TYPE=Release --prefix=/tmp/usr
+mkdir out
+pushd out
+cmake -DCMAKE_BUILD_TYPE=Release ../
 # time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+popd
 popd
 popd
 
