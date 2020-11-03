@@ -14,6 +14,7 @@ CCACHE_VERSION=4.0
 echo "libzstd-dev" >/tmp/update_list
 echo "libb2-dev" >>/tmp/update_list
 echo "gperf" >>/tmp/update_list
+echo "asciidoc" >>/tmp/update_list
 bash ../apt_install.sh
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
