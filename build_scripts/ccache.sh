@@ -39,7 +39,7 @@ pushd ccache
 cmake --help
 mkdir out
 pushd out
-cmake -DCMAKE_BUILD_TYPE=Release ../
+cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON ../
 # time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 popd
 popd
