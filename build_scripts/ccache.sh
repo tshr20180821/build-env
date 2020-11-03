@@ -33,10 +33,11 @@ tar xf cmake-3.18.4-Linux-x86_64.tar.gz -C /tmp/usr --strip=1
 export PATH="/tmp/usr/bin:${PATH}"
 
 pushd ccache
-time sh autogen.sh
-./configure --help
-time ./configure --prefix=/tmp/usr --disable-man
-time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+# time sh autogen.sh
+# ./configure --help
+# time ./configure --prefix=/tmp/usr --disable-man
+cmake -DCMAKE_BUILD_TYPE=Release --prefix=/tmp/usr --disable-man
+# time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 popd
 popd
 
