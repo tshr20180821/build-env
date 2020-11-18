@@ -74,7 +74,7 @@ pushd curl-${CURL_VERSION}
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --with-zstd
 #  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
 
-# cat Makefile
+cat Makefile
 
 # time timeout -sKILL 210 make
 time timeout -sKILL 180 make -j${PARALLEL_COUNT}
