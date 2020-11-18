@@ -21,7 +21,6 @@ echo "libnghttp2-14" >>/tmp/update_list
 echo "libnghttp2-dev" >>/tmp/update_list
 echo "libpsl5" >>/tmp/update_list
 echo "libpsl-dev" >>/tmp/update_list
-echo "zstd" >>/tmp/update_list
 echo "libzstd-dev" >>/tmp/update_list
 bash ../apt_install.sh
 
@@ -72,8 +71,7 @@ pushd curl-${CURL_VERSION}
 ./configure --help
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
   --with-libssh2 --with-brotli --with-nghttp2 \
-  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
-#  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
+  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
 
 # time timeout -sKILL 210 make
 time timeout -sKILL 180 make -j${PARALLEL_COUNT}
