@@ -169,7 +169,7 @@ popd
 
 whereis distcc
 
-mkdir /tmp/bin
+# mkdir /tmp/bin
 
 if [ -f ./bin/distcc ]; then
   cp ./bin/distcc /tmp/bin
