@@ -17,7 +17,7 @@ echo "gperf" >>/tmp/update_list
 # echo "asciidoc" >>/tmp/update_list
 bash ../apt_install.sh
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -Werror=pedantic"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
