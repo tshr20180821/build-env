@@ -41,7 +41,8 @@ cmake --help
 mkdir out
 pushd out
 cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON --disable-man --prefix=/tmp/usr ../
-time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+# time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 210 make -j1
 popd
 popd
 popd
