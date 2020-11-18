@@ -207,6 +207,8 @@ pushd build_scripts
 ./${BUILD_SCRIPT_NAME}.sh
 popd
 
+/tmp/bin/ssh2 -F /tmp/ssh_config ${HPN_SSH_OPTION} -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'cat /tmp/distcc.log'
+
 # ps aux
 
 pgrep -f "ps:socks -a ${DISTCC_HOST_NAME}" | xargs -t -L 1 -n 1 kill -9
