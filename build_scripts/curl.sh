@@ -69,12 +69,10 @@ curl -O https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
 ./configure --help
-./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
+LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib64 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
   --with-libssh2 --with-brotli --with-nghttp2 \
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --with-zstd
 #  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
-
-cat Makefile
 
 # time timeout -sKILL 210 make
 time timeout -sKILL 180 make -j${PARALLEL_COUNT}
