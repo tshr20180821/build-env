@@ -66,10 +66,6 @@ time make -j${PARALLEL_COUNT}
 make install
 popd
 
-# -lzstd
-export CFLAGS="${CFLAGS} -lzstd"
-export CXXFLAGS="${CFLAGS}"
-
 curl -O https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
