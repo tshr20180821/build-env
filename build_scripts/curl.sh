@@ -71,12 +71,12 @@ pushd curl-${CURL_VERSION}
 ./configure --help
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
   --with-libssh2 --with-brotli --with-nghttp2 \
-  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
+  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --with-zstd
+#  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
 
 # cat Makefile
 
 # time timeout -sKILL 210 make
-# time timeout -sKILL 180 make -j2
 time timeout -sKILL 180 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
   echo 'time out'
