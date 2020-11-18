@@ -51,8 +51,8 @@ popd
 
 ldd /tmp/ccache/ccache
 
-/tmp/ccache/ccache --version
+/tmp/ccache/out/ccache --version
 
-cp /tmp/ccache/ccache ../www/
+cp /tmp/ccache/out/ccache ../www/
 
 date
