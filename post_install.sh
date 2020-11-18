@@ -22,11 +22,12 @@ whereis gcc
 gcc --version
 ldd /usr/bin/gcc
 
+chmod +x ./build_scripts/${BUILD_SCRIPT_NAME}.sh
+
 # ***** target *****
 
 if [ ${NEED_DISTCC} != "yes" ]; then
   pushd build_scripts
-  chmod +x ./${BUILD_SCRIPT_NAME}.sh
   ./${BUILD_SCRIPT_NAME}.sh
   popd
   ssh-keygen -t rsa -N '' -f etc/ssh_host_rsa_key
@@ -203,7 +204,6 @@ chmod +x ./bin/distccd_start
 # ***** target *****
 
 pushd build_scripts
-chmod +x ./${BUILD_SCRIPT_NAME}.sh
 ./${BUILD_SCRIPT_NAME}.sh
 popd
 
