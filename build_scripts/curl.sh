@@ -29,7 +29,7 @@ printenv | sort
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
-export CXXFLAGS="$CFLAGS"
+export CXXFLAGS="${CFLAGS}"
 export LDFLAGS="-fuse-ld=gold"
 
 export CCACHE_DIR=/tmp/ccache_cache
@@ -64,6 +64,10 @@ time ./configure --prefix=/tmp/usr --enable-shared=no
 time make -j${PARALLEL_COUNT}
 make install
 popd
+
+# -lzstd
+export CFLAGS="${CFLAGS} -lzstd"
+export CXXFLAGS="${CFLAGS}"
 
 curl -O https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
