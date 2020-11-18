@@ -195,7 +195,7 @@ chmod +x distcc-ssh
 cat distcc-ssh
 popd
 
-export DISTCC_HOSTS="@0.0.0.0/8:/app/bin/distccd_start localhost/1"
+export DISTCC_HOSTS="localhost/1 @0.0.0.0/8:/app/bin/distccd_start"
 export DISTCC_POTENTIAL_HOSTS=${DISTCC_HOSTS}
 export DISTCC_SSH="/tmp/bin/distcc-ssh"
 
