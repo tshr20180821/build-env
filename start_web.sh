@@ -101,8 +101,8 @@ printenv | sort
 
 # sleep 15 && kill -HUP $(ss -ltnp | grep 1092 | head -n 1 | grep -o -E 'pid=[0-9]+' | grep -o -E '[0-9]+') &
 
-sleep 20 && ss -atnp &
+# sleep 20 && ss -atnp &
 
-sleep 25 && ps aux &
+# sleep 25 && ps aux &
 
 vendor/bin/heroku-php-apache2 -C apache.conf www
