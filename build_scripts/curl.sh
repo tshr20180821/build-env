@@ -44,10 +44,10 @@ else
 fi
 
 pushd /tmp/usr/bin
-# ln -s ccache gcc
-# ln -s ccache g++
-# ln -s ccache cc
-# ln -s ccache c++
+ln -s ccache gcc
+ln -s ccache g++
+ln -s ccache cc
+ln -s ccache c++
 popd
   
 ccache -s
