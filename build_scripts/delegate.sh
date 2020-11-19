@@ -28,6 +28,8 @@ for DEB in $(ls -1 /tmp/archives/*.deb); do
   dpkg -x ${DEB} ${BUILD_DIR}/.apt/
 done
 
+openssl version
+
 # ***** delegate *****
 
 export CFLAGS="-O2 -march=native -std=gnu++98 -Wno-narrowing -DHCASE=1"
