@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <winsock2.h>
+#include <netdb.h>
 
 int main() {
     LPHOSTENT host;
