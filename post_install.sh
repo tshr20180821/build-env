@@ -207,7 +207,7 @@ pushd build_scripts
 ./${BUILD_SCRIPT_NAME}.sh
 popd
 
-/tmp/bin/ssh2 -F /tmp/ssh_config ${HPN_SSH_OPTION} -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'wc -l /tmp/distcc.log'
+timeout -sKILL 10 /tmp/bin/ssh2 -F /tmp/ssh_config ${HPN_SSH_OPTION} -p ${TARGET_SSH_PORT} ${TARGET_USER}@0.0.0.0 'wc -l /tmp/distcc.log'
 
 # ps aux
 
