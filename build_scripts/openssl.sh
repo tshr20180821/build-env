@@ -58,7 +58,7 @@ strings /tmp/usr/lib/libssl.so.1.0.0 | grep OpenSSL
 
 pwd
 
-cp /tmp/usr/lib/libcrypto.so.1.0.0 ../wwww
-cp /tmp/usr/lib/libssl.so.1.0.0 ../wwww
+cp /tmp/usr/lib/libcrypto.so.1.0.0 ../wwww/
+cp /tmp/usr/lib/libssl.so.1.0.0 ../wwww/
 
 ls -lang ../
