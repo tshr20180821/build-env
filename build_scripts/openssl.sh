@@ -26,7 +26,7 @@ pushd openssl
 # time ./config -fPIC shared
 ./config --prefix=/tmp/usr shared
 
-time timeout -sKILL 180 make -j2
+time timeout -sKILL 180 make -j1
 make install
 
 popd
