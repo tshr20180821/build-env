@@ -51,7 +51,7 @@ time git push origin master
 popd
 popd
 
-tree /tmp/usr
+# tree /tmp/usr
 
-strings /tmp/usr/lib/libcrypto.so.1.0.0
-strings /tmp/usr/lib/libssl.so.1.0.0
+# strings /tmp/usr/lib/libcrypto.so.1.0.0
+strings /tmp/usr/lib/libssl.so.1.0.0 | grep OpenSSL
