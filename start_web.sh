@@ -66,6 +66,8 @@ else
   echo -n no >is_hpn_sshd
 fi
 
+/app/bin/ssh2d -V
+
 echo -n $(whoami) >ssh_info_user
 echo -n ${PORT} >ssh_info_http_port
 echo -n ${PORT_SSHD} >ssh_info_ssh_port
