@@ -89,6 +89,7 @@ ccache -s
 pushd /tmp
 time tar cf ccache_cache.tar.bz2 --use-compress-prog=lbzip2 ./ccache_cache
 ls -lang ccache_cache.tar.bz2
+du -h ccache_cache.tar.bz2
 mv ccache_cache.tar.bz2 repo/build-env/ccache_cache/
 pushd repo/build-env
 git init
