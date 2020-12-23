@@ -4,7 +4,7 @@ set -x
 
 date
 
-CURL_VERSION=7.73.0
+CURL_VERSION=7.74.0
 # 7.73.0 - --without-zstd
 
 # - Aptfile -
