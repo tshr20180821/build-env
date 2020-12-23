@@ -50,6 +50,7 @@ chmod 600 .ssh/ssh_host_rsa_key2
 
 gcc -### -E - -march=native 2>&1 | sed -r '/cc1/!d;s/(")|(^.* - )//g' >cflags_option
 
+openssl version
 ssh -V
 
 cat /app/.ssh/sshd_config
