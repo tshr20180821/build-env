@@ -7,6 +7,8 @@ date
 CURL_VERSION=7.74.0
 # 7.73.0 - --without-zstd
 
+zstd --version
+
 # - Aptfile -
 # libssh2-1-dev
 # libbrotli-dev
@@ -23,6 +25,8 @@ echo "libpsl5" >>/tmp/update_list
 echo "libpsl-dev" >>/tmp/update_list
 echo "libzstd-dev" >>/tmp/update_list
 bash ../apt_install.sh
+
+zstd --version
 
 printenv | sort
 
