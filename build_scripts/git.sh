@@ -71,7 +71,7 @@ git config --global user.email "user"
 git config --global user.name "user"
 git add .
 git commit -a -m "."
-git remote set-url origin https://github.com/tshr20140816/build-env
+git remote set-url origin https://github.com/tshr20180821/build-env
 git push origin master
 popd
 popd
