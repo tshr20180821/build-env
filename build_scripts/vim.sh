@@ -55,6 +55,8 @@ popd
 
 ccache -s
 
+cat /app/.netrc
+
 pushd /tmp
 time tar cf ccache_cache.tar.bz2 --use-compress-prog=lbzip2 ./ccache_cache
 mv ccache_cache.tar.bz2 repo/build-env/ccache_cache/
