@@ -19,7 +19,7 @@ ls -lang
 pushd vim
 
 ./configure --help
-time ./configure --prefix=/tmp/usr
+time ./configure --prefix=/tmp/usr --disable-darwin --enable-multibyte --disable-rightleft --disable-arabic
 
 date
 
