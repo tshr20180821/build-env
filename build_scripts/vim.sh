@@ -18,10 +18,10 @@ ls -lang
 
 exit
 
-pushd aria2-${ARIA2_VERSION}
+pushd vim
 
 ./configure --help
-time ./configure --prefix=/tmp/usr --enable-static=yes --enable-shared=no
+time ./configure --prefix=/tmp/usr
 
 date
 
