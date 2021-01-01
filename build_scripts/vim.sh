@@ -16,8 +16,6 @@ time git clone --depth=1 -b ${VIM_VERSION} https://github.com/vim/vim.git
 
 ls -lang
 
-exit
-
 pushd vim
 
 ./configure --help
