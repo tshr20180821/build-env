@@ -8,7 +8,7 @@ ccache --version
 ccache version 4.0
 
 distcc --version
-distcc 3.3.3 x86_64-pc-linux-gnu
+distcc 3.3.5 x86_64-pc-linux-gnu
 
 hpn-ssh -V
 OpenSSH_8.4p1-hpn15v1, OpenSSL 1.1.1  11 Sep 2018
