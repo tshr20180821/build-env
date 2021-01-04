@@ -36,7 +36,7 @@ printenv | sort
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="${CFLAGS}"
-export LDFLAGS="-fuse-ld=gold -static"
+export LDFLAGS="-fuse-ld=gold"
 
 export CCACHE_DIR=/tmp/ccache_cache
 
@@ -71,6 +71,9 @@ time make -j${PARALLEL_COUNT}
 make install
 popd
 
+export LDFLAGS="-fuse-ld=gold -static"
+unset CCACHE_PREFIX
+
 curl -O https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
@@ -79,8 +82,6 @@ pushd curl-${CURL_VERSION}
   --with-libssh2 --with-brotli --with-nghttp2 \
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
 #   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
-
-unset CCACHE_PREFIX
 
 # time timeout -sKILL 210 make
 time timeout -sKILL 180 make -j${PARALLEL_COUNT}
