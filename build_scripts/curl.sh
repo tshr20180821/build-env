@@ -80,6 +80,13 @@ pushd curl-${CURL_VERSION}
   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
 #   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
 
+pushd /tmp/usr/bin
+rm -f gcc
+rm -f g++
+rm -f cc
+rm -f c++
+popd
+
 # time timeout -sKILL 210 make
 time timeout -sKILL 180 make -j${PARALLEL_COUNT}
 if [ $? != 0 ]; then
