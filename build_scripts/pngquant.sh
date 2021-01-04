@@ -9,7 +9,8 @@ PNGQUANT_VERSION=2.13.1
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 # export CXXFLAGS="$CFLAGS"
-export LDFLAGS="-fuse-ld=gold"
+# export LDFLAGS="-fuse-ld=gold"
+export LDFLAGS="-fuse-ld=gold -static"
 
 pushd /tmp
 
