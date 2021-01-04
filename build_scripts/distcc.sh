@@ -18,7 +18,7 @@ PYTHON_H=$(pwd)/../.apt/usr/include/python3.6m/
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -I${PYTHON_H}"
 export CXXFLAGS="$CFLAGS"
-export LDFLAGS="-fuse-ld=gold"
+export LDFLAGS="-fuse-ld=gold -static"
 
 pushd /tmp
 
