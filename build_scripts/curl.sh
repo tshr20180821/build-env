@@ -71,9 +71,6 @@ time make -j${PARALLEL_COUNT}
 make install
 popd
 
-export LDFLAGS="-fuse-ld=gold -static"
-unset CCACHE_PREFIX
-
 curl -O https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
