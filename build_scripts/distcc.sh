@@ -7,6 +7,9 @@ date
 
 DISTCC_VERSION=3.3.5
 
+echo "libiberty-dev" >>/tmp/update_list
+bash ../apt_install.sh
+
 whereis python
 python --version
 find / -name Python.h -print 2>/dev/null
