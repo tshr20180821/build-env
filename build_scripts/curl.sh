@@ -36,7 +36,7 @@ printenv | sort
 cflags_option=$(cat /tmp/cflags_option)
 export CFLAGS="-O2 ${cflags_option} -pipe -fomit-frame-pointer"
 export CXXFLAGS="${CFLAGS}"
-export LDFLAGS="-fuse-ld=gold"
+export LDFLAGS="-fuse-ld=gold -static"
 
 export CCACHE_DIR=/tmp/ccache_cache
 
