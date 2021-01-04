@@ -5,7 +5,7 @@ set -x
 
 date
 
-DISTCC_VERSION=3.3.3
+DISTCC_VERSION=3.3.5
 
 whereis python
 python --version
