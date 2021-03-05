@@ -32,7 +32,8 @@ ls -lang
 # patch -p1 <./hpn-openssl1.1-7_8_P1.diff
 # patch -p1 <./openssh-8_1_P1-hpn-14.20.diff
 # patch -p1 <./openssh-8_3_P1-hpn-14.22.diff
-patch -p1 <./openssh-8_4_P1-hpn-15.1.diff
+# patch -p1 <./openssh-8_4_P1-hpn-15.1.diff
+patch -p1 <./openssh-8_5_P1-hpn-15.2.diff
 
 autoreconf
 ./configure --help
