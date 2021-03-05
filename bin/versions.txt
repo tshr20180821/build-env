@@ -5,7 +5,7 @@ brotli --version
 brotli 1.0.9
 
 ccache --version
-ccache version 4.0
+ccache version 4.2
 
 distcc --version
 distcc 3.3.5 x86_64-pc-linux-gnu
