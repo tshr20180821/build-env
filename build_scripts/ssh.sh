@@ -7,7 +7,8 @@ date
 # SSH_VERSION=7_8_P1
 # SSH_VERSION=8_1_P1
 # SSH_VERSION=8_3_P1
-SSH_VERSION=8_4_P1
+# SSH_VERSION=8_4_P1
+SSH_VERSION=8_5_P1
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
@@ -23,7 +24,8 @@ pushd openssh-portable-V_${SSH_VERSION}
 # curl -O https://excellmedia.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2014v20%208.1p1/openssh-8_1_P1-hpn-14.20.diff
 # curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2014v22%208.3p1/openssh-8_3_P1-hpn-14.22.diff
 # curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2014v22%208.3p1/openssh-8_3_P1-hpn-14.22.diff
-curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2015v1%208.4p1/openssh-8_4_P1-hpn-15.1.diff
+# curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2015v1%208.4p1/openssh-8_4_P1-hpn-15.1.diff
+curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2015v2%208.5p1/openssh-8_5_P1-hpn-15.2.diff
 
 ls -lang
 
