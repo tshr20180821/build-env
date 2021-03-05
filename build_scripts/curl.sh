@@ -71,7 +71,7 @@ time make -j${PARALLEL_COUNT}
 make install
 popd
 
-curl -O https://curl.haxx.se/download/curl-${CURL_VERSION}.tar.xz
+curl -O https://curl.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
 ./configure --help
