@@ -25,9 +25,9 @@ pushd openssh-portable-V_${SSH_VERSION}
 # curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2014v22%208.3p1/openssh-8_3_P1-hpn-14.22.diff
 # curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2014v22%208.3p1/openssh-8_3_P1-hpn-14.22.diff
 # curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2015v1%208.4p1/openssh-8_4_P1-hpn-15.1.diff
-curl -LO https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2015v2%208.5p1/openssh-8_5_P1-hpn-15.2.diff
+curl -L -o openssh_hpn_patch.diff https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2015v2%208.5p1/openssh-8_5_P1-hpn-15.2.diff
 
-cat openssh-8_5_P1-hpn-15.2.diff
+cat openssh_hpn_patch.diff
 
 ls -lang
 
@@ -35,7 +35,7 @@ ls -lang
 # patch -p1 <./openssh-8_1_P1-hpn-14.20.diff
 # patch -p1 <./openssh-8_3_P1-hpn-14.22.diff
 # patch -p1 <./openssh-8_4_P1-hpn-15.1.diff
-patch -p1 <./openssh-8_5_P1-hpn-15.2.diff
+patch -p1 <./openssh_hpn_patch.diff
 
 autoreconf
 ./configure --help
