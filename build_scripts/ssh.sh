@@ -27,6 +27,7 @@ pushd openssh-portable-V_${SSH_VERSION}
 # curl -O https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2015v1%208.4p1/openssh-8_4_P1-hpn-15.1.diff
 curl -L -o openssh_hpn_patch.diff https://master.dl.sourceforge.net/project/hpnssh/Patches/HPN-SSH%2015v2%208.5p1/openssh-8_5_P1-hpn-15.2.diff
 
+sha512sum openssh_hpn_patch.diff
 cat openssh_hpn_patch.diff
 
 ls -lang
