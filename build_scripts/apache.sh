@@ -4,7 +4,7 @@ set -x
 
 date
 
-APACHE_VERSION=2.4.46
+APACHE_VERSION=2.4.48
 
 # - Aptfile -
 echo "libbrotli-dev" >>/tmp/update_list
