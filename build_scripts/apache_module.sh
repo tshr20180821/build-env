@@ -48,9 +48,6 @@ wget https://github.com/nghttp2/nghttp2/releases/download/v1.43.0/nghttp2-1.43.0
 wget https://cmake.org/files/v3.20/cmake-3.20.0-linux-x86_64.tar.gz &
 # git clone --depth 1 https://github.com/google/brotli &
 wget https://github.com/google/brotli/archive/v1.0.9.tar.gz &
-# wget http://ftp.jaist.ac.jp/pub/apache//apr/apr-1.6.3.tar.bz2 &
-wget https://ftp.jaist.ac.jp/pub/apache//apr/apr-1.7.0.tar.bz2 &
-wget https://ftp.jaist.ac.jp/pub/apache//apr/apr-util-1.6.1.tar.bz2 &
 
 wait
 
