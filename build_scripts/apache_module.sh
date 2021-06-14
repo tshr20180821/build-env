@@ -4,8 +4,6 @@ set -x
 
 date
 
-APACHE_VERSION=2.4.48
-
 # - Aptfile -
 
 printenv | sort
@@ -53,8 +51,6 @@ wget https://github.com/google/brotli/archive/v1.0.9.tar.gz &
 # wget http://ftp.jaist.ac.jp/pub/apache//apr/apr-1.6.3.tar.bz2 &
 wget https://ftp.jaist.ac.jp/pub/apache//apr/apr-1.7.0.tar.bz2 &
 wget https://ftp.jaist.ac.jp/pub/apache//apr/apr-util-1.6.1.tar.bz2 &
-# wget http://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.34.tar.gz &
-wget https://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.48.tar.gz &
 
 wait
 
