@@ -130,7 +130,7 @@ pushd out
 ../configure-cmake --help
 ../configure-cmake --prefix=/tmp/usr --disable-debug
 time timeout -sKILL 90 make -j${PARALLEL_COUNT}
-make install &
+# make install &
 
 popd
 popd
