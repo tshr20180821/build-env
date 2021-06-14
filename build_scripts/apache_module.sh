@@ -4,7 +4,7 @@ set -x
 
 date
 
-APACHE_VERSION=2.4.46
+APACHE_VERSION=2.4.48
 
 # - Aptfile -
 
@@ -41,27 +41,28 @@ ccache -z
 
 pushd /tmp
 
-# wget https://c-ares.haxx.se/download/c-ares-1.14.0.tar.gz &
-wget https://github.com/c-ares/c-ares/releases/download/cares-1_16_1/c-ares-1.16.1.tar.gz &
-# wget http://www.digip.org/jansson/releases/jansson-2.11.tar.bz2 &
-wget http://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2 &
-# wget https://github.com/nghttp2/nghttp2/releases/download/v1.32.0/nghttp2-1.32.0.tar.xz &
-wget https://github.com/nghttp2/nghttp2/releases/download/v1.41.0/nghttp2-1.41.0.tar.xz &
-# wget https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz &
-wget https://cmake.org/files/v3.18/cmake-3.18.4-Linux-x86_64.tar.gz &
+# wget https://github.com/c-ares/c-ares/releases/download/cares-1_16_1/c-ares-1.16.1.tar.gz &
+wget https://github.com/c-ares/c-ares/releases/download/cares-1_17_1/c-ares-1.17.1.tar.gz &
+wget https://www.digip.org/jansson/releases/jansson-2.13.1.tar.bz2 &
+# wget https://github.com/nghttp2/nghttp2/releases/download/v1.41.0/nghttp2-1.41.0.tar.xz &
+wget https://github.com/nghttp2/nghttp2/releases/download/v1.43.0/nghttp2-1.43.0.tar.xz &
+# wget https://cmake.org/files/v3.18/cmake-3.18.4-Linux-x86_64.tar.gz &
+wget https://cmake.org/files/v3.20/cmake-3.20.0-linux-x86_64.tar.gz &
 # git clone --depth 1 https://github.com/google/brotli &
 wget https://github.com/google/brotli/archive/v1.0.9.tar.gz &
-wget http://ftp.jaist.ac.jp/pub/apache//apr/apr-1.6.3.tar.bz2 &
-wget http://ftp.jaist.ac.jp/pub/apache//apr/apr-util-1.6.1.tar.bz2 &
-wget http://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.34.tar.gz &
+# wget http://ftp.jaist.ac.jp/pub/apache//apr/apr-1.6.3.tar.bz2 &
+wget https://ftp.jaist.ac.jp/pub/apache//apr/apr-1.7.0.tar.bz2 &
+wget https://ftp.jaist.ac.jp/pub/apache//apr/apr-util-1.6.1.tar.bz2 &
+# wget http://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.34.tar.gz &
+wget https://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.48.tar.gz &
 
 wait
 
 # ***** c-ares *****
 
-# 1.16.1
-tar xf c-ares-1.16.1.tar.gz
-target=c-ares-1.16.1
+# 1.17.1
+tar xf c-ares-1.17.1.tar.gz
+target=c-ares-1.17.1
 pushd ${target}
 
 if [ -f ${BUILD_DIR}/../ccache_cache/config.cache.c-ares ]; then
@@ -99,9 +100,9 @@ wait
 
 # ***** nghttp2 *****
 
-# 1.41.0
-tar xf nghttp2-1.41.0.tar.xz
-target=nghttp2-1.41.0
+# 1.43.0
+tar xf nghttp2-1.43.0.tar.xz
+target=nghttp2-1.43.0
 pushd ${target}
 
 ./configure --help
@@ -122,8 +123,8 @@ popd
 
 # ***** cmake *****
 
-# 3.18.4
-tar xf cmake-3.18.4-Linux-x86_64.tar.gz -C /tmp/usr --strip=1 
+# 3.20.0
+tar xf cmake-3.20.0-Linux-x86_64.tar.gz -C /tmp/usr --strip=1 
 
 # ***** brotli *****
 
