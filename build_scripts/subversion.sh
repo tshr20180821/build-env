@@ -4,7 +4,7 @@ set -x
 
 date
 
-SUBVERSION_VERSION=1.14.0
+SUBVERSION_VERSION=1.14.1
 
 # - Aptfile -
 # libsqlite3-dev
