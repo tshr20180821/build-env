@@ -71,15 +71,14 @@ time make -j${PARALLEL_COUNT}
 make install
 popd
 
-whereis ssl
-
 curl -O https://curl.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
 ./configure --help
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
-  --with-libssh2 --with-brotli --with-nghttp2 --with-openssl=/usr/lib/ssl \
-  --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
+  --with-libssh2 --with-brotli --with-nghttp2 --with-openssl \
+  --with-gssapi --enable-alt-svc --without-zstd
+#   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
 #   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
 
 # time timeout -sKILL 210 make
