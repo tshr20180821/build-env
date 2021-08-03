@@ -17,7 +17,6 @@ zstd --version
 # libpsl5
 # libgsasl-dev
 # libpsl-dev
-# libbrotli-dev
 # libzstd-dev
 # zstd
 echo "libssh2-1-dev" >/tmp/update_list
@@ -27,7 +26,6 @@ echo "libnghttp2-dev" >>/tmp/update_list
 echo "libpsl5" >>/tmp/update_list
 echo "libpsl-dev" >>/tmp/update_list
 # echo "libgsasl-dev" >>/tmp/update_list
-# echo "libbrotli-dev" >>/tmp/update_list
 # echo "libzstd-dev" >>/tmp/update_list
 # echo "zstd" >>/tmp/update_list
 bash ../apt_install.sh
@@ -70,10 +68,6 @@ pushd curl-${CURL_VERSION}
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
   --with-libssh2 --with-brotli --with-nghttp2 --with-openssl \
   --with-gssapi --enable-alt-svc # --with-zstd
-#   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
-#   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
-
-exit
 
 # time timeout -sKILL 210 make
 time timeout -sKILL 180 make -j${PARALLEL_COUNT}
