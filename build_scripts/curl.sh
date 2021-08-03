@@ -71,6 +71,8 @@ time make -j${PARALLEL_COUNT}
 make install
 popd
 
+whereis ssl
+
 curl -O https://curl.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
