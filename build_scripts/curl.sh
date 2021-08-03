@@ -17,6 +17,7 @@ zstd --version
 # libpsl5
 # libgsasl-dev
 # libpsl-dev
+# libbrotli-dev
 # libzstd-dev
 # zstd
 echo "libssh2-1-dev" >/tmp/update_list
@@ -26,6 +27,7 @@ echo "libnghttp2-dev" >>/tmp/update_list
 echo "libpsl5" >>/tmp/update_list
 echo "libpsl-dev" >>/tmp/update_list
 echo "libgsasl-dev" >>/tmp/update_list
+echo "libbrotli-dev" >>/tmp/update_list
 # echo "libzstd-dev" >>/tmp/update_list
 # echo "zstd" >>/tmp/update_list
 bash ../apt_install.sh
