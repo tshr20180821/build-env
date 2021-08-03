@@ -59,25 +59,13 @@ popd
 ccache -s
 ccache -z
 
-pushd /tmp
-
-time git clone --depth=1 -b release-0.1.3 https://github.com/metalink-dev/libmetalink.git
-pushd libmetalink
-time ./buildconf
-./configure --help
-time ./configure --prefix=/tmp/usr --enable-shared=no
-# time make -j2
-time make -j${PARALLEL_COUNT}
-make install
-popd
-
 curl -O https://curl.se/download/curl-${CURL_VERSION}.tar.xz
 tar xf curl-${CURL_VERSION}.tar.xz
 pushd curl-${CURL_VERSION}
 ./configure --help
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
   --with-libssh2 --with-brotli --with-nghttp2 --with-openssl \
-  --with-gssapi --enable-alt-svc --without-zstd
+  --with-gssapi --enable-alt-svc # --without-zstd
 #   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc --without-zstd
 #   --with-gssapi --with-libmetalink=/tmp/usr --enable-alt-svc
 
