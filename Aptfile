@@ -9,8 +9,8 @@ lbzip2
 # https://code.launchpad.net/~apt-fast/+archive/ubuntu/stable/+files/apt-fast_1.9.8-1~ubuntu18.04.1_all.deb
 
 # -- subversion --
-libsqlite3-dev
-libutf8proc-dev
+# libsqlite3-dev
+# libutf8proc-dev
 
 # -- mercurial --
 # libpython3-dev
