@@ -62,7 +62,7 @@ pushd subversion-${SUBVERSION_VERSION}
 time timeout -sKILL 60 ./configure --prefix=/tmp/usr --enable-shared=no
 # time timeout -sKILL 240 make -j${PARALLEL_COUNT}
 time timeout -sKILL 100 make -j${PARALLEL_COUNT}
-time make install
+# time make install
 popd
 popd
 
