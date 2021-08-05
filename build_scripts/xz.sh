@@ -16,12 +16,12 @@ pushd /tmp
 curl -L -O https://tukaani.org/xz/xz-${XZ_VERSION}.tar.xz
 ls -lang
 
-tar xf xz-${XZ_VERSION}.tar.gz
+tar xf xz-${XZ_VERSION}.tar.xz
 pushd xz-${XZ_VERSION}
 ls -lang
+./configure --help
+time ./configure --prefix=/tmp/usr
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
-ls -lang bin
-tree ./
 popd
 popd
 
