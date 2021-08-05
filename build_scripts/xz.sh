@@ -23,14 +23,13 @@ ls -lang
 time ./configure --prefix=/tmp/usr
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 time make install
-ls -lang
 popd
 popd
 
-ldd /tmp/xz-${XZ_VERSION}/bin/xz
+ldd /tmp/usr/bin/xz
 
-/tmp/xz-${XZ_VERSION}/bin/xz --version
+/tmp/usr/bin/xz --version
 
-cp /tmp/xz-${XZ_VERSION}/bin/xz ../www/
+cp /tmp/usr/bin/xz ../www/
 
 date
