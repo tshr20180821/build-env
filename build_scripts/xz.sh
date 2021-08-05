@@ -23,6 +23,7 @@ ls -lang
 time ./configure --prefix=/tmp/usr
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 time make install
+ls -lang
 popd
 popd
 
