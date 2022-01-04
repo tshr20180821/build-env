@@ -6,8 +6,8 @@ date
 
 # CCACHE_VERSION=3.7.12
 # CCACHE_VERSION=4.0
-CCACHE_VERSION=4.3
-# NG CCACHE_VERSION=4.4
+# CCACHE_VERSION=4.3
+CCACHE_VERSION=4.5.1
 
 # - Aptfile -
 # libzstd-dev
@@ -17,7 +17,6 @@ echo "libzstd-dev" >/tmp/update_list
 echo "libb2-dev" >>/tmp/update_list
 echo "gperf" >>/tmp/update_list
 # echo "asciidoc" >>/tmp/update_list
-echo "libhiredis-dev" >>/tmp/update_list
 bash ../apt_install.sh
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer -Werror=pedantic"
@@ -50,7 +49,7 @@ cmake --help
 mkdir out
 pushd out
 # cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON --disable-man --prefix=/tmp/usr ../
-cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON -DCMAKE_INSTALL_PREFIX=/tmp/usr ../
+cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON -DHIREDIS_FROM_INTERNET=ON -DCMAKE_INSTALL_PREFIX=/tmp/usr ../
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 # time timeout -sKILL 210 make -j1
 find /tmp -name ccache -print
