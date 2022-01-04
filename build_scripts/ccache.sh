@@ -50,7 +50,7 @@ cmake --help
 mkdir out
 pushd out
 # cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON --disable-man --prefix=/tmp/usr ../
-cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON --disable-man -DCMAKE_INSTALL_PREFIX=/tmp/usr ../
+cmake -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=ON -DCMAKE_INSTALL_PREFIX=/tmp/usr ../
 time timeout -sKILL 210 make -j$(grep -c -e processor /proc/cpuinfo)
 # time timeout -sKILL 210 make -j1
 find /tmp -name ccache -print
