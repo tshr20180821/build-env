@@ -7,7 +7,8 @@ date
 # PNGQUANT_VERSION=2.12.5
 # PNGQUANT_VERSION=2.13.1
 # PNGQUANT_VERSION=2.15.1
-PNGQUANT_VERSION=2.16.0
+# PNGQUANT_VERSION=2.16.0
+PNGQUANT_VERSION=2.17.0
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 # export CXXFLAGS="$CFLAGS"
