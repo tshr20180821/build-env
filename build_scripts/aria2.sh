@@ -4,11 +4,15 @@ set -x
 
 date
 
+# ARIA2_VERSION=1.35.0
 ARIA2_VERSION=1.36.0
 
 # - Aptfile -
 # libssh2-1-dev
 # libc-ares-dev
+echo "libssh2-1-dev" >/tmp/update_list
+echo "libc-ares-dev" >>/tmp/update_list
+bash ../apt_install.sh
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
