@@ -4,7 +4,7 @@ set -x
 
 date
 
-ARIA2_VERSION=1.35.0
+ARIA2_VERSION=1.36.0
 
 # - Aptfile -
 # libssh2-1-dev
