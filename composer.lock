@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39e4749c5fffc3b8b64c731ca075b7f2",
+    "content-hash": "2a57b18d0b908fc49c39d01ade0ca170",
     "packages": [],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v190",
+            "version": "v213",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "3e49045a63ed480378c9d3d3e364acbfcc06eb3f"
+                "reference": "a5acafd19b69670c03a128f275f231346a4cfdd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/3e49045a63ed480378c9d3d3e364acbfcc06eb3f",
-                "reference": "3e49045a63ed480378c9d3d3e364acbfcc06eb3f",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/a5acafd19b69670c03a128f275f231346a4cfdd3",
+                "reference": "a5acafd19b69670c03a128f275f231346a4cfdd3",
                 "shasum": ""
             },
             "bin": [
@@ -46,7 +46,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2021-03-04T23:15:04+00:00"
+            "time": "2022-03-17T22:04:03+00:00"
         }
     ],
     "aliases": [],
