@@ -102,4 +102,8 @@ printenv | sort
 
 sleep 10 && ss -atnp &
 
+composer update
+
+cp composer.lock www/composer.txt
+
 vendor/bin/heroku-php-apache2 -C apache.conf www
