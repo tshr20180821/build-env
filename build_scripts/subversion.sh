@@ -10,6 +10,9 @@ SUBVERSION_VERSION=1.14.2
 # libsqlite3-dev
 # libutf8proc-dev
 
+echo "libutf8proc-dev" >/tmp/update_list
+bash ../apt_install.sh
+
 BUILD_DIR=$(pwd)
 
 find / -name libsqlite3.so -print 2>/dev/null
