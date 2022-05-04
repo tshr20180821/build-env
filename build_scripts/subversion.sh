@@ -60,6 +60,7 @@ tar xf subversion-${SUBVERSION_VERSION}.tar.bz2
 pushd subversion-${SUBVERSION_VERSION}
 curl -o sqlite-amalgamation.zip https://www.sqlite.org/2015/sqlite-amalgamation-3081101.zip
 unzip sqlite-amalgamation.zip
+ls -lang
 ./configure --help
 time timeout -sKILL 60 ./configure --prefix=/tmp/usr --enable-shared=no
 # time timeout -sKILL 240 make -j${PARALLEL_COUNT}
