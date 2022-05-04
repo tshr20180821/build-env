@@ -13,12 +13,12 @@ SUBVERSION_VERSION=1.14.2
 BUILD_DIR=$(pwd)
 
 find / -name libsqlite3.so -print 2>/dev/null
-find / -name libsqlite3.so.0.8.6 -print 2>/dev/null
+# find / -name libsqlite3.so.0.8.6 -print 2>/dev/null
 
-rm ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu/libsqlite3.so
-pushd ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
-ln -s /usr/lib/x86_64-linux-gnu/libsqlite3.so.0.8.6 libsqlite3.so
-popd
+# rm ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu/libsqlite3.so
+# pushd ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
+# ln -s /usr/lib/x86_64-linux-gnu/libsqlite3.so.0.8.6 libsqlite3.so
+# popd
 
 ls -lang ${BUILD_DIR}/../.apt/usr/lib/x86_64-linux-gnu
 
@@ -58,6 +58,8 @@ time curl -O http://ftp.riken.jp/net/apache/subversion/subversion-${SUBVERSION_V
 tar xf subversion-${SUBVERSION_VERSION}.tar.bz2
 
 pushd subversion-${SUBVERSION_VERSION}
+curl -o sqlite-amalgamation.zip https://www.sqlite.org/2015/sqlite-amalgamation-3081101.zip
+unzip sqlite-amalgamation.zip
 ./configure --help
 time timeout -sKILL 60 ./configure --prefix=/tmp/usr --enable-shared=no
 # time timeout -sKILL 240 make -j${PARALLEL_COUNT}
