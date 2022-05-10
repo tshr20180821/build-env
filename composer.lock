@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a57b18d0b908fc49c39d01ade0ca170",
+    "content-hash": "35d8b99e823b72392e3da9b6e227a748",
     "packages": [],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v213",
+            "version": "v216",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "a5acafd19b69670c03a128f275f231346a4cfdd3"
+                "reference": "78a95ba0abdadf2546178d5a2f9ab8d9dcac092d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/a5acafd19b69670c03a128f275f231346a4cfdd3",
-                "reference": "a5acafd19b69670c03a128f275f231346a4cfdd3",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/78a95ba0abdadf2546178d5a2f9ab8d9dcac092d",
+                "reference": "78a95ba0abdadf2546178d5a2f9ab8d9dcac092d",
                 "shasum": ""
             },
             "bin": [
@@ -46,7 +46,11 @@
                 "nginx",
                 "php"
             ],
-            "time": "2022-03-17T22:04:03+00:00"
+            "support": {
+                "issues": "https://github.com/heroku/heroku-buildpack-php/issues",
+                "source": "https://github.com/heroku/heroku-buildpack-php/tree/v216"
+            },
+            "time": "2022-04-14T16:00:42+00:00"
         }
     ],
     "aliases": [],
