@@ -5,7 +5,8 @@ set -x
 
 date
 
-DISTCC_VERSION=3.3.5
+# DISTCC_VERSION=3.3.5
+DISTCC_VERSION=3.4
 
 echo "libiberty-dev" >>/tmp/update_list
 bash ../apt_install.sh
@@ -22,7 +23,8 @@ export LDFLAGS="-fuse-ld=gold -static"
 
 pushd /tmp
 
-curl -L -O https://github.com/distcc/distcc/archive/v${DISTCC_VERSION}.tar.gz
+# curl -L -O https://github.com/distcc/distcc/archive/v${DISTCC_VERSION}.tar.gz
+curl -L -O https://github.com/distcc/distcc/archive/refs/tags/v${DISTCC_VERSION}.tar.gz
 
 tar xf v${DISTCC_VERSION}.tar.gz
 
