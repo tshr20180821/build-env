@@ -70,7 +70,7 @@ ls -lang
 time timeout -sKILL 60 ./configure --prefix=/tmp/usr --enable-shared=no
 # time timeout -sKILL 240 make -j${PARALLEL_COUNT}
 time timeout -sKILL 220 make -j${PARALLEL_COUNT}
-# time make install
+time make install
 popd
 popd
 
