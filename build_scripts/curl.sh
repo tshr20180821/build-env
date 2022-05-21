@@ -5,7 +5,7 @@ set -x
 date
 
 # CURL_VERSION=7.78.0
-CURL_VERSION=7.83.0
+CURL_VERSION=7.83.1
 # 7.73.0 - --without-zstd
 
 zstd --version
