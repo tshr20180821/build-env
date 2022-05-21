@@ -46,7 +46,8 @@ ls -lang
 pushd git-${GIT_VERSION}
 make configure
 ./configure --help
-./configure --prefix /tmp/usr2 --with-curl=/tmp/.apt/usr
+# ./configure --prefix /tmp/usr2 --with-curl=/tmp/.apt/usr
+./configure --prefix /tmp/usr2
 cat config.log
 
 time timeout -sKILL 210 make -j${PARALLEL_COUNT}
