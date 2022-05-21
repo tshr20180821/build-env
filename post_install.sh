@@ -94,6 +94,7 @@ rm ccache_cache.tar.bz2
 popd
 
 wait
+whereis heroku
 
 # ***** ssh *****
 
