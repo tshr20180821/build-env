@@ -12,6 +12,7 @@ SUBVERSION_VERSION=1.14.2
 # libutf8proc-dev
 
 echo "libutf8proc-dev" >/tmp/update_list
+echo "gettext" >>/tmp/update_list
 bash ../apt_install.sh
 
 BUILD_DIR=$(pwd)
