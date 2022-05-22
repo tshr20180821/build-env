@@ -94,8 +94,6 @@ time git push origin master
 popd
 popd
 
-find / -name git -print 2>nul
-
 tree /tmp/usr
 
 ldd /tmp/usr/bin/svn
