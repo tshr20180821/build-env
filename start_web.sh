@@ -9,6 +9,8 @@ cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e proce
 
 cat /proc/version
 
+cat /etc/os-release
+
 hostname -i
 whoami
 
