@@ -113,6 +113,7 @@ else
   export IS_HPN_SSH=no
 fi
 ls -lang /tmp/bin
+ldd /tmp/bin/ssh2
 /tmp/bin/ssh2 -V
 /tmp/bin/ssh2 --help
 
